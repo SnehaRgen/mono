@@ -8,3 +8,9 @@ LIB_MCS_FLAGS =
 TEST_MCS_FLAGS = /r:System /r:System.Core /r:System.IO.Compression.dll
 
 include ../../build/library.make
+
+EXTRA_DISTFILES = \
+	foo/bar.txt				\
+	foo/foo.txt				\
+	foo/foobar/bar.txt		\
+	foo/foobar/foo.txt		\

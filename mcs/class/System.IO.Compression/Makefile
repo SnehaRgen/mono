@@ -8,3 +8,5 @@ LIB_MCS_FLAGS = /unsafe
 TEST_MCS_FLAGS = /r:System /r:System.Core
 
 include ../../build/library.make
+
+EXTRA_DISTFILES = archive.zip

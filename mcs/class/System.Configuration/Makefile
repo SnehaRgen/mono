@@ -31,3 +31,8 @@ $(the_libdir_base)System.Security.dll:
 
 $(bare_libdir)/System.Xml.dll:
 	(cd ../System.XML; $(MAKE) $@)
+
+test-local:
+	cp Test/App.config $(test_lib).config
+
+EXTRA_DISTFILES = Test/App.config Test/appSettings.config

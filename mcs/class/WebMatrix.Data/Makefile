@@ -9,3 +9,5 @@ LIB_MCS_FLAGS = -r:$(corlib)
 TEST_MCS_FLAGS = -r:System.dll -r:System.Core.dll -r:System.Data.dll -r:Mono.Data.Sqlite.dll -r:Microsoft.CSharp.dll
 
 include ../../build/library.make
+
+EXTRA_DISTFILES = Test/testsqlite.db

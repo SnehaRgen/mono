@@ -56,3 +56,5 @@ ifeq ($(AOT_SUPPORTED), 1)
 	@MONO_DEBUG=gen-compact-seq-points $(MONO) --aot=gen-seq-points-file $(TEST_EXE) > /dev/null
 	$(CHECK_DIFF)
 endif
+
+EXTRA_DISTFILES = Test/StackTraceDumper.cs Test/symbolicate.expected

@@ -145,4 +145,4 @@ parser.exe: Monodoc.Ecma/EcmaUrlParser.cs Monodoc.Ecma/EcmaUrlTokenizer.cs Monod
 
 setup-doc-sources: $(DOC_SOURCES)
 	mkdir -p ./Test/monodoc_test/sources/
-	cp $(DOC_SOURCES) ./Test/monodoc_test/sources/
+	cp -u $(DOC_SOURCES) ./Test/monodoc_test/sources/
