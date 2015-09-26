@@ -52,6 +52,9 @@ install-local:
 	$(MKINSTALLDIRS) $(DESTDIR)$(LIBRARY_INSTALL_DIR)
 	$(INSTALL_LIB) $(mscorlib_aot_image) $(DESTDIR)$(LIBRARY_INSTALL_DIR)
 	$(INSTALL_LIB) $(mcs_aot_image) $(DESTDIR)$(PROGRAM_INSTALL_DIR)
+uninstall-local:
+	rm -f $(DESTDIR)$(LIBRARY_INSTALL_DIR)/mscorlib.dll$(PLATFORM_AOT_SUFFIX)
+	rm -f $(DESTDIR)$(PROGRAM_INSTALL_DIR)/mcs.exe$(PLATFORM_AOT_SUFFIX)
 endif
 
 endif

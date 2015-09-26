@@ -14,6 +14,11 @@ install-local:
 	$(INSTALL_LIB) ../../../external/binary-reference-assemblies/v3.5/* $(PROFILE_DIR)/3.5
 	$(INSTALL_LIB) ../../../external/binary-reference-assemblies/v4.0/* $(PROFILE_DIR)/4.0
 
+uninstall-local:
+	rm -f $(PROFILE_DIR)/2.0/*
+	rm -f $(PROFILE_DIR)/3.5/*
+	rm -f $(PROFILE_DIR)/4.0/*
+
 DISTFILES = $(wildcard ../../../external/binary-reference-assemblies/v4.0/*) $(wildcard ../../../external/binary-reference-assemblies/v3.5/*) $(wildcard ../../../external/binary-reference-assemblies/v2.0/*) Makefile
 
 dist-local: dist-default

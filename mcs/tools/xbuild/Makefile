@@ -17,6 +17,7 @@ ifeq (4.0, $(FRAMEWORK_VERSION))
 install-local: xbuild-net4-fail
 else
 install-local: install-extras
+uninstall-local: uninstall-extras
 endif
 
 NETFRAMEWORK_DIR=$(mono_libdir)/mono/xbuild-frameworks/.NETFramework
@@ -25,6 +26,7 @@ PORTABLE_TARGETS_DIR = $(mono_libdir)/mono/xbuild/Microsoft/Portable
 
 
 install-extras: install-bin-data install-frameworks install-pcl-targets install-web-targets
+uninstall-extras: uninstall-bin-data uninstall-frameworks uninstall-pcl-targets uninstall-web-targets
 
 install-bin-data:
 	$(MKINSTALLDIRS) $(DESTDIR)$(XBUILD_BIN_DIR)/MSBuild
@@ -37,6 +39,17 @@ install-bin-data:
 	$(INSTALL_DATA) data/MSBuild/Microsoft.Build.CommonTypes.xsd $(DESTDIR)$(XBUILD_BIN_DIR)/MSBuild
 	$(INSTALL_DATA) data/MSBuild/Microsoft.Build.Core.xsd $(DESTDIR)$(XBUILD_BIN_DIR)/MSBuild
 	sed -e 's/@ASM_VERSION@/$(XBUILD_ASSEMBLY_VERSION)/g' data/xbuild.exe.config.in > $(DESTDIR)$(XBUILD_BIN_DIR)/xbuild.exe.config
+
+uninstall-bin-data:
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/xbuild.rsp
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/Microsoft.Common.tasks
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/Microsoft.Common.targets
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/Microsoft.CSharp.targets
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/Microsoft.Build.xsd
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/Microsoft.VisualBasic.targets
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/MSBuild/Microsoft.Build.CommonTypes.xsd
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/MSBuild/Microsoft.Build.Core.xsd
+	rm -f $(DESTDIR)$(XBUILD_BIN_DIR)/xbuild.exe.config
 
 install-frameworks:
 	$(MKINSTALLDIRS) $(DESTDIR)$(NETFRAMEWORK_DIR)/v$(FRAMEWORK_VERSION)/RedistList
@@ -56,6 +69,15 @@ install-frameworks:
 	$(MKINSTALLDIRS) $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.5.2/RedistList
 	$(INSTALL_DATA) frameworks/net_4.5.2.xml $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.5.2/RedistList/FrameworkList.xml
 
+uninstall-frameworks:
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v$(FRAMEWORK_VERSION)/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v2.0/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v3.0/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v3.5/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.0/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.0/Profile/Client/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.5.1/RedistList/FrameworkList.xml
+
 install-pcl-targets:
 	$(MKINSTALLDIRS) $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.0
 	$(INSTALL_DATA) targets/Microsoft.Portable.Common.targets $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.0/Microsoft.Portable.Common.targets
@@ -72,6 +94,16 @@ install-pcl-targets:
 	$(INSTALL_DATA) targets/Microsoft.Portable.CSharp_4.5.targets $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.6/Microsoft.Portable.CSharp.targets
 	$(INSTALL_DATA) targets/Microsoft.Portable.VisualBasic_4.5.targets $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.6/Microsoft.Portable.VisualBasic.targets
 
+uninstall-pcl-targets:
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.0/Microsoft.Portable.Common.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.0/Microsoft.Portable.CSharp.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.0/Microsoft.Portable.VisualBasic.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.5/Microsoft.Portable.Common.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.5/Microsoft.Portable.CSharp.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.5/Microsoft.Portable.VisualBasic.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/Microsoft.Portable.Core.targets
+	rm -f $(DESTDIR)$(PORTABLE_TARGETS_DIR)/Microsoft.Portable.Core.props
+
 install-web-targets:
 	$(MKINSTALLDIRS) $(DESTDIR)$(VS_TARGETS_DIR)/v9.0/WebApplications
 	$(INSTALL_DATA) targets/Microsoft.WebApplication.targets $(DESTDIR)$(VS_TARGETS_DIR)/v9.0/WebApplications
@@ -79,6 +111,11 @@ install-web-targets:
 	$(INSTALL_DATA) targets/Microsoft.WebApplication.targets $(DESTDIR)$(VS_TARGETS_DIR)/v10.0/WebApplications
 	$(MKINSTALLDIRS) $(DESTDIR)$(VS_TARGETS_DIR)/v11.0/WebApplications
 	$(INSTALL_DATA) targets/Microsoft.WebApplication.targets $(DESTDIR)$(VS_TARGETS_DIR)/v11.0/WebApplications
+
+uninstall-web-targets:
+	rm -f $(DESTDIR)$(VS_TARGETS_DIR)/v9.0/WebApplications/Microsoft.WebApplication.targets
+	rm -f $(DESTDIR)$(VS_TARGETS_DIR)/v10.0/WebApplications/Microsoft.WebApplication.targets
+	rm -f $(DESTDIR)$(VS_TARGETS_DIR)/v11.0/WebApplications/Microsoft.WebApplication.targets
 
 EXTRA_DISTFILES = \
 	data/xbuild.rsp \
