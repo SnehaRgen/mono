@@ -1365,7 +1365,7 @@ test-oom: $(OOM_TESTS)
 		MONO_GC_PARAMS=max-heap-size=16m                                                  $(RUNTIME) $$fn > $$fn.stdout || exit 1;	\
 	done
 
-if HOST_WIN32
+if !HOST_WIN32
 test-unhandled-exception-2:
 else
 test-unhandled-exception-2: test-unhandled-exception-2-1 test-unhandled-exception-2-2 test-unhandled-exception-2-3 test-unhandled-exception-2-4	\

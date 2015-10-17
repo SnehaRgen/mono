@@ -388,7 +388,7 @@ check-mdoc-validate: $(PROGRAM)
 		sed 's#file://$(my_abs_top_srcdir)/##g' | \
 		diff --brief - Test/validate.check.monodocer.since
 
-run-test-local: check-doc-tools
+run-test-local:
 
 run-test-update : check-doc-tools-update
 
@@ -417,5 +417,5 @@ check-doc-tools-update: check-monodocer-since-update \
 	check-mdoc-export-msxdoc-update \
 	check-mdoc-validate-update 
 
-check: check-doc-tools 
+check:
 

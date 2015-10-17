@@ -73,9 +73,9 @@ gen-mt-tests:
 test-local:
 	@:
 
-run-test-local: $(TEST_ILS:.il=.dll) setup qcheck
+run-test-local:
 
-check: run-test-local
+check:
 
 endif
 
