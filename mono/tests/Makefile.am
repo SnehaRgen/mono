@@ -928,9 +928,9 @@ test-type-load: TestDriver.dll
 
 EXTRA_DIST += custom-attr-errors.cs custom-attr-errors-lib.cs
 test-cattr-type-load: TestDriver.dll custom-attr-errors.cs custom-attr-errors-lib.cs
-	$(MCS) -D:WITH_MEMBERS /t:library $(srcdir)/custom-attr-errors-lib.cs
-	$(MCS) -r:TestDriver.dll -r:custom-attr-errors-lib.dll  $(srcdir)/custom-attr-errors.cs
-	$(MCS) /t:library $(srcdir)/custom-attr-errors-lib.cs
+	$(MCS) -D:WITH_MEMBERS /t:library -out:custom-attr-errors-lib.dll $(srcdir)/custom-attr-errors-lib.cs
+	$(MCS) -r:TestDriver.dll -r:custom-attr-errors-lib.dll -out:custom-attr-errors.exe $(srcdir)/custom-attr-errors.cs
+	$(MCS) /t:library -out:custom-attr-errors-lib.dll $(srcdir)/custom-attr-errors-lib.cs
 	@echo "Testing custom-attribute-load-exceptions.exe..."
 	@$(RUNTIME) custom-attr-errors.exe > custom-attr-errors.exe.stdout 2> custom-attr-errors.exe.stderr
 
