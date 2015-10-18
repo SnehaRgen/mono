@@ -77,6 +77,7 @@ uninstall-frameworks:
 	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.0/RedistList/FrameworkList.xml
 	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.0/Profile/Client/RedistList/FrameworkList.xml
 	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.5.1/RedistList/FrameworkList.xml
+	rm -f $(DESTDIR)$(NETFRAMEWORK_DIR)/v4.5.2/RedistList/FrameworkList.xml
 
 install-pcl-targets:
 	$(MKINSTALLDIRS) $(DESTDIR)$(PORTABLE_TARGETS_DIR)/v4.0
