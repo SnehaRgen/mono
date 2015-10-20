@@ -44,9 +44,9 @@ TESTS = test-sgen-qsort test-memfuncs test-mono-linked-list-set test-conc-hashta
 check-local:
 	if [ -e test-suite.log ]; then \
 		if grep -q "# FAIL:  0\|tests passed" test-suite.log; then successbool=True && failures=0; else successbool=False && failures=1; fi; \
-		echo "<?xml version='1.0' encoding='utf-8'?><test-results failures='$$failures' total='1' not-run='0' name='unit-tests.dummy' date='$$(date +%F)' time='$$(date +%T)'><test-suite name='MonoTests.unit-tests' success='$$successbool' time='0'><results><test-case name='MonoTests.unit-tests.100percentsuccess' executed='True' success='$$successbool' time='0'>" > TestResult-unit-tests.xml; \
-		if [ $$failures -ne 0 ]; then echo "<failure><message>"'<![CDATA[' >> TestResult-unit-tests.xml && cat test-suite.log >> TestResult-unit-tests.xml && echo "]]></message><stack-trace></stack-trace></failure>" >> TestResult-unit-tests.xml; fi; \
-		echo "</test-case></results></test-suite></test-results>" >> TestResult-unit-tests.xml; \
+		echo "<?xml version='1.0' encoding='utf-8'?><test-results failures='$$failures' total='1' not-run='0' name='unit-tests.dummy' date='$$(date +%F)' time='$$(date +%T)'><test-suite name='MonoTests.unit-tests' success='$$successbool' time='0'><results><test-case name='MonoTests.unit-tests.100percentsuccess' executed='True' success='$$successbool' time='0'>" > TestResults_unit-tests.xml; \
+		if [ $$failures -ne 0 ]; then echo "<failure><message>"'<![CDATA[' >> TestResult-unit-tests.xml && cat test-suite.log >> TestResult-unit-tests.xml && echo "]]></message><stack-trace></stack-trace></failure>" >> TestResults_unit-tests.xml; fi; \
+		echo "</test-case></results></test-suite></test-results>" >> TestResults_unit-tests.xml; \
 	fi;
 
 endif SUPPORT_BOEHM
