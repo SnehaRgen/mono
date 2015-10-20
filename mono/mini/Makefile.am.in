@@ -286,7 +286,7 @@ genmdesc_SOURCES = \
 	seq-points.h	\
 	genmdesc.c	\
 	helpers.c	\
-	../metadata/opcodes.c
+	opcodes.c
 
 # Don't link this against libmonoruntime to speed up rebuilds
 genmdesc_LDADD = \
