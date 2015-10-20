@@ -184,3 +184,5 @@ EXTRA_DIST += configure.host
 # it will not remove dest if building fails
 .S.s:
 	if $(CPP) $< >$@ ; then :; else rm -f $@; fi
+
+DISTCLEANFILES = doltcompile doltlibtool

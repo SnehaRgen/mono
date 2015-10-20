@@ -53,3 +53,4 @@ endif SUPPORT_BOEHM
 endif !HOST_WIN32
 endif !CROSS_COMPILE
 
+CLEANFILES = TestResults_*.xml

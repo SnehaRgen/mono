@@ -48,7 +48,7 @@ dist-hook:
 
 pkgconfigdir = $(libdir)/pkgconfig
 noinst_DATA = mono-uninstalled.pc
-DISTCLEANFILES= mono-uninstalled.pc
+DISTCLEANFILES= mono-uninstalled.pc doltcompile doltlibtool
 
 # building with monolite
 mcslib = $(mcs_topdir)/class/lib

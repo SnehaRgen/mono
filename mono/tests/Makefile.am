@@ -749,8 +749,8 @@ if HOST_WIN32
 test-messages:
 else
 test-messages: w32message.exe
-	> test_messages.zero
-	$(with_mono_path) $(JITTEST_PROG_RUN) w32message.exe > w32message.allout 2>&1 && cmp test_messages.zero w32message.allout
+	> test_messages.stdout
+	$(with_mono_path) $(JITTEST_PROG_RUN) w32message.exe > w32message.stdout 2>&1 && cmp test_messages.stdout w32message.stdout
 endif
 endif
 
@@ -1416,4 +1416,4 @@ endif
 libtest_la_SOURCES = libtest.c
 libtest_la_LIBADD = $(GLIB_LIBS) $(LIBICONV)
 
-CLEANFILES = $(TESTSI_CS) $(TESTSI_IL) $(STRESS_TESTS) *.dll *.stdout *.aotlog *.exe stest.dat
+CLEANFILES = $(TESTSI_CS) $(TESTSI_IL) $(STRESS_TESTS) $(TEST_CS_SRC_GEN) *.dll *.netmodule *.stdout *.aotlog *.exe *.mdb stest.dat reflection-load-dir/*

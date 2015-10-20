@@ -17,3 +17,4 @@ endif
 endif
 
 EXTRA_DIST = autogen.sh README NEWS AUTHORS ChangeLog winconfig.h
+DISTCLEANFILES = doltcompile doltlibtool
