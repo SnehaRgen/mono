@@ -3845,8 +3845,6 @@ mono/arch/mips/Makefile
 mono/sgen/Makefile
 mono/tests/Makefile
 mono/tests/tests-config
-mono/tests/assemblyresolve/Makefile
-mono/tests/gc-descriptors/Makefile
 mono/unit-tests/Makefile
 mono/benchmark/Makefile
 mono/io-layer/Makefile

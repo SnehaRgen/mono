@@ -1,6 +1,5 @@
-SUBDIRS = assemblyresolve gc-descriptors
 
-check-local: assemblyresolve/test/asm.dll testjit test-generic-sharing test-type-load test-cattr-type-load test-reflection-load-with-context test_platform test-process-exit test-messages test-unhandled-exception-2 test-appdomain-unload rm-empty-logs
+check-local: testjit test-generic-sharing test-type-load test-cattr-type-load test-reflection-load-with-context test_platform test-process-exit test-messages test-unhandled-exception-2 test-appdomain-unload rm-empty-logs
 check-full: test-sgen check-local
 check-parallel: compile-tests check-full
 
@@ -782,9 +781,6 @@ compile-tests:
 rm-empty-logs:
 	@echo "Removing empty logs..."
 	@find . '(' -name "*.stdout" -o -name "*.stderr" ')' -empty -exec rm {} \;
-
-assemblyresolve/test/asm.dll:
-	$(MAKE) -C assemblyresolve prereq
 
 TestDriver.dll:
 	$(MCS) -target:library -out:$@ $(srcdir)/../mini/TestDriver.cs
