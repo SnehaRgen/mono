@@ -80,7 +80,6 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		[Category("InetAccess")]
 		public void DownloadFileTaskAsync ()
 		{
 			WebClient wc = new WebClient ();
@@ -94,8 +93,7 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		[Category("InetAccess")]
-		[Category ("AndroidNotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
+		[Category ("NotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
 		public void Cancellation ()
 		{
 			WebClient wc = new WebClient ();
@@ -122,8 +120,7 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		[Category("InetAccess")]
-		[Category ("AndroidNotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
+		[Category ("NotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
 		public void DownloadMultiple ()
 		{
 			WebClient wc = new WebClient ();
@@ -141,8 +138,7 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		[Category("InetAccess")]
-		[Category ("AndroidNotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
+		[Category ("NotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
 		public void DownloadMultiple2 ()
 		{
 			WebClient wc = new WebClient ();
@@ -154,8 +150,7 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		[Category("InetAccess")]
-		[Category ("AndroidNotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
+		[Category ("NotWorking")] // Fails when ran as part of the entire BCL test suite. Works when only this fixture is ran
 		public void DownloadMultiple3 ()
 		{
 			WebClient wc = new WebClient ();

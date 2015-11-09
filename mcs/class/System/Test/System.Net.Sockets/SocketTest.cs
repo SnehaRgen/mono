@@ -80,7 +80,7 @@ namespace MonoTests.System.Net.Sockets
 		}
 
 		[Test]
-		[Category ("InetAccess")]
+		[Category ("NotWorking")]
 		public void BogusEndConnect ()
 		{
 			IPAddress ipOne = IPAddress.Parse (BogusAddress);

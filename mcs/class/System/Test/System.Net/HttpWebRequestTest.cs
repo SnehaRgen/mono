@@ -58,7 +58,6 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		[Category("InetAccess")]
 		public void Sync ()
 		{
 			HttpWebRequest req = (HttpWebRequest) WebRequest.Create ("http://www.google.com");
@@ -125,7 +124,6 @@ namespace MonoTests.System.Net
 		}
 
 		[Test]
-		//[Category("InetAccess")]
 		[Category ("NotWorking")] // Disabled until a server that meets requirements is found
 		public void Cookies1 ()
 		{
