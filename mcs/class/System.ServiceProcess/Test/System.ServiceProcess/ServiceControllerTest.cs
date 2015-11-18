@@ -42,6 +42,9 @@ namespace MonoTests.System.ServiceProcess
 	[TestFixture]
 	public class ServiceControllerTest
 	{
+		const string TEST_SERVICE = "Spooler";
+		const string TEST_SERVICE_DISABLED = "Fax";
+
 		[Test]
 		public void Constructor1 ()
 		{
@@ -164,10 +167,10 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("lanmanworkstation");
+			ServiceController sc = new ServiceController ("LanmanWorkstation");
 
 			Assert.IsTrue (sc.CanPauseAndContinue, "#A1");
-			Assert.IsTrue (sc.CanShutdown, "#B1");
+			Assert.IsFalse (sc.CanShutdown, "#B1");
 			Assert.IsTrue (sc.CanStop, "#C1");
 
 			sc.Close ();
@@ -186,11 +189,11 @@ namespace MonoTests.System.ServiceProcess
 			sc.Refresh ();
 
 			Assert.IsNotNull (sc.ServiceName, "#G1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#G2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#G2");
 
 			ServiceController [] servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#H1");
-			Assert.AreEqual (0, servicesDependedOn.Length, "#H2");
+			Assert.AreEqual (4, servicesDependedOn.Length, "#H2");
 
 			Assert.AreEqual (ServiceType.Win32ShareProcess, sc.ServiceType, "#I1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#J1");
@@ -222,7 +225,7 @@ namespace MonoTests.System.ServiceProcess
 			ServiceController sc = new ServiceController ("workstation");
 
 			Assert.IsTrue (sc.CanPauseAndContinue, "#A1");
-			Assert.IsTrue (sc.CanShutdown, "#B1");
+			Assert.IsFalse (sc.CanShutdown, "#B1");
 			Assert.IsTrue (sc.CanStop, "#C1");
 		}
 
@@ -249,10 +252,10 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("lanmanworkstation");
+			ServiceController sc = new ServiceController ("LanmanWorkstation");
 
 			Assert.IsTrue (sc.CanPauseAndContinue, "#A1");
-			Assert.IsTrue (sc.CanShutdown, "#B1");
+			Assert.IsFalse (sc.CanShutdown, "#B1");
 			Assert.IsTrue (sc.CanStop, "#C1");
 		}
 
@@ -262,11 +265,11 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("lanmanworkstation",
+			ServiceController sc = new ServiceController ("LanmanWorkstation",
 				Environment.MachineName);
 
 			Assert.IsTrue (sc.CanPauseAndContinue, "#A1");
-			Assert.IsTrue (sc.CanShutdown, "#B1");
+			Assert.IsFalse (sc.CanShutdown, "#B1");
 			Assert.IsTrue (sc.CanStop, "#C1");
 
 			sc.Close ();
@@ -285,11 +288,11 @@ namespace MonoTests.System.ServiceProcess
 			sc.Refresh ();
 
 			Assert.IsNotNull (sc.ServiceName, "#G1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#G2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#G2");
 
 			ServiceController [] servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#H1");
-			Assert.AreEqual (0, servicesDependedOn.Length, "#H2");
+			Assert.AreEqual (4, servicesDependedOn.Length, "#H2");
 
 			Assert.AreEqual (ServiceType.Win32ShareProcess, sc.ServiceType, "#I1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#J1");
@@ -369,7 +372,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController ("Workstation", ".");
 			Assert.IsTrue (sc.CanPauseAndContinue, "#1");
 			sc.ServiceName = "SamSs";
 			Assert.IsFalse (sc.CanPauseAndContinue, "#2");
@@ -403,7 +406,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				bool canPauseAndContinue = sc.CanPauseAndContinue;
@@ -432,7 +435,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 			Assert.IsFalse (sc1.CanPauseAndContinue);
 		}
 
@@ -480,7 +483,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController ("Workstation", ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#1");
 			Assert.IsTrue (sc.CanPauseAndContinue, "#2");
 		}
@@ -491,8 +494,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController ("Workstation", ".");
+			ServiceController sc2 = new ServiceController ("Workstation", ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -528,8 +531,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController ("Workstation", ".");
+			ServiceController sc2 = new ServiceController ("Workstation", ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -584,7 +587,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.IsTrue (sc.CanShutdown, "#1");
 			sc.ServiceName = "SamSs";
 			Assert.IsFalse (sc.CanShutdown, "#2");
@@ -618,7 +621,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				bool canShutdown = sc.CanShutdown;
@@ -647,7 +650,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 			Assert.IsFalse (sc1.CanShutdown);
 		}
 
@@ -695,7 +698,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#1");
 			Assert.IsTrue (sc.CanShutdown, "#2");
 		}
@@ -706,8 +709,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -743,8 +746,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -799,7 +802,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.IsTrue (sc.CanStop, "#1");
 			sc.ServiceName = "SamSs";
 			Assert.IsFalse (sc.CanStop, "#2");
@@ -833,7 +836,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				bool canStop = sc.CanStop;
@@ -862,7 +865,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 			Assert.IsFalse (sc1.CanStop);
 		}
 
@@ -910,7 +913,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#1");
 			Assert.IsTrue (sc.CanStop, "#2");
 		}
@@ -921,8 +924,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -958,8 +961,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -982,8 +985,8 @@ namespace MonoTests.System.ServiceProcess
 				sc2.Refresh ();
 			}
 
-			Assert.IsTrue (sc1.CanShutdown, "#E1");
-			Assert.IsTrue (sc2.CanShutdown, "#E2");
+			Assert.IsFalse (sc1.CanShutdown, "#E1");
+			Assert.IsFalse (sc2.CanShutdown, "#E2");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#F1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#F2");
@@ -1014,8 +1017,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -1052,7 +1055,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				sc.Continue ();
@@ -1081,8 +1084,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
-			ServiceController sc2 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc2.Status, "#A2");
@@ -1091,10 +1094,10 @@ namespace MonoTests.System.ServiceProcess
 				sc1.Continue ();
 				Assert.Fail ("#B1");
 			} catch (InvalidOperationException ex) {
-				// Cannot resume NetDDE service on computer '.'
+				// Cannot resume service on computer '.'
 				Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 				Assert.IsNotNull (ex.Message, "#B3");
-				Assert.IsTrue (ex.Message.IndexOf ("NetDDE") != -1, "#B4");
+				Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE_DISABLED) != -1, "#B4");
 				Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 				Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -1181,8 +1184,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -1199,8 +1202,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -1219,10 +1222,10 @@ namespace MonoTests.System.ServiceProcess
 				sc1.Continue ();
 				Assert.Fail ("#D1");
 			} catch (InvalidOperationException ex) {
-				// Cannot resume Schedule service on computer '.'
+				// Cannot resume service on computer '.'
 				Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 				Assert.IsNotNull (ex.Message, "#D3");
-				Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#D4");
+				Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#D4");
 				Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#D5");
 				Assert.IsNotNull (ex.InnerException, "#D6");
 
@@ -1399,11 +1402,10 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("NetDDE", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE_DISABLED, ".");
 			ServiceController [] dependentServices = sc.DependentServices;
 			Assert.IsNotNull (dependentServices, "#1");
-			Assert.AreEqual (1, dependentServices.Length, "#2");
-			Assert.AreEqual ("ClipSrv", dependentServices [0].ServiceName, "#3");
+			Assert.AreEqual (0, dependentServices.Length, "#2");
 		}
 
 		[Test]
@@ -1462,7 +1464,7 @@ namespace MonoTests.System.ServiceProcess
 			ServiceController sc = new ServiceController ();
 			sc.DisplayName = "workstation";
 			Assert.AreEqual ("workstation", sc.DisplayName, "#A1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#A2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#A2");
 
 			sc.DisplayName = "alerter";
 			Assert.AreEqual ("alerter", sc.DisplayName, "#B1");
@@ -1471,7 +1473,7 @@ namespace MonoTests.System.ServiceProcess
 			sc = new ServiceController ("workstation");
 			sc.DisplayName = "alerter";
 			Assert.AreEqual ("alerter", sc.DisplayName, "#C1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#C2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#C2");
 			Assert.AreEqual ("workstation", sc.DisplayName, "#C3");
 
 			sc.DisplayName = "alerter";
@@ -1480,15 +1482,15 @@ namespace MonoTests.System.ServiceProcess
 
 			sc.DisplayName = "workstation";
 			Assert.AreEqual ("workstation", sc.DisplayName, "#E1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#E2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#E2");
 
 			sc = new ServiceController ("workstation");
 			Assert.AreEqual ("workstation", sc.DisplayName, "#F1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#F2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#F2");
 
 			sc.DisplayName = "Workstation";
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#G1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#G2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#G2");
 		}
 
 		[Test]
@@ -1526,8 +1528,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("NetDDE", ".");
-			Assert.AreEqual ("Network DDE", sc.DisplayName);
+			ServiceController sc = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			Assert.AreEqual ("Fax", sc.DisplayName);
 		}
 
 		[Test]
@@ -1567,7 +1569,7 @@ namespace MonoTests.System.ServiceProcess
 			ServiceController sc = new ServiceController ();
 			sc.DisplayName = "workstation";
 			Assert.AreEqual ("workstation", sc.DisplayName, "#A1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#A2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#A2");
 		}
 
 		[Test]
@@ -1614,7 +1616,7 @@ namespace MonoTests.System.ServiceProcess
 			sc.DisplayName = "WorkStation";
 
 			Assert.AreEqual ("WorkStation", sc.DisplayName, "#B1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#B2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#B2");
 
 			sc.DisplayName = string.Empty;
 
@@ -1650,9 +1652,9 @@ namespace MonoTests.System.ServiceProcess
 				Assert.Ignore ("Running on Unix.");
 
 			ServiceController sc = new ServiceController ();
-			sc.DisplayName = "lanmanworkstation";
-			Assert.AreEqual ("lanmanworkstation", sc.DisplayName, "#A1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#A2");
+			sc.DisplayName = "LanmanWorkstation";
+			Assert.AreEqual ("LanmanWorkstation", sc.DisplayName, "#A1");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#A2");
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#A3");
 		}
 
@@ -1670,7 +1672,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_CONTINUE);
 					Assert.Fail ("#B1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 					Assert.IsNotNull (ex.Message, "#B3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#B4");
@@ -1690,7 +1692,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_DEVICEEVENT);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#C2");
 					Assert.IsNotNull (ex.Message, "#C3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#C4");
@@ -1710,7 +1712,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_HARDWAREPROFILECHANGE);
 					Assert.Fail ("#D1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 					Assert.IsNotNull (ex.Message, "#D3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#D4");
@@ -1730,7 +1732,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_INTERROGATE);
 					Assert.Fail ("#E1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#E2");
 					Assert.IsNotNull (ex.Message, "#E3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#E4");
@@ -1750,7 +1752,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDADD);
 					Assert.Fail ("#F1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#F2");
 					Assert.IsNotNull (ex.Message, "#F3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#F4");
@@ -1770,7 +1772,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDDISABLE);
 					Assert.Fail ("#G1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#G2");
 					Assert.IsNotNull (ex.Message, "#G3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#G4");
@@ -1790,7 +1792,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDENABLE);
 					Assert.Fail ("#H1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#H2");
 					Assert.IsNotNull (ex.Message, "#H3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#H4");
@@ -1810,7 +1812,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDREMOVE);
 					Assert.Fail ("#I1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#I2");
 					Assert.IsNotNull (ex.Message, "#I3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#I4");
@@ -1830,7 +1832,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_PARAMCHANGE);
 					Assert.Fail ("#J1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#J2");
 					Assert.IsNotNull (ex.Message, "#J3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#J4");
@@ -1850,7 +1852,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_PAUSE);
 					Assert.Fail ("#K1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#K2");
 					Assert.IsNotNull (ex.Message, "#K3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#K4");
@@ -1870,7 +1872,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_POWEREVENT);
 					Assert.Fail ("#L1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#L2");
 					Assert.IsNotNull (ex.Message, "#L3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#L4");
@@ -1890,7 +1892,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_SESSIONCHANGE);
 					Assert.Fail ("#M1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#M2");
 					Assert.IsNotNull (ex.Message, "#M3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#M4");
@@ -1910,7 +1912,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_SHUTDOWN);
 					Assert.Fail ("#N1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#N2");
 					Assert.IsNotNull (ex.Message, "#N3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#N4");
@@ -1930,7 +1932,7 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_STOP);
 					Assert.Fail ("#O1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#O2");
 					Assert.IsNotNull (ex.Message, "#O3");
 					Assert.IsTrue (ex.Message.IndexOf ("Disk") != -1, "#O4");
@@ -1958,7 +1960,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_PAUSE);
@@ -1987,7 +1989,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			try {
@@ -1995,10 +1997,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (127);
 					Assert.Fail ("#B1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 					Assert.IsNotNull (ex.Message, "#B3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#B4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#B4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 					Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -2018,10 +2020,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (256);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#C2");
 					Assert.IsNotNull (ex.Message, "#C3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#C4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#C4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#C5");
 					Assert.IsNotNull (ex.InnerException, "#C6");
 
@@ -2046,7 +2048,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			sc.Pause ();
@@ -2063,10 +2065,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (127);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#C2");
 					Assert.IsNotNull (ex.Message, "#C3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#C4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#C4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#C5");
 					Assert.IsNotNull (ex.InnerException, "#C6");
 
@@ -2091,7 +2093,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			try {
@@ -2099,10 +2101,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_CONTINUE);
 					Assert.Fail ("#B1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 					Assert.IsNotNull (ex.Message, "#B3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#B4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#B4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 					Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -2119,10 +2121,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_DEVICEEVENT);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#C2");
 					Assert.IsNotNull (ex.Message, "#C3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#C4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#C4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#C5");
 					Assert.IsNotNull (ex.InnerException, "#C6");
 
@@ -2139,10 +2141,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_HARDWAREPROFILECHANGE);
 					Assert.Fail ("#D1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 					Assert.IsNotNull (ex.Message, "#D3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#D4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#D4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#D5");
 					Assert.IsNotNull (ex.InnerException, "#D6");
 
@@ -2159,10 +2161,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_INTERROGATE);
 					Assert.Fail ("#E1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#E2");
 					Assert.IsNotNull (ex.Message, "#E3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#E4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#E4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#E5");
 					Assert.IsNotNull (ex.InnerException, "#E6");
 
@@ -2179,10 +2181,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDADD);
 					Assert.Fail ("#F1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#F2");
 					Assert.IsNotNull (ex.Message, "#F3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#F4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#F4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#F5");
 					Assert.IsNotNull (ex.InnerException, "#F6");
 
@@ -2199,10 +2201,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDDISABLE);
 					Assert.Fail ("#G1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#G2");
 					Assert.IsNotNull (ex.Message, "#G3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#G4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#G4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#G5");
 					Assert.IsNotNull (ex.InnerException, "#G6");
 
@@ -2219,10 +2221,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDENABLE);
 					Assert.Fail ("#H1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#H2");
 					Assert.IsNotNull (ex.Message, "#H3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#H4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#H4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#H5");
 					Assert.IsNotNull (ex.InnerException, "#H6");
 
@@ -2239,10 +2241,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_NETBINDREMOVE);
 					Assert.Fail ("#I1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#I2");
 					Assert.IsNotNull (ex.Message, "#I3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#I4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#I4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#I5");
 					Assert.IsNotNull (ex.InnerException, "#I6");
 
@@ -2259,10 +2261,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_PARAMCHANGE);
 					Assert.Fail ("#J1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#J2");
 					Assert.IsNotNull (ex.Message, "#J3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#J4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#J4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#J5");
 					Assert.IsNotNull (ex.InnerException, "#J6");
 
@@ -2279,10 +2281,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_PAUSE);
 					Assert.Fail ("#K1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#K2");
 					Assert.IsNotNull (ex.Message, "#K3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#K4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#K4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#K5");
 					Assert.IsNotNull (ex.InnerException, "#K6");
 
@@ -2299,10 +2301,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_POWEREVENT);
 					Assert.Fail ("#L1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#L2");
 					Assert.IsNotNull (ex.Message, "#L3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#L4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#L4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#L5");
 					Assert.IsNotNull (ex.InnerException, "#L6");
 
@@ -2319,10 +2321,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_SESSIONCHANGE);
 					Assert.Fail ("#M1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#M2");
 					Assert.IsNotNull (ex.Message, "#M3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#M4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#M4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#M5");
 					Assert.IsNotNull (ex.InnerException, "#M6");
 
@@ -2339,10 +2341,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_SHUTDOWN);
 					Assert.Fail ("#N1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#N2");
 					Assert.IsNotNull (ex.Message, "#N3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#N4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#N4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#N5");
 					Assert.IsNotNull (ex.InnerException, "#N6");
 
@@ -2359,10 +2361,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand ((int) SERVICE_CONTROL_TYPE.SERVICE_CONTROL_STOP);
 					Assert.Fail ("#O1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#O2");
 					Assert.IsNotNull (ex.Message, "#O3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#O4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#O4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#O5");
 					Assert.IsNotNull (ex.InnerException, "#O6");
 
@@ -2415,7 +2417,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			sc.Pause ();
@@ -2440,7 +2442,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			sc.Pause ();
@@ -2452,10 +2454,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (127);
 					Assert.Fail ("#B1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 					Assert.IsNotNull (ex.Message, "#B3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#B4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#B4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 					Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -2480,7 +2482,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			sc.Stop ();
@@ -2495,10 +2497,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (127);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#C2");
 					Assert.IsNotNull (ex.Message, "#C3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#C4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#C4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#C5");
 					Assert.IsNotNull (ex.InnerException, "#C6");
 
@@ -2515,10 +2517,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (128);
 					Assert.Fail ("#D1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 					Assert.IsNotNull (ex.Message, "#D3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#D4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#D4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#D5");
 					Assert.IsNotNull (ex.InnerException, "#D6");
 
@@ -2543,7 +2545,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			sc.Stop ();
@@ -2556,10 +2558,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (127);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 					Assert.IsNotNull (ex.Message, "#C3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#C4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#C4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#C5");
 					Assert.IsNotNull (ex.InnerException, "#C6");
 
@@ -2576,10 +2578,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (128);
 					Assert.Fail ("#D1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 					Assert.IsNotNull (ex.Message, "#D3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#D4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#D4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#D5");
 					Assert.IsNotNull (ex.InnerException, "#D6");
 
@@ -2604,7 +2606,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE, ".");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#A");
 
 			sc.Stop ();
@@ -2614,10 +2616,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (127);
 					Assert.Fail ("#B1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 					Assert.IsNotNull (ex.Message, "#B3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#B4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#B4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 					Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -2634,10 +2636,10 @@ namespace MonoTests.System.ServiceProcess
 					sc.ExecuteCommand (128);
 					Assert.Fail ("#C1");
 				} catch (InvalidOperationException ex) {
-					// Cannot control Schedule service on computer '.'
+					// Cannot control service on computer '.'
 					Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#C2");
 					Assert.IsNotNull (ex.Message, "#C3");
-					Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#C4");
+					Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#C4");
 					Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#C5");
 					Assert.IsNotNull (ex.InnerException, "#C6");
 
@@ -2808,7 +2810,7 @@ namespace MonoTests.System.ServiceProcess
 				case "Disk":
 					foundDisk = true;
 					break;
-				case "lanmanworkstation":
+				case "LanmanWorkstation":
 					foundWorkstation = true;
 					break;
 				}
@@ -2828,7 +2830,7 @@ namespace MonoTests.System.ServiceProcess
 				case "Disk":
 					foundDisk = true;
 					break;
-				case "lanmanworkstation":
+				case "LanmanWorkstation":
 					Assert.AreEqual ("Workstation", sc.DisplayName, "#B2");
 					Assert.AreEqual (ServiceControllerStatus.Running, sc.Status, "#B3");
 					foundWorkstation = true;
@@ -2981,8 +2983,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -3012,7 +3014,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				sc.Pause ();
@@ -3041,8 +3043,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
-			ServiceController sc2 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc2.Status, "#A2");
@@ -3051,10 +3053,10 @@ namespace MonoTests.System.ServiceProcess
 				sc1.Pause ();
 				Assert.Fail ("#B1");
 			} catch (InvalidOperationException ex) {
-				// Cannot pause NetDDE service on computer '.'
+				// Cannot pause service on computer '.'
 				Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 				Assert.IsNotNull (ex.Message, "#B3");
-				Assert.IsTrue (ex.Message.IndexOf ("NetDDE") != -1, "#B4");
+				Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE_DISABLED) != -1, "#B4");
 				Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 				Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -3141,8 +3143,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -3177,8 +3179,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -3197,10 +3199,10 @@ namespace MonoTests.System.ServiceProcess
 				sc1.Pause ();
 				Assert.Fail ("#D1");
 			} catch (InvalidOperationException ex) {
-				// Cannot pause Schedule service on computer '.'
+				// Cannot pause service on computer '.'
 				Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 				Assert.IsNotNull (ex.Message, "#D3");
-				Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#D4");
+				Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#D4");
 				Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#D5");
 				Assert.IsNotNull (ex.InnerException, "#D6");
 
@@ -3249,39 +3251,44 @@ namespace MonoTests.System.ServiceProcess
 			ServiceController [] dependentServices = null;
 			ServiceController [] servicesDependedOn = null;
 
-			sc = new ServiceController ("NetDDE", ".");
+			sc = new ServiceController (TEST_SERVICE, ".");
 			dependentServices = sc.DependentServices;
 			Assert.IsNotNull (dependentServices, "#A1");
 			Assert.AreEqual (1, dependentServices.Length, "#A2");
-			Assert.AreEqual ("ClipSrv", dependentServices [0].ServiceName, "#A3");
+			Assert.AreEqual ("Fax", dependentServices [0].ServiceName, "#A3");
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#A4");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#A5");
-			Assert.AreEqual ("NetDDEDSDM", servicesDependedOn [0].ServiceName, "#A6");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#A5");
+			Assert.AreEqual ("RPCSS", servicesDependedOn [0].ServiceName, "#A6");
+			Assert.AreEqual ("HTTP", servicesDependedOn [1].ServiceName, "#A7");
 
 			sc.ServiceName = "rasman";
 			sc.Refresh ();
 
 			dependentServices = sc.DependentServices;
 			Assert.IsNotNull (dependentServices, "#B1");
-			Assert.AreEqual (1, dependentServices.Length, "#B2");
-			Assert.AreEqual ("RasAuto", dependentServices [0].ServiceName, "#B3");
+			Assert.AreEqual (3, dependentServices.Length, "#B2");
+			Assert.AreEqual ("SharedAccess", dependentServices [0].ServiceName, "#B3");
+			Assert.AreEqual ("RemoteAccess", dependentServices [1].ServiceName, "#B3a");
+			Assert.AreEqual ("RasAuto", dependentServices [2].ServiceName, "#B3b");
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#B4");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#B5");
-			Assert.AreEqual ("Tapisrv", servicesDependedOn [0].ServiceName, "#B6");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#B5");
+			Assert.AreEqual ("SstpSvc", servicesDependedOn [0].ServiceName, "#B6");
+			Assert.AreEqual ("Tapisrv", servicesDependedOn [1].ServiceName, "#B7");
 
-			sc.DisplayName = "NetDDE";
+			sc.DisplayName = TEST_SERVICE;
 			sc.Refresh ();
 
 			dependentServices = sc.DependentServices;
 			Assert.IsNotNull (dependentServices, "#C1");
 			Assert.AreEqual (1, dependentServices.Length, "#C2");
-			Assert.AreEqual ("ClipSrv", dependentServices [0].ServiceName, "#C3");
+			Assert.AreEqual ("Fax", dependentServices [0].ServiceName, "#C3");
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#C4");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#C5");
-			Assert.AreEqual ("NetDDEDSDM", servicesDependedOn [0].ServiceName, "#C6");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#C5");
+			Assert.AreEqual ("RPCSS", servicesDependedOn [0].ServiceName, "#C6");
+			Assert.AreEqual ("HTTP", servicesDependedOn [1].ServiceName, "#C7");
 		}
 
 		[Test]
@@ -3290,7 +3297,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			sc.Refresh ();
 		}
@@ -3311,8 +3318,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -3352,8 +3359,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -3404,8 +3411,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -3451,15 +3458,15 @@ namespace MonoTests.System.ServiceProcess
 				Assert.Ignore ("Running on Unix.");
 
 			ServiceController sc = new ServiceController ();
-			sc.ServiceName = "lanmanworkstation";
+			sc.ServiceName = "LanmanWorkstation";
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#A1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#A2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#A2");
 
 			sc.ServiceName = "alerter";
 			Assert.AreEqual ("Alerter", sc.DisplayName, "#B1");
 			Assert.AreEqual ("alerter", sc.ServiceName, "#B2");
 
-			sc = new ServiceController ("lanmanworkstation");
+			sc = new ServiceController ("LanmanWorkstation");
 			sc.ServiceName = "alerter";
 			Assert.AreEqual ("alerter", sc.ServiceName, "#C1");
 			Assert.AreEqual ("Alerter", sc.DisplayName, "#C2");
@@ -3469,12 +3476,12 @@ namespace MonoTests.System.ServiceProcess
 			Assert.AreEqual ("alerter", sc.ServiceName, "#D1");
 			Assert.AreEqual ("Alerter", sc.DisplayName, "#D2");
 
-			sc.ServiceName = "lanmanworkstation";
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#E1");
+			sc.ServiceName = "LanmanWorkstation";
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#E1");
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#E2");
 
-			sc = new ServiceController ("lanmanWorkstation");
-			Assert.AreEqual ("lanmanWorkstation", sc.ServiceName, "#F1");
+			sc = new ServiceController ("LanmanWorkstation");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#F1");
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#F2");
 
 			sc.ServiceName = "LanManWorkstation";
@@ -3517,8 +3524,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("NetDDE", ".");
-			Assert.AreEqual ("NetDDE", sc.ServiceName);
+			ServiceController sc = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			Assert.AreEqual ("Fax", sc.ServiceName);
 		}
 
 		[Test]
@@ -3556,9 +3563,9 @@ namespace MonoTests.System.ServiceProcess
 				Assert.Ignore ("Running on Unix.");
 
 			ServiceController sc = new ServiceController ();
-			sc.ServiceName = "lanmanworkstation";
+			sc.ServiceName = "LanmanWorkstation";
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#2");
 		}
 
 		[Test]
@@ -3601,10 +3608,10 @@ namespace MonoTests.System.ServiceProcess
 			Assert.AreEqual (string.Empty, sc.DisplayName, "#A1");
 			Assert.AreEqual (string.Empty, sc.ServiceName, "#A2");
 
-			sc.ServiceName = "lanmanworkstation";
+			sc.ServiceName = "LanmanWorkstation";
 
 			Assert.AreEqual ("Workstation", sc.DisplayName, "#B1");
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#B2");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#B2");
 
 			try {
 				sc.ServiceName = string.Empty;
@@ -3628,7 +3635,7 @@ namespace MonoTests.System.ServiceProcess
 				Assert.Ignore ("Running on Unix.");
 
 			ServiceController sc = new ServiceController ();
-			sc.ServiceName = "lanmanworkstation";
+			sc.ServiceName = "LanmanWorkstation";
 			try {
 				sc.ServiceName = null;
 				Assert.Fail ("#1");
@@ -3640,7 +3647,7 @@ namespace MonoTests.System.ServiceProcess
 				Assert.IsNull (ex.InnerException, "#6");
 			}
 
-			Assert.AreEqual ("lanmanworkstation", sc.ServiceName, "#7");
+			Assert.AreEqual ("LanmanWorkstation", sc.ServiceName, "#7");
 		}
 
 		[Test]
@@ -3687,35 +3694,39 @@ namespace MonoTests.System.ServiceProcess
 			sc = new ServiceController ("spooler", ".");
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#A1");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#A2");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#A2");
 			Assert.AreEqual ("RPCSS", servicesDependedOn [0].ServiceName, "#A3");
+			Assert.AreEqual ("HTTP", servicesDependedOn [1].ServiceName, "#A4");
 
 			// modifying ServiceName does not cause cache to be cleared:
 			// https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=201762
-			sc.ServiceName = "lanmanworkstation";
+			sc.ServiceName = "LanmanWorkstation";
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#B1");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#B2");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#B2");
 			Assert.AreEqual ("RPCSS", servicesDependedOn [0].ServiceName, "#B3");
+			Assert.AreEqual ("HTTP", servicesDependedOn [1].ServiceName, "#B4");
 
 			// modifying DisplayName does not cause cache to be cleared:
 			// https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=201762
 			sc.DisplayName = "alerter";
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#C1");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#C2");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#C2");
 			Assert.AreEqual ("RPCSS", servicesDependedOn [0].ServiceName, "#C3");
+			Assert.AreEqual ("HTTP", servicesDependedOn [1].ServiceName, "#C4");
 
 			// modifying MachineName does not cause cache to be cleared:
 			// https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=201762
 			sc.MachineName = "doesnotexist";
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#D1");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#D2");
+			Assert.AreEqual (2, servicesDependedOn.Length, "#D2");
 			Assert.AreEqual ("RPCSS", servicesDependedOn [0].ServiceName, "#D3");
+			Assert.AreEqual ("HTTP", servicesDependedOn [1].ServiceName, "#D4");
 
 			// no depended services
-			sc = new ServiceController ("lanmanworkstation", ".");
+			sc = new ServiceController ("LanmanWorkstation", ".");
 			servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#E1");
 			Assert.AreEqual (0, servicesDependedOn.Length, "#E2");
@@ -3791,7 +3802,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("dmserver",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				ServiceController [] servicesDependedOn = sc.ServicesDependedOn;
@@ -3820,11 +3831,14 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("ClipSrv", ".");
+			ServiceController sc = new ServiceController (TEST_SERVICE_DISABLED, ".");
 			ServiceController [] servicesDependedOn = sc.ServicesDependedOn;
 			Assert.IsNotNull (servicesDependedOn, "#1");
-			Assert.AreEqual (1, servicesDependedOn.Length, "#2");
-			Assert.AreEqual ("NetDDE", servicesDependedOn [0].ServiceName, "#3");
+			Assert.AreEqual (4, servicesDependedOn.Length, "#2");
+			Assert.AreEqual ("RpcSs", servicesDependedOn [0].ServiceName, "#3");
+			Assert.AreEqual ("TapiSrv", servicesDependedOn [1].ServiceName, "#4");
+			Assert.AreEqual ("PlugPlay", servicesDependedOn [2].ServiceName, "#5");
+			Assert.AreEqual ("Spooler", servicesDependedOn [3].ServiceName, "#6");
 		}
 
 		[Test]
@@ -3882,8 +3896,8 @@ namespace MonoTests.System.ServiceProcess
 
 			ServiceController sc = null;
 			
-			sc = new ServiceController ("dmserver", ".");
-			Assert.AreEqual (ServiceType.Win32ShareProcess, sc.ServiceType, "#A1");
+			sc = new ServiceController (TEST_SERVICE, ".");
+			Assert.AreEqual (ServiceType.Win32OwnProcess | ServiceType.InteractiveProcess, sc.ServiceType, "#A1");
 			sc.ServiceName = "Disk";
 			Assert.AreEqual (ServiceType.KernelDriver, sc.ServiceType, "#A2");
 			sc.DisplayName = "Workstation";
@@ -3911,10 +3925,10 @@ namespace MonoTests.System.ServiceProcess
 
 			sc = new ServiceController ("Disk", ".");
 			Assert.AreEqual (ServiceType.KernelDriver, sc.ServiceType, "#B1");
-			sc.DisplayName = "Alerter";
-			Assert.AreEqual (ServiceType.Win32ShareProcess, sc.ServiceType, "#B2");
+			sc.DisplayName = "Fax";
+			Assert.AreEqual (ServiceType.Win32OwnProcess, sc.ServiceType, "#B2");
 			sc.MachineName = Environment.MachineName;
-			Assert.AreEqual (ServiceType.Win32ShareProcess, sc.ServiceType, "#B3");
+			Assert.AreEqual (ServiceType.Win32OwnProcess, sc.ServiceType, "#B3");
 			sc.ServiceName = "Disk";
 			Assert.AreEqual (ServiceType.KernelDriver, sc.ServiceType, "#B4");
 		}
@@ -3954,8 +3968,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("NetDDE", ".");
-			Assert.AreEqual (ServiceType.Win32ShareProcess, sc.ServiceType);
+			ServiceController sc = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			Assert.AreEqual (ServiceType.Win32OwnProcess, sc.ServiceType);
 		}
 
 		[Test]
@@ -4023,8 +4037,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -4054,7 +4068,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				sc.Stop ();
@@ -4083,8 +4097,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
-			ServiceController sc2 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc2.Status, "#A2");
@@ -4093,10 +4107,10 @@ namespace MonoTests.System.ServiceProcess
 				sc1.Stop ();
 				Assert.Fail ("#B1");
 			} catch (InvalidOperationException ex) {
-				// Cannot stop NetDDE service on computer '.'
+				// Cannot stop service on computer '.'
 				Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#B2");
 				Assert.IsNotNull (ex.Message, "#B3");
-				Assert.IsTrue (ex.Message.IndexOf ("NetDDE") != -1, "#B4");
+				Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE_DISABLED) != -1, "#B4");
 				Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#B5");
 				Assert.IsNotNull (ex.InnerException, "#B6");
 
@@ -4105,6 +4119,7 @@ namespace MonoTests.System.ServiceProcess
 				Win32Exception win32Error = (Win32Exception) ex.InnerException;
 				//Assert.AreEqual (-2147467259, win32Error.ErrorCode, "#B8");
 				Assert.IsNotNull (win32Error.Message, "#B9");
+				Console.WriteLine(win32Error.Message);
 				Assert.AreEqual (1062, win32Error.NativeErrorCode, "#B10");
 				Assert.IsNull (win32Error.InnerException, "#B11");
 			}
@@ -4183,8 +4198,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController ("PlugPlay", ".");
+			ServiceController sc2 = new ServiceController ("PlugPlay", ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -4224,8 +4239,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -4244,10 +4259,10 @@ namespace MonoTests.System.ServiceProcess
 				sc1.Stop ();
 				Assert.Fail ("#D1");
 			} catch (InvalidOperationException ex) {
-				// Cannot stop Schedule service on computer '.'
+				// Cannot stop service on computer '.'
 				Assert.AreEqual (typeof (InvalidOperationException), ex.GetType (), "#D2");
 				Assert.IsNotNull (ex.Message, "#D3");
-				Assert.IsTrue (ex.Message.IndexOf ("Schedule") != -1, "#D4");
+				Assert.IsTrue (ex.Message.IndexOf (TEST_SERVICE) != -1, "#D4");
 				Assert.IsTrue (ex.Message.IndexOf ("'.'") != -1, "#D5");
 				Assert.IsNotNull (ex.InnerException, "#D6");
 
@@ -4292,8 +4307,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
@@ -4338,7 +4353,7 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc = new ServiceController ("Schedule",
+			ServiceController sc = new ServiceController (TEST_SERVICE,
 				"doesnotexist");
 			try {
 				sc.WaitForStatus (ServiceControllerStatus.Stopped,
@@ -4368,8 +4383,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("NetDDE", ".");
-			ServiceController sc2 = new ServiceController ("NetDDE", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE_DISABLED, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE_DISABLED, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Stopped, sc2.Status, "#A2");
@@ -4480,8 +4495,8 @@ namespace MonoTests.System.ServiceProcess
 			if (RunningOnUnix)
 				Assert.Ignore ("Running on Unix.");
 
-			ServiceController sc1 = new ServiceController ("Schedule", ".");
-			ServiceController sc2 = new ServiceController ("Schedule", ".");
+			ServiceController sc1 = new ServiceController (TEST_SERVICE, ".");
+			ServiceController sc2 = new ServiceController (TEST_SERVICE, ".");
 
 			Assert.AreEqual (ServiceControllerStatus.Running, sc1.Status, "#A1");
 			Assert.AreEqual (ServiceControllerStatus.Running, sc2.Status, "#A2");
