@@ -387,7 +387,7 @@ common_sources = \
 	method-to-ir.c		\
 	decompose.c		\
 	mini.h			\
-	version.h		\
+	version-make.h		\
 	optflags-def.h		\
 	jit-icalls.h 		\
 	jit-icalls.c 		\
@@ -767,7 +767,7 @@ clean-local:
 
 pkgconfigdir = $(libdir)/pkgconfig
 
-BUILT_SOURCES = version.h $(arch_built)
+BUILT_SOURCES = version-make.h $(arch_built)
 
 CLEANFILES= $(BUILT_SOURCES) *.exe *.dll
 EXTRA_DIST = TestDriver.cs \
@@ -790,7 +790,7 @@ EXTRA_DIST = TestDriver.cs \
 	test_op_il_seq_point_headerfooter.sh	\
 	Makefile.am.in
 
-version.h: Makefile
+version-make.h: Makefile
 	if test -d $(top_srcdir)/.git; then \
 		(cd $(top_srcdir); \
 			LANG=C; export LANG; \
@@ -800,7 +800,7 @@ version.h: Makefile
 		); \
 	else \
 		echo "#define FULL_VERSION \"tarball\""; \
-	fi > version.h
+	fi > version-make.h
 
 # Utility target for patching libtool to speed up linking
 patch-libtool:

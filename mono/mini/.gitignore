@@ -25,7 +25,8 @@
 /.project
 /.cproject
 /iltests.il
-/version.h
+/version-make.h
+/version-msvc.h
 /buildver.h
 /TAGS
 /mono-sgen
