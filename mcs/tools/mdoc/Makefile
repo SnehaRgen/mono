@@ -168,7 +168,7 @@ check-monodocer-addNonGeneric: $(PROGRAM)
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-addNonGeneric-v2.dll
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-addNonGeneric-v2.dll
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-addNonGeneric-v2.dll
-	diff --exclude=.svn -rup Test/en.expected-addNonGeneric Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-addNonGeneric Test/en.actual
 
 check-monodocer-dropns-classic: $(PROGRAM)
 	# tests the simplest --dropns case, a single class where the root namespace was dropped.
@@ -176,7 +176,7 @@ check-monodocer-dropns-classic: $(PROGRAM)
 	$(MAKE) Test/DocTest-DropNS-classic.dll
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-DropNS-classic.dll
 	$(MAKE) update-monodocer-dropns-unified
-	diff --exclude=.svn -rup Test/en.expected-dropns-classic-v1 Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-dropns-classic-v1 Test/en.actual
 
 check-monodocer-dropns-multi: $(PROGRAM)
 	-rm -Rf Test/en.actual
@@ -193,7 +193,7 @@ check-monodocer-dropns-multi: $(PROGRAM)
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual $(MULTI-CLASSIC) -multiassembly
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual $(MULTI-UNIFIED) --dropns Test/DocTest-DropNS-unified.dll=MyFramework --dropns Test/DocTest-DropNS-unified-multitest.dll=MyFramework -multiassembly
 	
-	diff --exclude=.svn -rup Test/en.expected-dropns-multi Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-dropns-multi Test/en.actual
 
 
 check-monodocer-dropns-multi-withexisting: $(PROGRAM)
@@ -211,7 +211,7 @@ check-monodocer-dropns-multi-withexisting: $(PROGRAM)
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual $(MULTI-CLASSIC) -multiassembly
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual $(MULTI-UNIFIED) --dropns Test/DocTest-DropNS-unified.dll=MyFramework --dropns Test/DocTest-DropNS-unified-multitest.dll=MyFramework -multiassembly
 	
-	diff --exclude=.svn -rup Test/en.expected-dropns-multi-withexisting Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-dropns-multi-withexisting Test/en.actual
 
 check-monodocer-dropns-delete: $(PROGRAM)
 	-rm -Rf Test/en.actual
@@ -225,7 +225,7 @@ check-monodocer-dropns-delete: $(PROGRAM)
 	$(MONO) $(PROGRAM) update --delete --exceptions=all -o Test/en.actual Test/DocTest-DropNS-classic-deletetest.dll
 	$(MAKE) Test/DocTest-DropNS-unified-deletetest-V2.dll
 	$(MONO) $(PROGRAM) update --delete --exceptions=all -o Test/en.actual Test/DocTest-DropNS-unified-deletetest.dll --dropns Test/DocTest-DropNS-unified-deletetest.dll=MyFramework
-	diff --exclude=.dvn -rup Test/en.expected-dropns-delete Test/en.actual
+	diff --strip-trailing-cr --exclude=.dvn -rup Test/en.expected-dropns-delete Test/en.actual
 
 check-monodocer-dropns-classic-withsecondary: $(PROGRAM)
 	# tests case where a secondary assembly is included with a --dropns parameter
@@ -234,7 +234,7 @@ check-monodocer-dropns-classic-withsecondary: $(PROGRAM)
 	$(MAKE) Test/DocTest-DropNS-classic-secondary.dll
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-DropNS-classic.dll Test/DocTest-DropNS-classic-secondary.dll
 	$(MAKE) update-monodocer-dropns-unified-withsecondary
-	diff --exclude=.svn -rup Test/en.expected-dropns-classic-withsecondary Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-dropns-classic-withsecondary Test/en.actual
 
 update-monodocer-dropns-unified: $(PROGRAM)
 	$(MAKE) Test/DocTest-DropNS-unified.dll
@@ -253,13 +253,13 @@ check-monodocer-internal-interface: $(PROGRAM)
 	-rm -Rf Test/en.actual
 	$(MAKE) Test/DocTest-InternalInterface.dll
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-InternalInterface.dll
-	diff --exclude=.svn -rup Test/en.expected-internal-interface Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-internal-interface Test/en.actual
 
 check-monodocer-enumerations: $(PROGRAM)
 	-rm -Rf Test/en.actual
 	$(MAKE) Test/DocTest-enumerations.dll
 	$(MONO) $(PROGRAM) update --exceptions=all -o Test/en.actual Test/DocTest-enumerations.dll
-	diff --exclude=.svn -rup Test/en.expected-enumerations Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected-enumerations Test/en.actual
 
 check-monodocer-update: $(PROGRAM)
 	find Test/en.expected -name \*.xml -exec rm "{}" \;
@@ -270,9 +270,9 @@ check-monodocer: $(PROGRAM)
 	-rm -Rf Test/en.actual
 	$(MAKE) Test/DocTest.dll-v1
 	$(MONO) $(PROGRAM) update --debug --exceptions=all -o Test/en.actual Test/DocTest.dll
-	diff --exclude=.svn -rup Test/en.expected Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected Test/en.actual
 	$(MONO) $(PROGRAM) update --debug --exceptions=all -o Test/en.actual Test/DocTest.dll 
-	diff --exclude=.svn -rup Test/en.expected Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected Test/en.actual
 
 check-monodocer-since-update: $(PROGRAM)
 	find Test/en.expected.since -name \*.xml -exec rm "{}" \;
@@ -289,7 +289,7 @@ check-monodocer-since: $(PROGRAM)
 	$(MAKE) Test/DocTest.dll-v2
 	$(MONO) $(PROGRAM) --debug update --exceptions=all --since="Version 2.0" \
 		-o Test/en.actual Test/DocTest.dll 
-	diff --exclude=.svn -rup Test/en.expected.since Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected.since Test/en.actual
 
 check-monodocer-delete-update: $(PROGRAM)
 	find Test/en.expected.delete -type f -exec rm "{}" \;
@@ -309,7 +309,7 @@ check-monodocer-delete: $(PROGRAM)
 	$(MONO) $(PROGRAM) --debug update --exceptions=all -o Test/en.actual Test/DocTest.dll
 	$(MAKE) Test/DocTest.dll-v1
 	$(MONO) $(PROGRAM) --debug update -fno-assembly-versions --delete --exceptions=all -o Test/en.actual Test/DocTest.dll
-	diff --exclude=.svn -rup Test/en.expected.delete Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected.delete Test/en.actual
 
 check-monodocer-importslashdoc-update: $(PROGRAM)
 	find Test/en.expected.importslashdoc -name \*.xml -exec rm "{}" \;
@@ -322,7 +322,7 @@ check-monodocer-importslashdoc: $(PROGRAM)
 	$(MAKE) Test/DocTest.dll-v1 TEST_CSCFLAGS=-doc:Test/DocTest.xml
 	$(MONO) $(PROGRAM) --debug update --exceptions=all -i Test/DocTest.xml \
 		-o Test/en.actual Test/DocTest.dll 
-	diff --exclude=.svn -rup Test/en.expected.importslashdoc Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected.importslashdoc Test/en.actual
 
 check-monodocer-importecmadoc-update: $(PROGRAM)
 	find Test/en.expected.importecmadoc -name \*.xml -exec rm "{}" \;
@@ -339,7 +339,7 @@ check-monodocer-importecmadoc: $(PROGRAM)
 		'--type=System.Action`1' --type=System.AsyncCallback \
 		--type=System.Environment --type=System.Array \
 		-o Test/en.actual Test/DocTest.dll 
-	diff --exclude=.svn -rup Test/en.expected.importecmadoc Test/en.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/en.expected.importecmadoc Test/en.actual
 
 check-mdoc-export-html-update: $(PROGRAM)
 	find Test/html.expected -name \*.html -exec rm "{}" \;
@@ -350,7 +350,7 @@ check-mdoc-export-html: check-monodocer $(PROGRAM)
 	rm -Rf Test/html.actual
 	$(MONO) $(PROGRAM) export-html -o Test/html.actual \
 		Test/en.expected.importslashdoc
-	diff --exclude=.svn -rup Test/html.expected Test/html.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/html.expected Test/html.actual
 
 check-mdoc-export-html-with-version: $(PROGRAM)
 	rm -Rf Test/html.actual.v0 Test/html.actual.since-with-v0 .v0.txt .v2.txt
@@ -360,12 +360,12 @@ check-mdoc-export-html-with-version: $(PROGRAM)
 		Test/en.expected.since -with-version 0.0.0.0
 	(cd Test/html.actual.v0            && find . -type f) | sort > .v0.txt
 	(cd Test/html.actual.since-with-v0 && find . -type f) | sort > .v2.txt
-	diff -rup .v0.txt .v2.txt   # assert no types added
+	diff --strip-trailing-cr -rup .v0.txt .v2.txt   # assert no types added
 
 check-md-html-dir: $(PROGRAM)
 	rm -Rf Test/html.actual
 	$(MONO) $(PROGRAM) export-html -dest:Test/html.actual $(DIR) 
-	diff --exclude=.svn -rup Test/html.expected Test/html.actual
+	diff --strip-trailing-cr --exclude=.svn -rup Test/html.expected Test/html.actual
 
 check-mdoc-export-msxdoc-update:
 	$(MONO) $(PROGRAM) export-msxdoc -o - Test/en.expected.importslashdoc \
@@ -373,7 +373,7 @@ check-mdoc-export-msxdoc-update:
 
 check-mdoc-export-msxdoc:
 	$(MONO) $(PROGRAM) export-msxdoc -o - Test/en.expected.importslashdoc \
-		| diff --brief - Test/msxdoc-expected.importslashdoc.xml
+		| diff --strip-trailing-cr --brief - Test/msxdoc-expected.importslashdoc.xml
 
 my_abs_top_srcdir = $(shell cd . && pwd)
 
@@ -391,13 +391,13 @@ check-mdoc-validate-update: $(PROGRAM)
 check-mdoc-validate: $(PROGRAM)
 	$(MONO) $(PROGRAM) validate -f ecma Test/en.expected 2>&1 | \
 		sed 's#file://$(my_abs_top_srcdir)/##g' | \
-		diff - Test/validate.check.monodocer
+		diff --strip-trailing-cr - Test/validate.check.monodocer
 	$(MONO) $(PROGRAM) validate -f ecma Test/en.expected.importslashdoc 2>&1 | \
 		sed 's#file://$(my_abs_top_srcdir)/##g' | \
-		diff --brief - Test/validate.check.monodocer.importslashdoc
+		diff --strip-trailing-cr --brief - Test/validate.check.monodocer.importslashdoc
 	$(MONO) $(PROGRAM) validate -f ecma Test/en.expected.since 2>&1 | \
 		sed 's#file://$(my_abs_top_srcdir)/##g' | \
-		diff --brief - Test/validate.check.monodocer.since
+		diff --strip-trailing-cr --brief - Test/validate.check.monodocer.since
 
 run-test-local: check-doc-tools
 
