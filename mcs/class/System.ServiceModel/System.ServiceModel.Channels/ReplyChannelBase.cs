@@ -108,7 +108,7 @@ namespace System.ServiceModel.Channels
 
 		public abstract bool TryReceiveRequest (TimeSpan timeout, out RequestContext context);
 
-		delegate bool TryReceiveDelegate (TimeSpan timeout, out RequestContext context);
+		delegate bool TryReceiveDelegate (TimeSpan timeout, out RequestContext context, out Exception exception);
 		TryReceiveDelegate try_recv_delegate;
 
 		object async_result_lock = new object ();
@@ -120,11 +120,12 @@ namespace System.ServiceModel.Channels
 			IAsyncResult result = null;
 
 			if (try_recv_delegate == null)
-				try_recv_delegate = new TryReceiveDelegate (delegate (TimeSpan tout, out RequestContext ctx) {
+				try_recv_delegate = new TryReceiveDelegate (delegate (TimeSpan tout, out RequestContext ctx, out Exception exception) {
 					lock (async_result_lock) {
 						if (currentAsyncResults.Contains (result))
 							currentAsyncThreads.Add (Thread.CurrentThread);
 					}
+					exception = null;
 					try {
 						return TryReceiveRequest (tout, out ctx);
 					} catch (XmlException ex) {
@@ -142,7 +143,10 @@ namespace System.ServiceModel.Channels
 						//on dropped connection, 
 						//whatever you do don't crash
 						//the whole app.  Ignore for now
-					} finally {
+					} catch (Exception ex) {
+						exception = ex;
+					}
+					finally {
 						lock (async_result_lock) {
 							currentAsyncResults.Remove (result);
 							currentAsyncThreads.Remove (Thread.CurrentThread);
@@ -152,8 +156,9 @@ namespace System.ServiceModel.Channels
 					return false;
 					});
 			RequestContext dummy;
+			Exception dummyEx;
 			lock (async_result_lock) {
-				result = try_recv_delegate.BeginInvoke (timeout, out dummy, callback, state);
+				result = try_recv_delegate.BeginInvoke (timeout, out dummy, out dummyEx, callback, state);
 				currentAsyncResults.Add (result);
 			}
 			// Note that at this point result can be missing from currentAsyncResults here if delegate has run to completion
@@ -170,7 +175,10 @@ namespace System.ServiceModel.Channels
 		{
 			if (try_recv_delegate == null)
 				throw new InvalidOperationException ("BeginTryReceiveRequest operation has not started");
-			return try_recv_delegate.EndInvoke (out context, result);
+			Exception ex;
+			var finished = try_recv_delegate.EndInvoke (out context, out ex, result);
+			if (ex != null) throw new Exception ("ex while treyrec", ex);
+			return finished;
 		}
 
 		public virtual bool WaitForRequest ()
