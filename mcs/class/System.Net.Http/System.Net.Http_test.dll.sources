@@ -33,3 +33,5 @@ System.Net.Http.Headers/TransferCodingHeaderValueTest.cs
 System.Net.Http.Headers/TransferCodingWithQualityHeaderValueTest.cs
 System.Net.Http.Headers/ViaHeaderValueTest.cs
 System.Net.Http.Headers/WarningHeaderValueTest.cs
+
+../../test-helpers/NetworkHelpers.cs

@@ -38,6 +38,8 @@ using System.Net;
 using System.Linq;
 using System.IO;
 
+using MonoTests.Helpers;
+
 namespace MonoTests.System.Net.Http
 {
 	[TestFixture]
@@ -155,14 +157,10 @@ namespace MonoTests.System.Net.Http
 		string port, TestHost, LocalServer;
 
 		[SetUp]
-		public void SetupFixture ()
+		public void SetupTest ()
 		{
-			if (Environment.OSVersion.Platform == PlatformID.Win32NT) {
-				port = "810";
-			} else {
-				port = "8810";
-			}
-
+			port = NetworkHelpers.FindFreePort ().ToString ();
+			Console.WriteLine (port);
 			TestHost = "localhost:" + port;
 			LocalServer = string.Format ("http://{0}/", TestHost);
 		}
@@ -782,9 +780,14 @@ namespace MonoTests.System.Net.Http
 
 						Assert.AreEqual (2, request.Headers.Count, "#1");
 						Assert.AreEqual ("0", request.Headers ["Content-Length"], "#1b");
+						Assert.AreEqual ("keep-alive", request.Headers ["Connection"], "#1b");
 						Assert.AreEqual (method.Method, request.HttpMethod, "#2");
 						failed = false;
-					} catch {
+					} catch (Exception ex){
+						Console.WriteLine(ex);
+						Console.WriteLine(String.Join("#", l.Request.Headers.AllKeys));
+						Console.WriteLine(l.Request.Headers ["Connection"]);
+						
 						failed = true;
 					}
 				});
