@@ -49,39 +49,39 @@ namespace System.Net
 		public WebProxy ()
 			: this ((Uri) null, false, null, null) {}
 
-		public WebProxy (string address)
-			: this (ToUri (address), false, null, null) {}
+		public WebProxy (string Address)
+			: this (ToUri (Address), false, null, null) {}
 
-		public WebProxy (Uri address) 
-			: this (address, false, null, null) {}
+		public WebProxy (Uri Address) 
+			: this (Address, false, null, null) {}
 
-		public WebProxy (string address, bool bypassOnLocal) 
-			: this (ToUri (address), bypassOnLocal, null, null) {}
+		public WebProxy (string Address, bool BypassOnLocal) 
+			: this (ToUri (Address), BypassOnLocal, null, null) {}
 
-		public WebProxy (string host, int port)
-			: this (new Uri ("http://" + host + ":" + port)) {}
+		public WebProxy (string Host, int Port)
+			: this (new Uri ("http://" + Host + ":" + Port)) {}
 
-		public WebProxy (Uri address, bool bypassOnLocal)
-			: this (address, bypassOnLocal, null, null) {}
+		public WebProxy (Uri Address, bool BypassOnLocal)
+			: this (Address, BypassOnLocal, null, null) {}
 
-		public WebProxy (string address, bool bypassOnLocal, string [] bypassList)
-			: this (ToUri (address), bypassOnLocal, bypassList, null) {}
+		public WebProxy (string Address, bool BypassOnLocal, string [] BypassList)
+			: this (ToUri (Address), BypassOnLocal, BypassList, null) {}
 
-		public WebProxy (Uri address, bool bypassOnLocal, string [] bypassList)
-			: this (address, bypassOnLocal, bypassList, null) {}
+		public WebProxy (Uri Address, bool BypassOnLocal, string [] BypassList)
+			: this (Address, BypassOnLocal, BypassList, null) {}
 
-		public WebProxy (string address, bool bypassOnLocal, string [] bypassList,
-				ICredentials credentials)
-			: this (ToUri (address), bypassOnLocal, bypassList, credentials) {}
+		public WebProxy (string Address, bool BypassOnLocal, string [] BypassList,
+				ICredentials Credentials)
+			: this (ToUri (Address), BypassOnLocal, BypassList, Credentials) {}
 
-		public WebProxy (Uri address, bool bypassOnLocal, 
-				 string[] bypassList, ICredentials credentials)
+		public WebProxy (Uri Address, bool BypassOnLocal, 
+				 string[] BypassList, ICredentials Credentials)
 		{
-			this.address = address;
-			this.bypassOnLocal = bypassOnLocal;
-			if (bypassList != null)
-				this.bypassList = new ArrayList (bypassList);
-			this.credentials = credentials;
+			this.address = Address;
+			this.bypassOnLocal = BypassOnLocal;
+			if (BypassList != null)
+				this.bypassList = new ArrayList (BypassList);
+			this.credentials = Credentials;
 			CheckBypassList ();
 		}
 

@@ -291,12 +291,12 @@ namespace System.CodeDom.Compiler {
 			return cp.Parse (codeStream);
 		}
 
-		public virtual bool Supports (GeneratorSupport supports)
+		public virtual bool Supports (GeneratorSupport generatorSupport)
 		{
 			ICodeGenerator cg = CreateGenerator ();
 			if (cg == null)
 				throw GetNotImplemented ();
-			return cg.Supports (supports);
+			return cg.Supports (generatorSupport);
 		}
 
 #if CONFIGURATION_DEP

@@ -70,21 +70,21 @@ namespace System.IO.Compression {
 			base.Dispose (disposing);
 		}
 
-		public override int Read (byte[] dest, int dest_offset, int count)
+		public override int Read (byte[] array, int offset, int count)
 		{
 			if (deflateStream == null)
 				throw new ObjectDisposedException (GetType ().FullName);
 
-			return deflateStream.Read(dest, dest_offset, count);
+			return deflateStream.Read(array, offset, count);
 		}
 
 
-		public override void Write (byte[] src, int src_offset, int count)
+		public override void Write (byte[] array, int offset, int count)
 		{
 			if (deflateStream == null)
 				throw new ObjectDisposedException (GetType ().FullName);
 
-			deflateStream.Write (src, src_offset, count);
+			deflateStream.Write (array, offset, count);
 		}
 
 		public override void Flush()
@@ -105,37 +105,37 @@ namespace System.IO.Compression {
 			throw new NotSupportedException();
 		}
 
-		public override IAsyncResult BeginRead (byte [] buffer, int offset, int count,
-							AsyncCallback cback, object state)
+		public override IAsyncResult BeginRead (byte [] array, int offset, int count,
+							AsyncCallback asyncCallback, object asyncState)
 		{
 			if (deflateStream == null)
 				throw new ObjectDisposedException (GetType ().FullName);
 
-			return deflateStream.BeginRead (buffer, offset, count, cback, state);
+			return deflateStream.BeginRead (array, offset, count, asyncCallback, asyncState);
 		}
 
-		public override IAsyncResult BeginWrite (byte [] buffer, int offset, int count,
-							AsyncCallback cback, object state)
+		public override IAsyncResult BeginWrite (byte [] array, int offset, int count,
+							AsyncCallback asyncCallback, object asyncState)
 		{
 			if (deflateStream == null)
 				throw new ObjectDisposedException (GetType ().FullName);
 
-			return deflateStream.BeginWrite (buffer, offset, count, cback, state);
+			return deflateStream.BeginWrite (array, offset, count, asyncCallback, asyncState);
 		}
 
-		public override int EndRead(IAsyncResult async_result) {
+		public override int EndRead(IAsyncResult asyncResult) {
 			if (deflateStream == null)
 				throw new ObjectDisposedException (GetType ().FullName);
 
-			return deflateStream.EndRead (async_result);
+			return deflateStream.EndRead (asyncResult);
 		}
 
-		public override void EndWrite (IAsyncResult async_result)
+		public override void EndWrite (IAsyncResult asyncResult)
 		{
 			if (deflateStream == null)
 				throw new ObjectDisposedException (GetType ().FullName);
 
-			deflateStream.EndWrite (async_result);
+			deflateStream.EndWrite (asyncResult);
 		}
 
 		public Stream BaseStream {

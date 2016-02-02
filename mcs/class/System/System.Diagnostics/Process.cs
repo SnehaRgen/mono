@@ -1203,13 +1203,13 @@ namespace System.Diagnostics {
 			return Start (new ProcessStartInfo (fileName, arguments));
 		}
 
-		public static Process Start(string fileName, string username, SecureString password, string domain) {
-			return Start(fileName, null, username, password, domain);
+		public static Process Start(string fileName, string userName, SecureString password, string domain) {
+			return Start(fileName, null, userName, password, domain);
 		}
 
-		public static Process Start(string fileName, string arguments, string username, SecureString password, string domain) {
+		public static Process Start(string fileName, string arguments, string userName, SecureString password, string domain) {
 			ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments);
-			psi.UserName = username;
+			psi.UserName = userName;
 			psi.Password = password;
 			psi.Domain = domain;
 			psi.UseShellExecute = false;
@@ -1241,13 +1241,13 @@ namespace System.Diagnostics {
 		}
 
 		[Obsolete ("Process.Start is not supported on the current platform.", true)]
-		public static Process Start(string fileName, string username, SecureString password, string domain)
+		public static Process Start(string fileName, string userName, SecureString password, string domain)
 		{
 			throw new PlatformNotSupportedException ("Process.Start is not supported on the current platform.");
 		}
 
 		[Obsolete ("Process.Start is not supported on the current platform.", true)]
-		public static Process Start(string fileName, string arguments, string username, SecureString password, string domain)
+		public static Process Start(string fileName, string arguments, string userName, SecureString password, string domain)
 		{
 			throw new PlatformNotSupportedException ("Process.Start is not supported on the current platform.");
 		}

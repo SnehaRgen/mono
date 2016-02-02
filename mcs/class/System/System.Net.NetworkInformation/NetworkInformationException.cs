@@ -55,10 +55,10 @@ namespace System.Net.NetworkInformation {
 #endif
 
 #if !NET_2_1
-		protected NetworkInformationException (SerializationInfo info, StreamingContext context)
-			: base (info, context)
+		protected NetworkInformationException (SerializationInfo serializationInfo, StreamingContext streamingContext)
+			: base (serializationInfo, streamingContext)
 		{
-			error_code = info.GetInt32 ("ErrorCode");
+			error_code = serializationInfo.GetInt32 ("ErrorCode");
 		}
 #endif
 

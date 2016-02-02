@@ -69,14 +69,14 @@ namespace System.Diagnostics
 		{
 		}
 
-		public ProcessStartInfo(string filename) 
+		public ProcessStartInfo(string fileName) 
 		{
-			this.filename = filename;
+			this.filename = fileName;
 		}
 
-		public ProcessStartInfo(string filename, string arguments) 
+		public ProcessStartInfo(string fileName, string arguments) 
 		{
-			this.filename = filename;
+			this.filename = fileName;
 			this.arguments = arguments;
 		}
 
