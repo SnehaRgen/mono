@@ -62,9 +62,9 @@ namespace System.Web.Security
 			this.statusCode = statusCode;
 		}
 		
-		public override void GetObjectData (SerializationInfo info, StreamingContext ctx)
+		public override void GetObjectData (SerializationInfo info, StreamingContext context)
 		{
-			base.GetObjectData (info, ctx);
+			base.GetObjectData (info, context);
 			statusCode = (MembershipCreateStatus) info.GetValue ("statusCode", typeof(MembershipCreateStatus));
 		}
 		
