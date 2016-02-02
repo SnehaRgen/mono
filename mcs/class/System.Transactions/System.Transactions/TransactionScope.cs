@@ -37,49 +37,49 @@ namespace System.Transactions
 		{
 		}
 
-		public TransactionScope (Transaction transaction)
-			: this (transaction, TransactionManager.DefaultTimeout)
+		public TransactionScope (Transaction transactionToUse)
+			: this (transactionToUse, TransactionManager.DefaultTimeout)
 		{
 		}
 
-		public TransactionScope (Transaction transaction,
-			TimeSpan timeout)
-			: this (transaction, timeout, DTCOption.None)
+		public TransactionScope (Transaction transactionToUse,
+			TimeSpan scopeTimeout)
+			: this (transactionToUse, scopeTimeout, DTCOption.None)
 		{
 		}
 
 		[MonoTODO ("EnterpriseServicesInteropOption not supported.")]
-		public TransactionScope (Transaction transaction,
-			TimeSpan timeout, DTCOption opt)
+		public TransactionScope (Transaction transactionToUse,
+			TimeSpan scopeTimeout, DTCOption interopOption)
 		{
 			Initialize (TransactionScopeOption.Required,
-				transaction, defaultOptions, opt, timeout);
+				transactionToUse, defaultOptions, interopOption, scopeTimeout);
 		}
 
-		public TransactionScope (TransactionScopeOption option)
-			: this (option, TransactionManager.DefaultTimeout)
+		public TransactionScope (TransactionScopeOption scopeOption)
+			: this (scopeOption, TransactionManager.DefaultTimeout)
 		{
-		}
-
-		public TransactionScope (TransactionScopeOption option,
-			TimeSpan timeout)
-		{
-			Initialize (option, null, defaultOptions,
-				DTCOption.None, timeout);
 		}
 
 		public TransactionScope (TransactionScopeOption scopeOption,
-			TransactionOptions options)
-			: this (scopeOption, options, DTCOption.None)
+			TimeSpan scopeTimeout)
+		{
+			Initialize (scopeOption, null, defaultOptions,
+				DTCOption.None, scopeTimeout);
+		}
+
+		public TransactionScope (TransactionScopeOption scopeOption,
+			TransactionOptions transactionOptions)
+			: this (scopeOption, transactionOptions, DTCOption.None)
 		{
 		}
 
 		[MonoTODO ("EnterpriseServicesInteropOption not supported")]
 		public TransactionScope (TransactionScopeOption scopeOption,
-			TransactionOptions options,
-			DTCOption opt)
+			TransactionOptions transactionOptions,
+			DTCOption interopOption)
 		{
-			Initialize (scopeOption, null, options, opt,
+			Initialize (scopeOption, null, transactionOptions, interopOption,
 				TransactionManager.DefaultTimeout);
 		}
 
