@@ -44,16 +44,16 @@ namespace System.ServiceModel.Channels
 		BindingElementCollection elements; // for internal use
 
 		public BindingContext (CustomBinding binding,
-			BindingParameterCollection parms)
+			BindingParameterCollection parameters)
 		{
 			if (binding == null)
 				throw new ArgumentNullException ("binding");
-			if (parms == null)
-				throw new ArgumentNullException ("parms");
+			if (parameters == null)
+				throw new ArgumentNullException ("parameters");
 
 			this.binding = binding;
 			parameters = new BindingParameterCollection ();
-			foreach (var item in parms)
+			foreach (var item in parameters)
 				parameters.Add (item);
 			this.elements = new BindingElementCollection ();
 			foreach (var item in binding.Elements)

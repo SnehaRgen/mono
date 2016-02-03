@@ -42,8 +42,8 @@ namespace System.ServiceModel
 			Initialize (identity);
 		}
 
-		public UpnEndpointIdentity (string upn)
-			: this (Claim.CreateUpnClaim (upn))
+		public UpnEndpointIdentity (string upnName)
+			: this (Claim.CreateUpnClaim (upnName))
 		{
 		}
 	}

@@ -85,9 +85,9 @@ namespace System.ServiceModel
 			get { return Endpoint.Binding.OpenTimeout; }
 		}
 
-		protected virtual void ApplyConfiguration (string endpointConfig)
+		protected virtual void ApplyConfiguration (string configurationName)
 		{
-			if (endpointConfig == null)
+			if (configurationName == null)
 				return;
 
 #if NET_2_1 || XAMMAC_4_5
@@ -120,7 +120,7 @@ namespace System.ServiceModel
 			ChannelEndpointElement endpoint = null;
 
 			foreach (ChannelEndpointElement el in client.Endpoints) {
-				if (el.Contract == contractName && (endpointConfig == el.Name || endpointConfig == "*")) {
+				if (el.Contract == contractName && (configurationName == el.Name || configurationName == "*")) {
 					if (endpoint != null)
 						throw new InvalidOperationException (String.Format ("More then one endpoint matching contract {0} was found.", contractName));
 					endpoint = el;
@@ -128,7 +128,7 @@ namespace System.ServiceModel
 			}
 
 			if (endpoint == null)
-				throw new InvalidOperationException (String.Format ("Client endpoint configuration '{0}' was not found in {1} endpoints.", endpointConfig, client.Endpoints.Count));
+				throw new InvalidOperationException (String.Format ("Client endpoint configuration '{0}' was not found in {1} endpoints.", configurationName, client.Endpoints.Count));
 
 			var binding = String.IsNullOrEmpty (endpoint.Binding) ? null : ConfigUtil.CreateBinding (endpoint.Binding, endpoint.BindingConfiguration);
 			var contractType = ConfigUtil.GetTypeFromConfigString (endpoint.Contract, NamedConfigCategory.Contract);
@@ -298,23 +298,23 @@ namespace System.ServiceModel
 		}
 
 		protected void InitializeEndpoint (
-			string endpointConfigurationName,
-			EndpointAddress remoteAddress)
+			string configurationName,
+			EndpointAddress address)
 		{
 			InitializeEndpoint (CreateDescription ());
-			if (remoteAddress != null)
-				service_endpoint.Address = remoteAddress;
-			ApplyConfiguration (endpointConfigurationName);
+			if (address != null)
+				service_endpoint.Address = address;
+			ApplyConfiguration (configurationName);
 		}
 
 		protected void InitializeEndpoint (Binding binding,
-			EndpointAddress remoteAddress)
+			EndpointAddress address)
 		{
 			InitializeEndpoint (CreateDescription ());
 			if (binding != null)
 				service_endpoint.Binding = binding;
-			if (remoteAddress != null)
-				service_endpoint.Address = remoteAddress;
+			if (address != null)
+				service_endpoint.Address = address;
 		}
 
 		protected void InitializeEndpoint (ServiceEndpoint endpoint)

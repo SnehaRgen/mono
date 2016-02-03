@@ -42,8 +42,8 @@ namespace System.ServiceModel
 			Initialize (identity);
 		}
 
-		public SpnEndpointIdentity (string spn)
-			: this (Claim.CreateSpnClaim (spn))
+		public SpnEndpointIdentity (string spnName)
+			: this (Claim.CreateSpnClaim (spnName))
 		{
 		}
 

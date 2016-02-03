@@ -42,8 +42,8 @@ namespace System.ServiceModel
 			Initialize (identity);
 		}
 
-		public DnsEndpointIdentity (string dns)
-			: this (Claim.CreateDnsClaim (dns))
+		public DnsEndpointIdentity (string dnsName)
+			: this (Claim.CreateDnsClaim (dnsName))
 		{
 		}
 	}
