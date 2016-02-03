@@ -34,7 +34,7 @@ namespace System.Web.UI.WebControls
 {
 	public interface IPostBackContainer
 	{
-		PostBackOptions GetPostBackOptions (IButtonControl control);
+		PostBackOptions GetPostBackOptions (IButtonControl buttonControl);
 	}
 }
 
