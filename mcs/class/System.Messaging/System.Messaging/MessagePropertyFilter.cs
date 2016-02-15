@@ -444,6 +444,16 @@ namespace System.Messaging
 			set { useTracing = value; }
 		}
 
+		[MonoTODO]
+		public bool LookupId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public void ClearAll ()
 		{
 			acknowledgeType = false;

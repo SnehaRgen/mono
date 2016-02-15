@@ -152,6 +152,16 @@ namespace System.Messaging
 			[MonoTODO]
 			set {throw new NotImplementedException();}
 		}
+
+		[MonoTODO]
+		public string MulticastAddress {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		[MonoTODO]
 		public override void Commit(IDictionary savedState)

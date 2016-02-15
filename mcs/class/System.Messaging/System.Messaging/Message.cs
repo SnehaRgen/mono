@@ -461,6 +461,16 @@ namespace System.Messaging
 			get { return delegateMessage; }
 		}
 
+		[MonoTODO]
+		public long LookupId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion //Properties
 		
 		internal static IMessage CreateMessage ()

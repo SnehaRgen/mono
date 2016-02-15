@@ -380,6 +380,16 @@ namespace System.Messaging
 			}
 		}
 
+		[MonoTODO]
+		public string MulticastAddress {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
