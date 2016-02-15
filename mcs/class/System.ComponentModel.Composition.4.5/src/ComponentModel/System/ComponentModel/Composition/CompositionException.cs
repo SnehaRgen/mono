@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // -----------------------------------------------------------------------
 using System;
@@ -172,6 +172,16 @@ namespace System.ComponentModel.Composition
                 return BuildDefaultMessage();
             }
         }
+
+		[MonoTODO]
+		public ReadOnlyCollection<Exception> RootCauses {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 
         private string BuildDefaultMessage()
         {
