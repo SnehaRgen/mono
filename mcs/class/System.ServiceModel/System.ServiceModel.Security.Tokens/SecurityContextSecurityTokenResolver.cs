@@ -60,6 +60,16 @@ namespace System.ServiceModel.Security.Tokens
 			get { return capacity; }
 		}
 
+		[MonoTODO]
+		public TimeSpan ClockSkew {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public void AddContext (SecurityContextSecurityToken token)
 		{
 			if (!TryAddContext (token))

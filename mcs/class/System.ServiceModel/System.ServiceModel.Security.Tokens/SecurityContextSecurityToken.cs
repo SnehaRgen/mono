@@ -186,6 +186,16 @@ namespace System.ServiceModel.Security.Tokens
 			set { cookie = value; }
 		}
 
+		[MonoTODO]
+		public bool IsCookieMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override bool CanCreateKeyIdentifierClause<T> ()
 		{
 			return typeof (T) == typeof (SecurityContextKeyIdentifierClause);

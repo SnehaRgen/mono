@@ -1,4 +1,4 @@
-﻿//
+//
 // WS2007FederationHttpBindingElement.cs
 //
 // Author:

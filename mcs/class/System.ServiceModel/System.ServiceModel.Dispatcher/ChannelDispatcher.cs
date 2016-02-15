@@ -228,6 +228,46 @@ namespace System.ServiceModel.Dispatcher
 			set { tx_timeout = value; }
 		}
 
+		[MonoTODO]
+		public bool AsynchronousTransactedAcceptEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool ReceiveContextEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool SendAsynchronously {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int MaxPendingReceives {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override void Attach (ServiceHostBase host)
 		{
 			this.host = host;

@@ -143,6 +143,16 @@ namespace System.ServiceModel.Security.Tokens
 			get { return true; }
 		}
 
+		[MonoTODO]
+		public bool UseStrTransform {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override SecurityTokenParameters CloneCore ()
 		{
 			return new IssuedSecurityTokenParameters (this);

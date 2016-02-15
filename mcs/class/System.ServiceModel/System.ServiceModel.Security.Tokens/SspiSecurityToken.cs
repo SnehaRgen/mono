@@ -77,5 +77,45 @@ namespace System.ServiceModel.Security.Tokens
 		public override ReadOnlyCollection<SecurityKey> SecurityKeys {
 			get { throw new NotImplementedException (); }
 		}
+
+		[MonoTODO]
+		public bool AllowNtlm {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool AllowUnauthenticatedCallers {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool ExtractGroupsForWindowsAccounts {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public TokenImpersonationLevel ImpersonationLevel {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

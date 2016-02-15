@@ -152,5 +152,35 @@ namespace System.ServiceModel.Dispatcher
 #endif
 
 		public DispatchOperation UnhandledDispatchOperation { get; set; }
+
+		[MonoTODO]
+		public bool EnsureOrderedDispatch {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool ImpersonateOnSerializingReply {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool PreserveMessage {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

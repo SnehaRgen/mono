@@ -212,6 +212,16 @@ namespace System.ServiceModel.Dispatcher
 			}
 		}
 
+		[MonoTODO]
+		public bool IsInsideTransactedReceiveScope {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		void ThrowIfOpened ()
 		{
 #if !NET_2_1 && !XAMMAC_4_5

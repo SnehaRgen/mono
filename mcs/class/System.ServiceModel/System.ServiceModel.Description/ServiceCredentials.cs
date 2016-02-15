@@ -96,6 +96,16 @@ namespace System.ServiceModel.Description
 			get { return windows; }
 		}
 
+		[MonoTODO]
+		public bool UseIdentityConfiguration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public ServiceCredentials Clone ()
 		{
 			ServiceCredentials ret = CloneCore ();

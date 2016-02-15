@@ -73,6 +73,16 @@ namespace System.ServiceModel.Description
 			set { svc_auth_manager = value; }
 		}
 
+		[MonoTODO]
+		public bool ImpersonateOnSerializingReply {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		void IServiceBehavior.AddBindingParameters (
 			ServiceDescription description,
 			ServiceHostBase serviceHostBase,

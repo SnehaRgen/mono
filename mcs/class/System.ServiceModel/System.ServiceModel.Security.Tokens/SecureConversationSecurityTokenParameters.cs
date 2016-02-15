@@ -130,6 +130,16 @@ namespace System.ServiceModel.Security.Tokens
 			get { return element.GetProperty<ISecurityCapabilities> (dummy_context).SupportsServerAuthentication; }
 		}
 
+		[MonoTODO]
+		public bool CanRenewSession {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override SecurityTokenParameters CloneCore ()
 		{
 			return new SecureConversationSecurityTokenParameters (this);

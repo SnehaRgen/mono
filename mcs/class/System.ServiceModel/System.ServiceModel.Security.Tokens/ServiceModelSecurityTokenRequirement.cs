@@ -223,6 +223,16 @@ namespace System.ServiceModel.Security.Tokens
 			set { Properties [TransportSchemeProperty] = value; }
 		}
 
+		[MonoTODO]
+		public string PreferSslCertificateAuthenticatorProperty {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal string Dump ()
 		{
 			StringBuilder sb = new StringBuilder ();

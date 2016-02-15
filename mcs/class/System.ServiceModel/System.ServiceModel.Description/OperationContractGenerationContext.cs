@@ -96,5 +96,15 @@ namespace System.ServiceModel.Description
 		public bool IsAsync {
 			get { return begin_method != null; }
 		}
+
+		[MonoTODO]
+		public bool IsTask {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

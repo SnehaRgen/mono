@@ -115,6 +115,16 @@ namespace System.ServiceModel.Description
 			get { return userpass; }
 		}
 
+		[MonoTODO]
+		public bool UseIdentityConfiguration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public ClientCredentials Clone ()
 		{
 			ClientCredentials ret = CloneCore ();
