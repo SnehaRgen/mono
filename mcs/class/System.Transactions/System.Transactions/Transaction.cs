@@ -308,6 +308,16 @@ namespace System.Transactions
 			set { scope = value; }
 		}
 
+		[MonoTODO]
+		public Guid PromoterType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected IAsyncResult BeginCommitInternal (AsyncCallback callback)
 		{
 			if (committed || committing)
