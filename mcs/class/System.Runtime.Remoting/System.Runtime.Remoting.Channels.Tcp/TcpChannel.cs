@@ -121,6 +121,16 @@ namespace System.Runtime.Remoting.Channels.Tcp
 			}
 		}
 
+		[MonoTODO]
+		public bool IsSecured {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public string Parse (string url, out string objectURI)
 		{
 			return TcpChannel.ParseChannelUrl (url, out objectURI);

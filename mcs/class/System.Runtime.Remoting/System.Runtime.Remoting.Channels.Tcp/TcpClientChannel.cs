@@ -111,6 +111,16 @@ namespace System.Runtime.Remoting.Channels.Tcp
 			}
 		}
 
+		[MonoTODO]
+		public bool IsSecured {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public virtual IMessageSink CreateMessageSink (string url,
 						       object remoteChannelData,
 						       out string objectURI)

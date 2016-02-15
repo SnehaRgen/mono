@@ -176,6 +176,16 @@ namespace System.Runtime.Remoting.Channels.Tcp
 			}
 		}
 
+		[MonoTODO]
+		public bool IsSecured {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public string GetChannelUri ()
 		{
 			return "tcp://" + host + ":" + port;

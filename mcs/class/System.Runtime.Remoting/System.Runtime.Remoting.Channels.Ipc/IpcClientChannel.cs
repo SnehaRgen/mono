@@ -77,6 +77,16 @@ namespace System.Runtime.Remoting.Channels.Ipc
                         get { return ((IChannel)_innerChannel).ChannelPriority; }
                 }
 
+				[MonoTODO]
+				public bool IsSecured {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
                 public string Parse (string url, out string objectURI)
                 {
                         return ((IChannel)_innerChannel).Parse (url, out objectURI);

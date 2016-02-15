@@ -102,6 +102,16 @@ namespace System.Runtime.Remoting.Channels.Ipc
                         get { return ((IChannelReceiver)_innerChannel).ChannelData; }
                 }
 
+				[MonoTODO]
+				public bool IsSecured {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
                 public string[] GetUrlsForUri (string objectURI)
                 {
                         return ((IChannelReceiver)_innerChannel).GetUrlsForUri (objectURI);
