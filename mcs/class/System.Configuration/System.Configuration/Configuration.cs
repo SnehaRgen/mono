@@ -250,6 +250,26 @@ namespace System.Configuration {
 		public ConfigurationSectionCollection Sections {
 			get { return RootSectionGroup.Sections; }
 		}
+
+		[MonoTODO]
+		public Func<string,string> AssemblyStringTransformer {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Func<string,string> TypeStringTransformer {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		public ConfigurationSection GetSection (string path)
 		{

@@ -610,6 +610,16 @@ namespace System.Configuration
 			get {	return elementPresent;	}
 		}
 
+		[MonoTODO]
+		public bool HasContext {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		void ValidateValue (ConfigurationProperty p, string value)
 		{
 			ConfigurationValidatorBase validator;

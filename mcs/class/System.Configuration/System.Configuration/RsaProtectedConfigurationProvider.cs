@@ -167,6 +167,16 @@ namespace System.Configuration
 		public bool UseOAEP {
 			get { return useOAEP; }
 		}
+
+		[MonoTODO]
+		public bool UseFIPS {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

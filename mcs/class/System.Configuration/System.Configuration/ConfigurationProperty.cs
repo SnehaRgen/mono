@@ -169,6 +169,36 @@ namespace System.Configuration
 			set { collectionAttribute = value; }
 		}
 
+		[MonoTODO]
+		public bool IsAssemblyStringTransformationRequired {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsTypeStringTransformationRequired {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsVersionCheckRequired {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal void Validate (object value)
 		{
 			if (validation != null)
