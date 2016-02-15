@@ -86,6 +86,16 @@ namespace System.Web.UI
 		public bool UseSetAttribute {
 			get; set;
 		}
+
+		[MonoTODO]
+		public bool IsEncoded {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

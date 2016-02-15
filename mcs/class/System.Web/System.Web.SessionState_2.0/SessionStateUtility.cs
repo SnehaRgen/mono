@@ -71,5 +71,15 @@ namespace System.Web.SessionState
 				return;
 			context.SetSession (null);
 		}
+
+		[MonoTODO]
+		public ISurrogateSelector SerializationSurrogateSelector {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
