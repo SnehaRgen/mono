@@ -46,6 +46,36 @@ namespace System.Data.OracleClient {
 			return new OraclePermission (this);
 		}
 
+		[MonoTODO]
+		public bool AllowBlankPassword {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ConnectionString {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string KeyRestrictions {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Methods
 	}
 }

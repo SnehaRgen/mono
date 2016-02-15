@@ -1,4 +1,4 @@
-﻿//
+//
 // System.Data.OracleClient.OracleCommandBuilder.cs
 //
 // based on the SqlCommandBuilder in mcs/class/System.Data/System.Data.SqlClient
@@ -135,6 +135,26 @@ namespace System.Data.OracleClient {
 				if (adapter != null)
 					return adapter.SelectCommand;
 				return null;
+			}
+		}
+
+		[MonoTODO]
+		public string CatalogSeparator {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SchemaSeparator {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 

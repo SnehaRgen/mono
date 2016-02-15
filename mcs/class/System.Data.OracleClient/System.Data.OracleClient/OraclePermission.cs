@@ -49,5 +49,15 @@ namespace System.Data.OracleClient {
 		{
 			return new OraclePermission (this);
 		}
+
+		[MonoTODO]
+		public bool AllowBlankPassword {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
