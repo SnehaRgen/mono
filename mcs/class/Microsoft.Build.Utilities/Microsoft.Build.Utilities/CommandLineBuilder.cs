@@ -369,6 +369,16 @@ namespace Microsoft.Build.Utilities
 				return commandLine;
 			}
 		}
+
+		[MonoTODO]
+		public int Length {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
