@@ -225,6 +225,16 @@ namespace System.Web.DynamicData
 			}
 		}
 
+		[MonoTODO]
+		public Type RootEntityType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		string BuildActionPath (string path, RouteValueDictionary values)
 		{
 			var sb = new StringBuilder ();

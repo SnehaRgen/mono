@@ -96,6 +96,16 @@ namespace System.Web.DynamicData
 			set { throw new NotImplementedException (); }
 		}
 
+		[MonoTODO]
+		public string ClientID {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void OnLoad (EventArgs e)
 		{
 			base.OnLoad (e);

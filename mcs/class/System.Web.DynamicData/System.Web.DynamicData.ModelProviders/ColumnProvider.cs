@@ -82,6 +82,16 @@ namespace System.Web.DynamicData.ModelProviders
 		public TableProvider Table { get; private set; }
 
 		[MonoTODO]
+		public bool IsReadOnly {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		public override string ToString ()
 		{
 			throw new NotImplementedException ();

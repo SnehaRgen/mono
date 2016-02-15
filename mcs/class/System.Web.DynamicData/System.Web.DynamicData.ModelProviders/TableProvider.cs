@@ -53,6 +53,36 @@ namespace System.Web.DynamicData.ModelProviders
 		public virtual Type EntityType { get; protected set; }
 		public virtual string Name { get; protected set; }
 
+		[MonoTODO]
+		public string DataContextPropertyName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Type ParentEntityType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Type RootEntityType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public virtual object EvaluateForeignKey (object row, string foreignKeyName)
 		{
 			return DataBinder.GetPropertyValue (row, foreignKeyName);

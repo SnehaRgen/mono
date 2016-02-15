@@ -57,6 +57,16 @@ namespace System.Web.DynamicData
 		public MetaColumn ColumnInOtherTable { get; private set; }
 
 		[MonoTODO]
+		public bool IsManyToMany {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		public string GetChildrenListPath (object row)
 		{
 			return ChildTable.GetActionPath (PageAction.List, row);

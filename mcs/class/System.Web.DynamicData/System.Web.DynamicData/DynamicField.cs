@@ -146,6 +146,26 @@ namespace System.Web.DynamicData
 		}
 
 		[MonoTODO]
+		public bool ReadOnly {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ValidationGroup {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected override void CopyProperties (DataControlField newField)
 		{
 			throw new NotImplementedException ();
