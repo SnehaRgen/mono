@@ -143,6 +143,16 @@ namespace System.Management
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public SecureString SecurePassword {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
