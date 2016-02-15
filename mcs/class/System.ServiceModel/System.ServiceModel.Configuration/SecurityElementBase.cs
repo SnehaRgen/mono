@@ -201,6 +201,46 @@ namespace System.ServiceModel.Configuration
 			set { base ["securityHeaderLayout"] = value; }
 		}
 
+		[MonoTODO]
+		public bool AllowInsecureTransport {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool CanRenewSecurityContextToken {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool EnableUnsecuredResponse {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool ProtectTokens {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 		[MonoTODO]
 		protected internal override BindingElement CreateBindingElement () {

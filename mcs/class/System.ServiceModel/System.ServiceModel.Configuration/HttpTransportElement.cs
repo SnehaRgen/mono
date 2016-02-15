@@ -212,6 +212,26 @@ namespace System.ServiceModel.Configuration
 			set { base ["useDefaultWebProxy"] = value; }
 		}
 
+		[MonoTODO]
+		public int MaxPendingAccepts {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public TimeSpan RequestInitializationTimeout {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override void ApplyConfiguration (BindingElement bindingElement)
 		{
 			var b = (HttpTransportBindingElement) bindingElement;

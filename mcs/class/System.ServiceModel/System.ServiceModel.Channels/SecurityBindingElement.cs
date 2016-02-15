@@ -133,6 +133,36 @@ namespace System.ServiceModel.Channels
 		public IDictionary<string,SupportingTokenParameters> OptionalOperationSupportingTokenParameters {
 			get { return opt_operation; }
 		}
+
+		[MonoTODO]
+		public bool AllowInsecureTransport {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool EnableUnsecuredResponse {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool ProtectTokens {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 #endif
 
 		[MonoTODO ("Implement for TransportSecurityBindingElement")]

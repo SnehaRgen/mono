@@ -117,6 +117,16 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
+		public bool ImpersonateOnSerializingReply {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected internal override object CreateBehavior ()
 		{
 			var b = new ServiceAuthorizationBehavior ();

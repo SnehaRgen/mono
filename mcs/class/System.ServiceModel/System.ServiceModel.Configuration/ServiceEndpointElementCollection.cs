@@ -85,6 +85,16 @@ namespace System.ServiceModel.Configuration
 		{
 			return (obj != null ? obj.GetHashCode () : 0) + ";";
 		}
+
+		[MonoTODO]
+		public bool ThrowOnDuplicate {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 
 }

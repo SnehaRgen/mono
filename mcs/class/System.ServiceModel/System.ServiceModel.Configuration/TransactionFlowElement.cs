@@ -89,6 +89,16 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
+		public bool AllowWildcardAction {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected internal override BindingElement CreateBindingElement () {
 			throw new NotImplementedException ();
 		}

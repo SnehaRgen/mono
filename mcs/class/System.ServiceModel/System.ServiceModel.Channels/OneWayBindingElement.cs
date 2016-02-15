@@ -51,6 +51,26 @@ namespace System.ServiceModel.Channels
 			get { return pool; }
 		}
 
+		[MonoTODO]
+		public bool PacketRoutable {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int MaxAcceptedChannels {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		[MonoTODO ("It generates just pass-thru factory")]
 		public override IChannelFactory<TChannel>
 			BuildChannelFactory<TChannel> (BindingContext context)

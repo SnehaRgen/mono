@@ -121,6 +121,26 @@ namespace System.ServiceModel.Configuration
 			get { return (TransportConfigurationTypeElementCollection) base [transport_configuration_types]; }
 		}
 
+		[MonoTODO]
+		public bool CloseIdleServicesAtLowMemory {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool MultipleSiteBindingsEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

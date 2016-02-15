@@ -45,5 +45,25 @@ namespace System.ServiceModel.Activation
 		}
 
 		public string VirtualPath { get; private set; }
+
+		[MonoTODO]
+		public string ApplicationVirtualPath {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SiteName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

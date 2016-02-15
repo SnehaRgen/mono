@@ -105,6 +105,16 @@ namespace System.ServiceModel
 		[MonoTODO]
 		public bool ValidateMustUnderstand { get; set; }
 
+		[MonoTODO]
+		public bool EnsureOrderedDispatch {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public object GetWellKnownSingleton ()
 		{
 			return singleton;

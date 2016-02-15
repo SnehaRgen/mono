@@ -37,6 +37,16 @@ namespace System.ServiceModel {
 
 		public static bool AspNetCompatibilityEnabled { get; internal set; }
 
+		[MonoTODO]
+		public static bool MultipleSiteBindingsEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static void EnsureServiceAvailable (string virtualPath)
 		{
 		}

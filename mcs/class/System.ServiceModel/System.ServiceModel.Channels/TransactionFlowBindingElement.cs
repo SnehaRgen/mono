@@ -54,6 +54,16 @@ namespace System.ServiceModel.Channels
 			get { return protocol; }
 		}
 
+		[MonoTODO]
+		public bool AllowWildcardAction {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override BindingElement Clone ()
 		{
 			return new TransactionFlowBindingElement (protocol);

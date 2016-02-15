@@ -90,6 +90,16 @@ namespace System.ServiceModel
 			set { security = value; }
 		}
 
+		[MonoTODO]
+		public bool EnableHttpCookieContainer {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override BindingElementCollection
 			CreateBindingElements ()
 		{

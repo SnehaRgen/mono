@@ -186,6 +186,26 @@ namespace System.ServiceModel.Configuration
 			set { base ["useSourceJournal"] = value; }
 		}
 
+		[MonoTODO]
+		public bool ReceiveContextEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public TimeSpan ValidityDuration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override void ApplyConfiguration (BindingElement bindingElement)
 		{
 			var b = (System.ServiceModel.Channels.MsmqBindingElementBase) bindingElement;

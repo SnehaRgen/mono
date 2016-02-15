@@ -122,6 +122,16 @@ namespace System.ServiceModel.Configuration
 			set { base ["tokenType"] = value; }
 		}
 
+		[MonoTODO]
+		public bool UseStrTransform {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

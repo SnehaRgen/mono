@@ -176,5 +176,15 @@ namespace System.ServiceModel
 				incoming_message = value;
 			}
 		}
+
+		[MonoTODO]
+		public System.Security.Claims.ClaimsPrincipal ClaimsPrincipal {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

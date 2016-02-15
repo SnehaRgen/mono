@@ -64,6 +64,16 @@ namespace System.ServiceModel.Channels
 			get { return suppress_entity; }
 			set { suppress_entity = value; }
 		}
+
+		[MonoTODO]
+		public bool SuppressPreamble {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		IMessageProperty IMessageProperty.CreateCopy ()
 		{

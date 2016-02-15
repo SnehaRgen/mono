@@ -392,6 +392,16 @@ namespace System.ServiceModel.Channels
 
 		public abstract FaultReason Reason { get; }
 
+		[MonoTODO]
+		public bool IsMustUnderstandFault {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public T GetDetail<T> ()
 		{
 			return GetDetail<T> (new DataContractSerializer (typeof (T)));

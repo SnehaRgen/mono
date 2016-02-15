@@ -111,6 +111,26 @@ namespace System.ServiceModel.Channels
 			set { use_source_journal = value; }
 		}
 
+		[MonoTODO]
+		public bool ReceiveContextEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public TimeSpan ValidityDuration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override T GetProperty<T> (BindingContext context)
 		{
 			if (typeof (T) is IBindingDeliveryCapabilities)

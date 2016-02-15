@@ -114,5 +114,25 @@ namespace System.ServiceModel
 		bool IBindingRuntimePreferences.ReceiveSynchronously {
 			get { throw new NotImplementedException (); }
 		}
+
+		[MonoTODO]
+		public bool ReceiveContextEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public TimeSpan ValidityDuration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

@@ -39,5 +39,15 @@ namespace System.ServiceModel
 		public MsmqPoisonMessageException (string msg, Exception inner) : base (msg, inner) {}
 		protected MsmqPoisonMessageException (SerializationInfo info, StreamingContext context) :
 			base (info, context) {}
+
+		[MonoTODO]
+		public long MessageLookupId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

@@ -242,6 +242,26 @@ namespace System.ServiceModel.Channels
 			set { throw new NotImplementedException (); }
 		}
 
+		[MonoTODO]
+		public int MaxPendingAccepts {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public TimeSpan RequestInitializationTimeout {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 #if !NET_2_1 && !XAMMAC_4_5
 		void IPolicyExportExtension.ExportPolicy (
 			MetadataExporter exporter,

@@ -140,6 +140,16 @@ namespace System.ServiceModel.Configuration
 			get { return (WindowsClientElement) base ["windows"]; }
 		}
 
+		[MonoTODO]
+		public bool UseIdentityConfiguration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override object CreateBehavior ()
 		{
 			var cb = new ClientCredentials ();
