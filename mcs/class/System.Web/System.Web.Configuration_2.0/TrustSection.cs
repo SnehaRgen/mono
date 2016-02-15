@@ -80,6 +80,36 @@ namespace System.Web.Configuration {
 			get { return properties; }
 		}
 
+		[MonoTODO]
+		public bool LegacyCasModel {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string HostSecurityPolicyResolverType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string PermissionSetName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 	}
 
 }

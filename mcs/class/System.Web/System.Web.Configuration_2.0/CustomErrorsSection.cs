@@ -103,6 +103,16 @@ namespace System.Web.Configuration
 			get { return properties; }
 		}
 
+		[MonoTODO]
+		public bool AllowNestedErrors {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 	}
 
 }

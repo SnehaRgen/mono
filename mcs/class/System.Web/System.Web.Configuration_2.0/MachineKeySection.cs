@@ -229,6 +229,26 @@ namespace System.Web.Configuration {
 			}
 		}
 
+		[MonoTODO]
+		public string ApplicationName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string DataProtectorType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal byte [] GetValidationKey ()
 		{
 			if (validation_key == null)

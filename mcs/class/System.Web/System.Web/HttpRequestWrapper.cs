@@ -252,6 +252,16 @@ namespace System.Web
 			get { return w.UserLanguages; }
 		}
 
+		[MonoTODO]
+		public string CurrentExecutionFilePathExtension {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public void Abort ()
 		{
 			w.WorkerRequest.CloseConnection();

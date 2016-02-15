@@ -27,6 +27,8 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Security.Permissions;
 using System.Security.Principal;
 
@@ -71,6 +73,16 @@ namespace System.Web.Security
 		{
 			get {
 				return ticket;
+			}
+		}
+
+		[MonoTODO]
+		public IEnumerable<Claim> Claims {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 	}

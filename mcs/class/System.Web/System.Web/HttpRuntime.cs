@@ -279,9 +279,9 @@ namespace System.Web
 			}
 		}
 		
-		public static Version TargetFramework {
+		public static Version TargeFramework {
 			get {
-				return runtime_section.TargetFramework;
+				return new Version (runtime_section.TargetFramework);
 			}
 		}
 		
@@ -670,6 +670,16 @@ namespace System.Web
 		internal static TraceManager TraceManager {
 			get {
 				return trace_manager;
+			}
+		}
+
+		[MonoTODO]
+		public Version TargetFramework {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 	}

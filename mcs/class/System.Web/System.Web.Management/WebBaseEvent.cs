@@ -106,6 +106,16 @@ namespace System.Web.Management
                         }
                 }
 
+				[MonoTODO]
+				public long EventOccurrence {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
                 public virtual void FormatCustomEventDetails (WebEventFormatter formatter)
                 {
                         throw new NotImplementedException ();

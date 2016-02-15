@@ -138,8 +138,8 @@ namespace System.Web.Configuration
 								     PropertyHelper.NonEmptyStringValidator,
 								     ConfigurationPropertyOptions.None);
 			relaxedUrlToFileSystemMappingProp = new ConfigurationProperty ("relaxedUrlToFileSystemMapping", typeof (bool), false);
-			targetFrameworkProp = new ConfigurationProperty ("targetFramework", typeof (Version), new Version (4, 0),
-										PropertyHelper.VersionConverter,
+			targetFrameworkProp = new ConfigurationProperty ("targetFramework", typeof (string), "4.0",
+										TypeDescriptor.GetConverter (typeof (string)),
 										PropertyHelper.DefaultValidator,
 										ConfigurationPropertyOptions.None);
 			allowDynamicModuleRegistrationProp = new ConfigurationProperty ("allowDynamicModuleRegistration", typeof(bool), true,
@@ -346,8 +346,8 @@ namespace System.Web.Configuration
 		}
 		[ConfigurationProperty ("targetFramework", DefaultValue = "4.0")]
 		[TypeConverter ("System.Web.Configuration.VersionConverter")]
-		public Version TargetFramework {
-			get { return (Version) base [targetFrameworkProp]; }
+		public string TargetFramework {
+			get { return (string) base [targetFrameworkProp]; }
 			set { base [targetFrameworkProp] = value; }
 		}
 		protected internal override ConfigurationPropertyCollection Properties {
@@ -357,6 +357,16 @@ namespace System.Web.Configuration
 		public bool AllowDynamicModuleRegistration {
 			get { return (bool) base [allowDynamicModuleRegistrationProp]; }
 			set { base [allowDynamicModuleRegistrationProp] = value; }
+		}
+
+		[MonoTODO]
+		public TimeSpan DefaultRegexMatchTimeout {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }

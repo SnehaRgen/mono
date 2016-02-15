@@ -180,6 +180,36 @@ namespace System.Web
 			set { w.TrySkipIisCustomErrors = value; }
 		}
 
+		[MonoTODO]
+		public bool HeadersWritten {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool SupportsAsyncFlush {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool SuppressDefaultCacheControlHeader {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override void AddCacheDependency (params CacheDependency [] dependencies)
 		{
 			w.AddCacheDependency (dependencies);

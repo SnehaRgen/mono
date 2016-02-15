@@ -146,6 +146,26 @@ namespace System.Web
 			get { return null; }
 		}
 
+		[MonoTODO]
+		public bool SupportsAsyncFlush {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool SupportsAsyncRead {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public virtual void CloseConnection ()
 		{
 		}

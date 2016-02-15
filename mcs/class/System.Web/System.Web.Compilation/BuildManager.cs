@@ -175,6 +175,26 @@ namespace System.Web.Compilation
 		internal static IList TopLevelAssemblies {
 			get { return TopLevel_Assemblies; }
 		}
+
+		[MonoTODO]
+		public bool IsPrecompiledApp {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsUpdatablePrecompiledApp {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		static BuildManager ()
 		{

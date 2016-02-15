@@ -111,6 +111,36 @@ namespace System.Web.Hosting {
 			}
 		}
 
+		[MonoTODO]
+		public bool IsDevelopmentEnvironment {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int MaxConcurrentRequestsPerCPU {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int MaxConcurrentThreadsPerCPU {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static void DecrementBusyCount ()
 		{
 			Interlocked.Decrement (ref busy_count);

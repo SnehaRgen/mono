@@ -87,6 +87,16 @@ namespace System.Web.Configuration {
 			get { return properties; }
 		}
 
+		[MonoTODO]
+		public TimeSpan UrlMetadataSlidingExpiration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 	}
 
 }

@@ -249,6 +249,46 @@ namespace System.Web.Configuration
 		protected internal override ConfigurationPropertyCollection Properties {
 			get { return properties; }
 		}
+
+		[MonoTODO]
+		public bool DisableObsoleteWarnings {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool EnablePrefetchOptimization {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int MaxConcurrentCompilations {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ControlBuilderInterceptorType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

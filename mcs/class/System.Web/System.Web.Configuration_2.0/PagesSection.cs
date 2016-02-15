@@ -311,6 +311,16 @@ namespace System.Web.Configuration
 			get { return properties; }
 		}
 
+		[MonoTODO]
+		public bool RenderAllHiddenFieldsAtTopOfForm {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override void DeserializeSection (XmlReader reader)
 		{
 			base.DeserializeSection (reader);

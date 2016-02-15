@@ -353,7 +353,7 @@ namespace System.Web
 				return false;
 			string val = value.TrimStart (new char[] {' ', '\t'});
 			if (val.Length < 11 ||
-				String.Compare (val, 0, "$resources:", 0, 11, StringComparison.InvariantCultureIgnoreCase) != 0)
+				String.Compare (val, 0, "resources:", 0, 11, StringComparison.InvariantCultureIgnoreCase) != 0)
 				return false;
 
 			val = val.Substring (11);

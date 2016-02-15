@@ -29,6 +29,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.CodeDom.Compiler;
 using System.Web;
 
@@ -54,6 +55,16 @@ namespace System.Web.Compilation {
 		public string StrongNameKeyFile {
 			get { return strongNameKeyFile; }
 			set { strongNameKeyFile = value; }
+		}
+
+		[MonoTODO]
+		public List<string> ExcludedVirtualPaths {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		PrecompilationFlags precompilationFlags;

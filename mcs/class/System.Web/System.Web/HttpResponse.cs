@@ -1318,6 +1318,46 @@ namespace System.Web
 
 			get { return (user_cache_control != null) ? user_cache_control : "private"; }
 		}
+
+		[MonoTODO]
+		public bool HeadersWritten {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool SupportsAsyncFlush {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool SuppressDefaultCacheControlHeader {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public CancellationToken ClientDisconnectedToken {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 #endregion
 
 		internal int GetOutputByteCount ()

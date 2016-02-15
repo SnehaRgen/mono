@@ -215,6 +215,16 @@ namespace System.Web
 			}
 		}
 
+		[MonoTODO]
+		public bool Shareable {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		/*
 		 * simple utility class that just overrides ToString
 		 * to get the desired behavior for

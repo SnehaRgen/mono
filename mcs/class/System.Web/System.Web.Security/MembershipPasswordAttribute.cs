@@ -44,6 +44,16 @@ namespace System.Web.Security
 		public string PasswordStrengthRegularExpression { get; set; }
 		public Type ResourceType { get; set; }
 
+		[MonoTODO]
+		public Nullable<int> PasswordStrengthRegexTimeout {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public MembershipPasswordAttribute ()
 		{
 			if (Membership.Provider != null)

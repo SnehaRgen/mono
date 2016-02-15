@@ -124,7 +124,7 @@ namespace System.Web.SessionState
 			get { return false; }
 		}
 		
-		object IHttpSessionState.this [int index] {
+		public object this [int index] {
 			get {
 				if (sessionItems == null || sessionItems.Count == 0)
 					return null;
@@ -137,7 +137,7 @@ namespace System.Web.SessionState
 			}
 		}
 		
-                object IHttpSessionState.this [string name] {
+		public object this [string name] {
 			get {
 				if (sessionItems == null || sessionItems.Count == 0)
 					return null;
