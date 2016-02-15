@@ -432,6 +432,36 @@ namespace System.DirectoryServices
 			}
 		}
 
+		[MonoTODO]
+		public bool Asynchronous {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool Tombstone {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string AttributeScopeQuery {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		/// <summary>
 		/// Initializes a new instance of the DirectorySearcher class with 
 		/// SearchRoot, Filter, PropertiesToLoad, and SearchScope set to the 

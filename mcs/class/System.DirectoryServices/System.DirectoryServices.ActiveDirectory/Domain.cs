@@ -75,6 +75,16 @@ namespace System.DirectoryServices.ActiveDirectory
 			}
 		}
 
+		[MonoTODO]
+		public int DomainModeLevel {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static Domain GetDomain (DirectoryContext context)
 		{
 			throw new NotImplementedException ();

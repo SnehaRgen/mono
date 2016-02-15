@@ -87,6 +87,16 @@ namespace System.DirectoryServices.ActiveDirectory
 			}
 		}
 
+		[MonoTODO]
+		public int ForestModeLevel {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public void Dispose ()
 		{
 			this.Dispose (true);
