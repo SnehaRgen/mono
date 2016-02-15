@@ -94,6 +94,16 @@ namespace System.IdentityModel.Selectors
 				token.CreateKeyIdentifierClause<SamlAssertionKeyIdentifierClause> ()));
 		}
 
+		[MonoTODO]
+		public IList<string> AllowedAudienceUris {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		class SamlAuthorizationPolicy : SystemIdentityAuthorizationPolicy
 		{
 			SamlSecurityTokenAuthenticator authenticator;

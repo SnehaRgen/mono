@@ -54,5 +54,15 @@ namespace System.IdentityModel.Tokens
 		public WindowsIdentity WindowsIdentity {
 			get { return identity; }
 		}
+
+		[MonoTODO]
+		public string AuthenticationType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

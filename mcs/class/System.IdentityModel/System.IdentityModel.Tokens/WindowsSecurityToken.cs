@@ -78,5 +78,15 @@ namespace System.IdentityModel.Tokens
 		public override ReadOnlyCollection<SecurityKey> SecurityKeys {
 			get { throw new NotImplementedException (); }
 		}
+
+		[MonoTODO]
+		public string AuthenticationType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

@@ -59,6 +59,46 @@ namespace System.IdentityModel.Tokens
 		}
 
 		[MonoTODO]
+		public DateTime ValidFrom {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public DateTime ValidTo {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public WindowsIdentity WindowsIdentity {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ValueTypeUri {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		public override bool CanCreateKeyIdentifierClause<T> ()
 		{
 			throw new NotImplementedException ();

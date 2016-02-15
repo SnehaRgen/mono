@@ -100,6 +100,26 @@ namespace System.IdentityModel.Tokens
 			get { return is_readonly; }
 		}
 
+		[MonoTODO]
+		public string AttributeValueXsiType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string OriginalIssuer {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		private void CheckReadOnly ()
 		{
 			if (is_readonly)

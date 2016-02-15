@@ -166,6 +166,16 @@ namespace System.IdentityModel.Tokens
 			get { return is_readonly; }
 		}
 
+		[MonoTODO]
+		public bool CanWriteSourceData {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		private void CheckReadOnly ()
 		{
 			if (is_readonly)

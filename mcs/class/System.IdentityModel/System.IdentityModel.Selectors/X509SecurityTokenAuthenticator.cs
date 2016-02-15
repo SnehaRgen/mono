@@ -87,6 +87,16 @@ namespace System.IdentityModel.Selectors
 			return new ReadOnlyCollection<IAuthorizationPolicy> (new IAuthorizationPolicy [] {policy});
 		}
 
+		[MonoTODO]
+		public bool MapCertificateToWindowsAccount {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		class X509AuthorizationPolicy : SystemIdentityAuthorizationPolicy
 		{
 			X509Certificate2 cert;

@@ -125,6 +125,26 @@ namespace System.IdentityModel.Selectors
 			}
 		}
 
+		[MonoTODO]
+		public string IsOptionalTokenProperty {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string PeerAuthenticationMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public TValue GetProperty<TValue> (string property)
 		{
 			TValue ret;
