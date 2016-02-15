@@ -776,5 +776,15 @@ namespace System.Security.Cryptography.Xml {
 		public XmlResolver Resolver {
 			set { xmlResolver = value; }
 		}
+
+		[MonoTODO]
+		public System.Collections.ObjectModel.Collection<string> SafeCanonicalizationMethods {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

@@ -124,6 +124,16 @@ namespace System.Security.Cryptography.Xml {
 			set { resolver = value; }
 		}
 
+		[MonoTODO]
+		public int XmlDSigSearchDepth {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties
 
 		#region Methods
