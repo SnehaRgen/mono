@@ -155,6 +155,16 @@ namespace System.Data.SqlClient {
 			}
 		}
 
+		[MonoTODO]
+		public bool EnableStreaming {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion
 
 		#region Methods

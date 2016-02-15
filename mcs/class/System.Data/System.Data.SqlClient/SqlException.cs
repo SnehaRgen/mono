@@ -209,6 +209,16 @@ namespace System.Data.SqlClient
 			get { return Errors [0].State; }
 		}
 
+		[MonoTODO]
+		public Guid ClientConnectionId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties
 
 		#region Methods

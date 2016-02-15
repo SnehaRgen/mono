@@ -473,6 +473,26 @@ namespace System.Data.SqlClient {
 		[BrowsableAttribute(false)]
 		public string UdtTypeName { get; set; }
 
+		[MonoTODO]
+		public bool ForceColumnEncryption {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string TypeName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties
 
 		#region Methods
