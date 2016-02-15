@@ -151,6 +151,56 @@ namespace Microsoft.Build.Execution
 
 		[MonoTODO]
 		public bool UseSynchronousLogging { get; set; }
+
+		[MonoTODO]
+		public bool DisableInProcNode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool LogInitialPropertiesAndItems {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool LogTaskInputs {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool ShutdownInProcNodeOnBuildFinish {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IDictionary<string,string> BuildProcessEnvironment {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

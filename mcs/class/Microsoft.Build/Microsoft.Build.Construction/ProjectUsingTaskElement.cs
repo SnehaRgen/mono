@@ -1,4 +1,4 @@
-﻿//
+//
 // ProjectUsingTaskElement.cs
 //
 // Author:
@@ -108,6 +108,26 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return "UsingTask"; }
                 }
+
+				[MonoTODO]
+				public string Architecture {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string Runtime {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 internal override ProjectElement LoadChildElement (XmlReader reader)
                 {
                         switch (reader.LocalName) {

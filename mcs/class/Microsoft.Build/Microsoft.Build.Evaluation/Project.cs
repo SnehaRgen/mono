@@ -721,6 +721,16 @@ namespace Microsoft.Build.Evaluation
 		IDictionary<string, ProjectTargetInstance> Targets {
 			get { return targets; }
 		}
+
+		[MonoTODO]
+		public string SubToolsetVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		// These are required for reserved property, represents dynamically changing property values.
 		// This should resolve to either the project file path or that of the imported file.

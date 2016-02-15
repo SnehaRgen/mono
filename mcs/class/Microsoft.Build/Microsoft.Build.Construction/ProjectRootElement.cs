@@ -595,5 +595,15 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return "Project"; }
                 }
+
+				[MonoTODO]
+				public string TreatAsLocalProperty {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
         }
 }
