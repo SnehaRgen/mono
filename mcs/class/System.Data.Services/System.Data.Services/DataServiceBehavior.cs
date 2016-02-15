@@ -1,4 +1,4 @@
-﻿// 
+// 
 // DataServiceBehavior.cs
 //  
 // Author:
@@ -48,6 +48,16 @@ namespace System.Data.Services
 
 		public DataServiceProtocolVersion MaxProtocolVersion {
 			get; set;
+		}
+
+		[MonoTODO]
+		public bool AcceptReplaceFunctionInQuery {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }
