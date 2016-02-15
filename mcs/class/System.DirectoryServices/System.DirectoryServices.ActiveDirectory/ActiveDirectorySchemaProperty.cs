@@ -132,7 +132,7 @@ namespace System.DirectoryServices.ActiveDirectory
 			}
 		}
 
-		public int RangeLower {
+		public int? RangeLower {
 			get {
 				throw new NotImplementedException ();
 			}
@@ -141,7 +141,7 @@ namespace System.DirectoryServices.ActiveDirectory
 			}
 		}
 
-		public int RangeUpper {
+		public int? RangeUpper {
 			get {
 				throw new NotImplementedException ();
 			}
