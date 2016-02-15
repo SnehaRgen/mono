@@ -99,6 +99,16 @@ namespace System.ServiceModel.Channels
 			}
 		}
 
+		[MonoTODO]
+		public bool CrossDomainScriptAccessEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// Methods
 
 		public override IChannelFactory<TChannel> BuildChannelFactory<TChannel> (BindingContext context)

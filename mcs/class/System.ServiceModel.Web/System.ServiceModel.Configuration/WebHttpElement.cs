@@ -71,6 +71,36 @@ namespace System.ServiceModel.Configuration
 			get { return typeof (WebHttpBehavior); }
 		}
 
+		[MonoTODO]
+		public bool AutomaticFormatSelectionEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool FaultExceptionEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool HelpEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override object CreateBehavior ()
 		{
 			return new WebHttpBehavior ();

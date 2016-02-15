@@ -72,6 +72,36 @@ namespace System.ServiceModel.Description
 		public override WebMessageFormat DefaultOutgoingResponseFormat { get; set; }
 
 		[MonoTODO]
+		public bool AutomaticFormatSelectionEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool FaultExceptionEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool HelpEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected override void AddClientErrorInspector (ServiceEndpoint endpoint, ClientRuntime clientRuntime)
 		{
 			base.AddClientErrorInspector (endpoint, clientRuntime);

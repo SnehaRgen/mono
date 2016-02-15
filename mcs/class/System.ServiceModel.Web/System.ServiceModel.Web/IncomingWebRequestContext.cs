@@ -26,6 +26,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 using System.ServiceModel.Channels;
@@ -75,6 +76,46 @@ namespace System.ServiceModel.Web
 
 		public string UserAgent {
 			get { return hp.Headers.Get ("User-Agent"); }
+		}
+
+		[MonoTODO]
+		public IEnumerable<string> IfMatch {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IEnumerable<string> IfNoneMatch {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Nullable<DateTime> IfModifiedSince {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Nullable<DateTime> IfUnmodifiedSince {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }

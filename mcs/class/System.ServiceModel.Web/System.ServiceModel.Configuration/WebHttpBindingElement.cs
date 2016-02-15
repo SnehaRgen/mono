@@ -260,6 +260,26 @@ namespace System.ServiceModel.Configuration
 			set { base [use_default_web_proxy] = value; }
 		}
 
+		[MonoTODO]
+		public bool CrossDomainScriptAccessEnabled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ContentTypeMapper {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void OnApplyConfiguration (Binding binding)
 		{
 			WebHttpBinding webBinding = (WebHttpBinding)binding;

@@ -73,6 +73,16 @@ namespace System.ServiceModel.Description
 
 		public virtual WebMessageFormat DefaultOutgoingResponseFormat { get; set; }
 
+		[MonoTODO]
+		public string JavascriptCallbackParameterName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public virtual void AddBindingParameters (ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)
 		{
 			// nothing

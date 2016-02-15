@@ -114,6 +114,16 @@ namespace System.ServiceModel.Web
 			set { suppress_body = value; }
 		}
 
+		[MonoTODO]
+		public System.Text.Encoding BindingWriteEncoding {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public void SetStatusAsCreated (Uri locationUri)
 		{
 			StatusCode = HttpStatusCode.Created;
