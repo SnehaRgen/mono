@@ -497,7 +497,7 @@ namespace System.Web.UI
 					for (int i = 0; i < _disposeScripts.Count; i++) {
 						RegisteredDisposeScript entry = _disposeScripts [i];
 						if (IsMultiForm)
-							sb.Append ("Sys.WebForms.PageRequestManager.getInstance($get(\"" + Page.Form.ClientID + "\"))._registerDisposeScript(\"");
+							sb.Append ("Sys.WebForms.PageRequestManager.getInstance(get(\"" + Page.Form.ClientID + "\"))._registerDisposeScript(\"");
 						else
 							sb.Append ("Sys.WebForms.PageRequestManager.getInstance()._registerDisposeScript(\"");
 						sb.Append (entry.UpdatePanel.ClientID);
@@ -619,7 +619,7 @@ namespace System.Web.UI
 
 				// Register startup script
 				if (IsMultiForm)
-					RegisterStartupScript (this, typeof (ExtenderControl), "Sys.Application.initialize();", "Sys.Application.getInstance($get(\"" + Page.Form.ClientID + "\")).initialize();\n", true);
+					RegisterStartupScript (this, typeof (ExtenderControl), "Sys.Application.initialize();", "Sys.Application.getInstance(get(\"" + Page.Form.ClientID + "\")).initialize();\n", true);
 				else
 					RegisterStartupScript (this, typeof (ExtenderControl), "Sys.Application.initialize();", "Sys.Application.initialize();\n", true);
 			}
@@ -691,6 +691,86 @@ namespace System.Web.UI
 
 		bool IsMultiForm {
 			get { return false; }
+		}
+
+		[MonoTODO]
+		public bool EnableCdn {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool EnableCdnFallback {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool EnableHistory {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool EnableSecureHistoryState {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsNavigating {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Assembly AjaxFrameworkAssembly {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ClientNavigateHandler {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string EmptyPageUrl {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		bool PanelRequiresUpdate (UpdatePanel panel)
@@ -1027,7 +1107,7 @@ namespace System.Web.UI
 			foreach (ScriptDescriptor scriptDescriptor in scriptDescriptors) {
 				if (IsMultiForm) {
 					scriptDescriptor.FormID = Page.Form.ClientID;
-					sb.AppendLine ("Sys.Application.getInstance($get(\"" + Page.Form.ClientID + "\")).add_init(function() {");
+					sb.AppendLine ("Sys.Application.getInstance(get(\"" + Page.Form.ClientID + "\")).add_init(function() {");
 				}
 				else
 					sb.AppendLine ("Sys.Application.add_init(function() {");
@@ -1097,7 +1177,7 @@ namespace System.Web.UI
 				writer.WriteLine ("//<![CDATA[");
 				writer.WriteLine ("Sys.WebForms.PageRequestManager._initialize('{0}', document.getElementById('{1}'));", UniqueID, Page.Form.ClientID);
 				if (IsMultiForm)
-					writer.WriteLine ("Sys.WebForms.PageRequestManager.getInstance($get(\"{0}\"))._updateControls([{1}], [{2}], [{3}], {4});",
+					writer.WriteLine ("Sys.WebForms.PageRequestManager.getInstance(get(\"{0}\"))._updateControls([{1}], [{2}], [{3}], {4});",
 							  Page.Form.ClientID,
 							  FormatUpdatePanelIDs (_updatePanels, true),
 							  FormatListIDs (_asyncPostBackControls, true, false),

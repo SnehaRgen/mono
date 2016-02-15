@@ -1,4 +1,4 @@
-﻿//
+//
 // ConvertersCollection.cs
 //
 // Author:

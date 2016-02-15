@@ -1,4 +1,4 @@
-﻿//
+//
 // ScriptIgnoreAttribute.cs
 //
 // Author:

@@ -1,4 +1,4 @@
-﻿//
+//
 // TargetControlTypeAttribute.cs
 //
 // Author:
@@ -44,6 +44,16 @@ namespace System.Web.UI
 
 		public Type TargetControlType {
 			get { return _targetControlType; } 
+		}
+
+		[MonoTODO]
+		public Object TypeId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }

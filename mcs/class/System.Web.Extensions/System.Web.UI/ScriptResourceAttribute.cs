@@ -1,4 +1,4 @@
-﻿//
+//
 // ScriptResourceAttribute.cs
 //
 // Author:
@@ -56,6 +56,26 @@ namespace System.Web.UI
 
 		public string TypeName {
 			get { return _typeName; }
+		}
+
+		[MonoTODO]
+		public string StringResourceClientTypeName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string StringResourceName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }

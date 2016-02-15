@@ -1,4 +1,4 @@
-﻿//
+//
 // UpdateProgress.cs
 //
 // Author:

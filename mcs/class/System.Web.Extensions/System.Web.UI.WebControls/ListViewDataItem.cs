@@ -50,6 +50,36 @@ namespace System.Web.UI.WebControls
 			
 			return base.OnBubbleEvent (source, e);
 		}
+
+		[MonoTODO]
+		public int DataItemIndex {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int DisplayIndex {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Object DataItem {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 	}
 }

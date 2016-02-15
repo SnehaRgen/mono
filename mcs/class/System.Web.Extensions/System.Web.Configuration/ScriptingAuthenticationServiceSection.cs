@@ -1,4 +1,4 @@
-﻿//
+//
 // ScriptingAuthenticationServiceSection.cs
 //
 // Author:

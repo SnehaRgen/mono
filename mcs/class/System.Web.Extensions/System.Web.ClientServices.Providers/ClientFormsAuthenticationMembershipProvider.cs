@@ -88,6 +88,16 @@ namespace System.Web.ClientServices.Providers
 		public override bool RequiresUniqueEmail {
 			get { throw new NotImplementedException (); }
 		}
+
+		[MonoTODO]
+		public string ServiceUri {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		public ClientFormsAuthenticationMembershipProvider ()
 		{
