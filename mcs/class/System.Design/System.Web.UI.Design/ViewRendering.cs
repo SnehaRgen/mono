@@ -52,5 +52,15 @@ namespace System.Web.UI.Design
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public bool Visible {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

@@ -204,6 +204,16 @@ namespace System.ComponentModel.Design
 			}
 		}
 
+		[MonoTODO]
+		public bool DtelLoading {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public event EventHandler Disposed;
 		public event EventHandler Flushed;
 		public event LoadedEventHandler Loaded;

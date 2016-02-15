@@ -60,6 +60,16 @@ namespace System.Web.UI.Design
 		}
 
 		[MonoTODO]
+		public bool NoWrap {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected virtual void AddDesignTimeCssAttributes (IDictionary styleAttributes)
 		{
 			throw new NotImplementedException ();

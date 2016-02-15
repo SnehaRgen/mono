@@ -58,6 +58,16 @@ namespace System.Web.UI.Design.WebControls {
 			get { throw new NotImplementedException (); }
 		}
 
+		[MonoTODO]
+		public string DataSourceID {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void Dispose (bool disposing)
 		{
 			throw new NotImplementedException ();

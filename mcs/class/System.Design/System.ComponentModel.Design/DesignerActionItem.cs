@@ -82,6 +82,16 @@ namespace System.ComponentModel.Design
 				return properties;
 			}
 		}
+
+		[MonoTODO]
+		public bool ShowInSourceView {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 	}
 }
