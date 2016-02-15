@@ -414,6 +414,16 @@ namespace Microsoft.Build.BuildEngine {
 				return (ITaskItem []) e.ConvertTo (project, typeof (ITaskItem []));
 			}
 		}
+
+		[MonoTODO]
+		public string Inputs {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 	
 	internal enum BuildState {

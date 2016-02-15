@@ -47,6 +47,16 @@ namespace Microsoft.Build.BuildEngine
 		}
 		
 		public bool IsReadOnly { get { return false; } }
+
+		[MonoTODO]
+		public IEnumerable<string> ToolsVersions {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 			
 		public Toolset this [string toolsVersion]
 		{

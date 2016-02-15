@@ -92,5 +92,15 @@ namespace Microsoft.Build.BuildEngine {
 				return helpKeyword;
 			}
 		}
+
+		[MonoTODO]
+		public bool InitializationException {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

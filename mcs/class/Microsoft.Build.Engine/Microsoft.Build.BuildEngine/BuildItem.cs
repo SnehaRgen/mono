@@ -730,5 +730,45 @@ namespace Microsoft.Build.BuildEngine {
 			get { return parent_item_group; }
 			set { parent_item_group = value; }
 		}
+
+		[MonoTODO]
+		public ICollection CustomMetadataNames {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ICollection MetadataNames {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int CustomMetadataCount {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int MetadataCount {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
