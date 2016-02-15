@@ -142,6 +142,16 @@ namespace Microsoft.Build.Tasks {
 			get { return rootNamespace; }
 			set { rootNamespace = value; }
 		}
+
+		[MonoTODO]
+		public bool PrependCultureAsDirectory {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

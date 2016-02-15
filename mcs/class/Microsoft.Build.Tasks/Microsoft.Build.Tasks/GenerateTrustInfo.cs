@@ -83,6 +83,16 @@ namespace Microsoft.Build.Tasks {
 				trustInfoFile = value;
 			}
 		}
+
+		[MonoTODO]
+		public string TargetFrameworkMoniker {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

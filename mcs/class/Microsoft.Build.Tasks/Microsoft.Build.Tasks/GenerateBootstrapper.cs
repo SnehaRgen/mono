@@ -133,6 +133,26 @@ namespace Microsoft.Build.Tasks {
 			get { return validate; }
 			set { validate = value; }
 		}
+
+		[MonoTODO]
+		public bool ApplicationRequiresElevation {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string VisualStudioVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

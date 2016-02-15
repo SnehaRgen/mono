@@ -112,6 +112,16 @@ namespace Microsoft.Build.Tasks.Deployment.Bootstrapper {
 			get { return validate; }
 			set { validate = value; }
 		}
+
+		[MonoTODO]
+		public bool ApplicationRequiresElevation {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

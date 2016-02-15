@@ -172,6 +172,36 @@ namespace Microsoft.Build.Tasks
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public bool CreateDesktopShortcut {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ErrorReportUrl {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SuiteName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		protected internal override bool ValidateInputs ()
 		{

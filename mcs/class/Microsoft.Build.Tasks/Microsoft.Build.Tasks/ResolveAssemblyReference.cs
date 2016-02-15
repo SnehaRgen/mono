@@ -744,6 +744,126 @@ namespace Microsoft.Build.Tasks {
                                 return cultureNamesTable;
                         }
                 }
+
+				[MonoTODO]
+				public bool CopyLocalDependenciesWhenParentReferenceInGac {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public bool IgnoreDefaultInstalledAssemblySubsetTables {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public bool IgnoreDefaultInstalledAssemblyTables {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public bool IgnoreTargetFrameworkAttributeVersionMismatch {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public bool IgnoreVersionForFrameworkReferences {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string ProfileName {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string TargetedRuntimeVersion {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string WarnOrErrorOnTargetArchitectureMismatch {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string[] FullFrameworkFolders {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string[] FullTargetFrameworkSubsetNames {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string[] LatestTargetFrameworkDirectories {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public string[] TargetFrameworkSubsets {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
 	}
 
 	static class ResolveAssemblyReferenceHelper {

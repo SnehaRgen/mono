@@ -152,6 +152,26 @@ namespace Microsoft.Build.Tasks {
 			get { return targetCulture; }
 			set { targetCulture = value; }
 		}
+
+		[MonoTODO]
+		public string TargetFrameworkMoniker {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string TargetFrameworkVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

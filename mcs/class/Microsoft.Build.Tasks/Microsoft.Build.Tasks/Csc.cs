@@ -238,6 +238,36 @@ namespace Microsoft.Build.Tasks {
 			get { return (string) Bag ["WarningsNotAsErrors"]; }
 			set { Bag ["WarningsNotAsErrors"] = value; }
 		}
+
+		[MonoTODO]
+		public bool ErrorEndLocation {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ApplicationConfiguration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string PreferredUILang {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

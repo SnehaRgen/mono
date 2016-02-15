@@ -103,6 +103,26 @@ namespace Microsoft.Build.Tasks {
 			get { return target_culture; }
 			set { target_culture = value; }
 		}
+
+		[MonoTODO]
+		public bool SigningManifests {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string TargetFrameworkVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

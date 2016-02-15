@@ -120,6 +120,16 @@ namespace Microsoft.Build.Tasks {
 				path = value;
 			}
 		}
+
+		[MonoTODO]
+		public bool UpdateToAbsolutePaths {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

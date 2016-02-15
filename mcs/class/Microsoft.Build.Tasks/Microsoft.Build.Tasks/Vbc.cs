@@ -187,18 +187,18 @@ namespace Microsoft.Build.Tasks {
 				return;
 			}
 
-			string filename = match.Result ("${file}") ?? "";
+			string filename = match.Result ("{file}") ?? "";
 
-			string line = match.Result ("${line}");
+			string line = match.Result ("{line}");
 			int lineNumber = !string.IsNullOrEmpty (line) ? Int32.Parse (line) : 0;
 
-			string col = match.Result ("${column}");
+			string col = match.Result ("{column}");
 			int columnNumber = 0;
 			if (!string.IsNullOrEmpty (col))
 				columnNumber = col.IndexOf ("+") >= 0 ? -1 : Int32.Parse (col);
 
-			string category = match.Result ("${level}");
-			string code = match.Result ("${number}");
+			string category = match.Result ("{level}");
+			string code = match.Result ("{number}");
 			string text = match.Result ("${message}");
 
 			if (String.Compare (category, "warning", StringComparison.OrdinalIgnoreCase) == 0) {
@@ -367,6 +367,56 @@ namespace Microsoft.Build.Tasks {
 				if (errorRegex == null)
 					errorRegex = new Regex (@"^\s*((?<file>.*)\s?\((?<line>\d*)(,(?<column>\d*))?\) : )?(?<level>\w+) :? ?(?<number>[^:]*): (?<message>.*)$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
 				return errorRegex;
+			}
+		}
+
+		[MonoTODO]
+		public bool NoVBRuntimeReference {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string LangVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ModuleAssemblyName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string PdbFile {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string VBRuntimePath {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 

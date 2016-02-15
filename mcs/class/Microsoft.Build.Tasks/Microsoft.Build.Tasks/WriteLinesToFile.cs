@@ -87,6 +87,16 @@ namespace Microsoft.Build.Tasks {
 			get { return overwrite; }
 			set { overwrite = value; }
 		}
+
+		[MonoTODO]
+		public string Encoding {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

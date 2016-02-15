@@ -25,6 +25,7 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using System;
 
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
@@ -51,6 +52,46 @@ namespace Microsoft.Build.Tasks {
 			}
 			set {
 				path = value;
+			}
+		}
+
+		[MonoTODO]
+		public string FrameworkSdkVersion20Path {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string FrameworkSdkVersion35Path {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string FrameworkSdkVersion40Path {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string FrameworkSdkVersion45Path {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 	}

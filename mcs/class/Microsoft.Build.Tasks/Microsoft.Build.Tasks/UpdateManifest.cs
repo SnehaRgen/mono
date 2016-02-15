@@ -87,6 +87,16 @@ namespace Microsoft.Build.Tasks
                 }
 
 		[MonoTODO]
+		public string TargetFrameworkVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		public override bool Execute ()
 		{
 			throw new NotImplementedException ();

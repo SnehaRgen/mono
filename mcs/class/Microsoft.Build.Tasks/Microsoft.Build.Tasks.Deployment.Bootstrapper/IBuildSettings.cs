@@ -47,6 +47,11 @@ namespace Microsoft.Build.Tasks.Deployment.Bootstrapper {
 			set;
 		}
 		
+		bool ApplicationRequiresElevation {
+			get;
+			set;
+		}
+		
 		string ApplicationUrl {
 			get;
 			set;

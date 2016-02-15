@@ -102,6 +102,16 @@ namespace Microsoft.Build.Tasks {
 			get { return targets; }
 			set { targets = value; }
 		}
+
+		[MonoTODO]
+		public bool UseResultsCache {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

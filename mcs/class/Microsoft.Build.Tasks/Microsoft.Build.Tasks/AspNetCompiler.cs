@@ -144,6 +144,16 @@ namespace Microsoft.Build.Tasks {
 		protected override string ToolName {
 			get { return MSBuildUtils.RunningOnWindows ? "aspnet_compiler.bat" : "aspnet_compiler"; }
 		}
+
+		[MonoTODO]
+		public string TargetFrameworkMoniker {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

@@ -119,6 +119,36 @@ namespace Microsoft.Build.Tasks {
 		}
 
 		[MonoTODO]
+		public string Platform {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SdkToolsPath {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string[] Types {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected override string GenerateCommandLineCommands ()
 		{
 			throw new NotImplementedException ();

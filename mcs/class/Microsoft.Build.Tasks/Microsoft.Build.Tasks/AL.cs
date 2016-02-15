@@ -263,6 +263,26 @@ namespace Microsoft.Build.Tasks {
 			get { return (string) Bag ["Win32Resource"]; }
 			set { Bag ["Win32Resource"] = value; }
 		}
+
+		[MonoTODO]
+		public bool Prefer32Bit {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SdkToolsPath {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

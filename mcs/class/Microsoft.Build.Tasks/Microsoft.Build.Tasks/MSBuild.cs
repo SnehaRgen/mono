@@ -193,6 +193,56 @@ namespace Microsoft.Build.Tasks {
 			get; set;
 		}
 
+		[MonoTODO]
+		public bool UnloadProjectsOnCompletion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool UseResultsCache {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string RemoveProperties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SkipNonexistentProjects {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string[] TargetAndPropertyListSeparators {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		SortedDictionary<string, string> SplitPropertiesToDictionary ()
 		{
 			if (properties == null)

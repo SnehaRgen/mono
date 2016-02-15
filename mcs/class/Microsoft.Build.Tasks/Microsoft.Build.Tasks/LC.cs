@@ -119,6 +119,16 @@ namespace Microsoft.Build.Tasks {
 				return MSBuildUtils.RunningOnWindows ? "lc.bat" : "lc";
 			}
 		}
+
+		[MonoTODO]
+		public string SdkToolsPath {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
