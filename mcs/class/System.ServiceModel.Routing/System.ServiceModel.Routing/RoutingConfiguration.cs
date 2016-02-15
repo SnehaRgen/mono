@@ -26,5 +26,15 @@ namespace System.ServiceModel.Routing
 		public MessageFilterTable<IEnumerable<ServiceEndpoint>> FilterTable { get; private set; }
 		public bool RouteOnHeadersOnly { get; set; }
 		public bool SoapProcessingEnabled { get; set; }
+
+		[MonoTODO]
+		public bool EnsureOrderedDispatch {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

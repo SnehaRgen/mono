@@ -34,6 +34,16 @@ namespace System.ServiceModel.Routing.Configuration
 			set { base ["soapProcessingEnabled"] = value; }
 		}
 
+		[MonoTODO]
+		public bool EnsureOrderedDispatch {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override object CreateBehavior ()
 		{
 			var table = RoutingSection.CreateFilterTable (FilterTableName);
