@@ -70,6 +70,16 @@ namespace Microsoft.Build.Framework {
 				return targetName;
 			}
 		}
+
+		[MonoTODO]
+		public string ParentTarget {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

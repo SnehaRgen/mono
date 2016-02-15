@@ -28,6 +28,7 @@
 
 
 using System;
+using System.Collections;
 
 namespace Microsoft.Build.Framework {
 	[Serializable]
@@ -70,6 +71,16 @@ namespace Microsoft.Build.Framework {
 		
 		public bool Succeeded {
 			get { return succeeded; }
+		}
+
+		[MonoTODO]
+		public IEnumerable TargetOutputs {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }

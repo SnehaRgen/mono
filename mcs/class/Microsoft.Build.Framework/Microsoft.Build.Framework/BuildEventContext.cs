@@ -55,6 +55,16 @@ namespace Microsoft.Build.Framework
 		public int ProjectContextId { get; private set; }
 		public int TaskId { get; private set; }
 
+		[MonoTODO]
+		public long BuildRequestId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// MSDN document says "true if the references are equal, false otherwise." but that doesn't make sense.
 		public override bool Equals (object obj)
 		{

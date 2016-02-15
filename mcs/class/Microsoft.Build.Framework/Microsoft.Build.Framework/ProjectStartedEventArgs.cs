@@ -29,6 +29,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Microsoft.Build.Framework {
 	[Serializable]
@@ -73,6 +74,36 @@ namespace Microsoft.Build.Framework {
 		
 		public IEnumerable Items {
 			get { return items; }
+		}
+
+		[MonoTODO]
+		public IDictionary<string,string> GlobalProperties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int ProjectId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ToolsVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }
