@@ -83,11 +83,8 @@ namespace System.ServiceModel.Description
 		}
 
 		[MonoTODO]
-		public ServiceDescription SingleWsdl {
+		public  System.Web.Services.Description.ServiceDescription SingleWsdl {
 			get {
-				throw new NotImplementedException ();
-			}
-			set {
 				throw new NotImplementedException ();
 			}
 		}
