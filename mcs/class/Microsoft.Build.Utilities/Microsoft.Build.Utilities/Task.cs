@@ -105,6 +105,26 @@ namespace Microsoft.Build.Utilities
 				taskResources = value;
 			}
 		}
+
+		[MonoTODO]
+		public IBuildEngine3 BuildEngine3 {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IBuildEngine4 BuildEngine4 {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
