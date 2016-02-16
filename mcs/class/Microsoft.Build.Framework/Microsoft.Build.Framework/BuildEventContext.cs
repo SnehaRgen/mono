@@ -8,7 +8,7 @@ namespace Microsoft.Build.Framework
 	{
 		static readonly Random rnd = new Random ();
 
-		public static BuildEventContext Invalid = new BuildEventContext (
+		static BuildEventContext invalid = new BuildEventContext (
 			InvalidSubmissionId,
 			InvalidNodeId,
 			InvalidProjectInstanceId,
@@ -62,6 +62,12 @@ namespace Microsoft.Build.Framework
 			}
 			set {
 				throw new NotImplementedException ();
+			}
+		}
+
+		public static BuildEventContext Invalid {
+			get {
+				return invalid;
 			}
 		}
 

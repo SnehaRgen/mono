@@ -105,6 +105,16 @@ namespace Microsoft.Build.Framework {
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public BuildEventContext ParentProjectBuildEventContext {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
