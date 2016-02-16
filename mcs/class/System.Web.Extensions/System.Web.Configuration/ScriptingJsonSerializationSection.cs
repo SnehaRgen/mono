@@ -62,5 +62,15 @@ namespace System.Web.Configuration
 				this ["recursionLimit"] = value;
 			}
 		}
+
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

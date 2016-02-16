@@ -51,5 +51,15 @@ namespace System.Web.Configuration
 			get { return (ScriptingProfileServiceSection) Sections ["profileService"]; }
 		}
 
+		[MonoTODO]
+		public ScriptingRoleServiceSection RoleService {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 	}
 }

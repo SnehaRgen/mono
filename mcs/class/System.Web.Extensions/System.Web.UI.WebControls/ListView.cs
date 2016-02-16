@@ -785,6 +785,16 @@ namespace System.Web.UI.WebControls
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public DataKeyArray ClientIDRowSuffixDataKeys {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 #endregion
 		
 		public ListView ()

@@ -221,6 +221,16 @@ namespace System.Web.UI
 
 		// Used by nested panels (see bug #542441)
 		ScriptManager.AlternativeHtmlTextWriter RenderChildrenWriter { get; set; }
+
+		[MonoTODO]
+		public AttributeCollection Attributes {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		protected virtual Control CreateContentTemplateContainer ()
 		{

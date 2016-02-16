@@ -55,6 +55,16 @@ namespace System.Web.Configuration
 				this ["enableCompression"] = value;
 			}
 		}
+
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

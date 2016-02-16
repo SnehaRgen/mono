@@ -70,5 +70,15 @@ namespace System.Web.Configuration
 				BaseRemove (converter.Name);
 		}
 
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 	}
 }

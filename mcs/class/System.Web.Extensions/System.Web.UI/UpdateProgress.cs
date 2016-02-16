@@ -105,6 +105,26 @@ namespace System.Web.UI
 			}
 		}
 
+		[MonoTODO]
+		public AttributeCollection Attributes {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ControlCollection Controls {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected virtual IEnumerable<ScriptDescriptor> GetScriptDescriptors () {
 			string updatePanelClientId;
 			if (String.IsNullOrEmpty (AssociatedUpdatePanelID))

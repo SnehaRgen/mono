@@ -57,5 +57,15 @@ namespace System.Web.Configuration
 				this ["type"] = value;
 			}
 		}
+
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
