@@ -111,6 +111,16 @@ public sealed class Hash :
 		}
 	}
 
+	[MonoTODO]
+	public Byte[] SHA256 {
+		get {
+			throw new NotImplementedException ();
+		}
+		set {
+			throw new NotImplementedException ();
+		}
+	}
+
 	//
 	// Public Methods
 	//

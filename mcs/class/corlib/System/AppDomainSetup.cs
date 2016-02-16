@@ -354,6 +354,46 @@ namespace System
 			set { disallow_appbase_probe = value; }
 		}
 
+		[MonoTODO]
+		public bool SandboxInterop {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string AppDomainManagerAssembly {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string AppDomainManagerType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string[] PartialTrustVisibleAssemblies {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		[MonoNotSupported ("This method exists but not considered.")]
 		public byte [] GetConfigurationBytes ()
 		{

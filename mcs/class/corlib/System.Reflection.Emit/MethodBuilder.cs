@@ -690,6 +690,36 @@ namespace System.Reflection.Emit
 		public override ParameterInfo ReturnParameter {
 			get { return base.ReturnParameter; }
 		}
+
+		[MonoTODO]
+		public bool IsSecurityCritical {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsSecuritySafeCritical {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsSecurityTransparent {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 #endif

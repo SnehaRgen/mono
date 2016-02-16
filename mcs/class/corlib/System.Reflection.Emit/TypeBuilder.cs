@@ -1572,7 +1572,7 @@ namespace System.Reflection.Emit
 				throw new ArgumentException ("Data size must be > 0 and < 0x3f0000");
 			check_not_created ();
 
-			string typeName = "$ArrayType$" + size;
+			string typeName = "ArrayType" + size;
 			TypeIdentifier ident = TypeIdentifiers.WithoutEscape (typeName);
 			Type datablobtype = pmodule.GetRegisteredType (fullname.NestedName(ident));
 			if (datablobtype == null) {
@@ -1902,6 +1902,36 @@ namespace System.Reflection.Emit
 
 		public override bool IsConstructedGenericType {
 			get { return false; }
+		}
+
+		[MonoTODO]
+		public bool IsSecurityCritical {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsSecuritySafeCritical {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsSecurityTransparent {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		public override bool IsAssignableFrom (TypeInfo typeInfo)

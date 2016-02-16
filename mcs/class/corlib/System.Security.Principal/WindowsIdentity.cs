@@ -29,6 +29,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
@@ -315,6 +316,36 @@ namespace System.Security.Principal {
 
 		public SafeAccessTokenHandle AccessToken {
 			get { throw new NotImplementedException (); }
+		}
+
+		[MonoTODO]
+		public IEnumerable<Claim> Claims {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IEnumerable<Claim> DeviceClaims {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IEnumerable<Claim> UserClaims {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		// see mono/mono/metadata/security.c for implementation

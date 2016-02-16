@@ -47,6 +47,36 @@ namespace System.Diagnostics.Tracing
 		public EventChannel Channel { get; set; }
 		public string Message { get; set; }
 		public EventTask Task { get; set; }
+
+		[MonoTODO]
+		public Byte Version {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public EventActivityOptions ActivityOptions {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public EventTags Tags {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

@@ -154,7 +154,7 @@ namespace System.Reflection.Emit {
 
 			CreateGlobalType ();
 
-			string typeName = "$ArrayType$" + size;
+			string typeName = "ArrayType$" + size;
 			Type datablobtype = GetType (typeName, false, false);
 			if (datablobtype == null) {
 				TypeBuilder tb = DefineType (typeName, 
@@ -982,6 +982,16 @@ namespace System.Reflection.Emit {
 		public override int MetadataToken {
 			get {
 				return base.MetadataToken;
+			}
+		}
+
+		[MonoTODO]
+		public int MDStreamVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 	}

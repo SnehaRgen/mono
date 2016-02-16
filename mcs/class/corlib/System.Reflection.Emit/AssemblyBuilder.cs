@@ -1193,6 +1193,46 @@ namespace System.Reflection.Emit
 		public override string FullName {
 			get { return base.FullName; }
 		}
+
+		[MonoTODO]
+		public long HostContext {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public PermissionSet PermissionSet {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Evidence Evidence {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public SecurityRuleSet SecurityRuleSet {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 #endif

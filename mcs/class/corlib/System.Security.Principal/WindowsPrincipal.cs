@@ -28,6 +28,7 @@
 //
 
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Claims;
@@ -158,6 +159,26 @@ namespace System.Security.Principal {
 
 		private IntPtr Token {
 			get { return (_identity as WindowsIdentity).Token; }
+		}
+
+		[MonoTODO]
+		public IEnumerable<Claim> DeviceClaims {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IEnumerable<Claim> UserClaims {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		// see mono/mono/metadata/security.c for implementation

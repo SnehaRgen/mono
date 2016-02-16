@@ -459,6 +459,16 @@ namespace System.Reflection.Emit
 				return false;
 			}
 		}
+
+		[MonoTODO]
+		public bool IsConstructedGenericType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 #endif

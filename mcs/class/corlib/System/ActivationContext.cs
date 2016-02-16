@@ -66,6 +66,26 @@ namespace System {
 			get { return _appid; }
 		}
 
+		[MonoTODO]
+		public Byte[] ApplicationManifestBytes {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Byte[] DeploymentManifestBytes {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		[MonoTODO ("Missing validation")]
 		static public ActivationContext CreatePartialActivationContext (ApplicationIdentity identity)
 		{

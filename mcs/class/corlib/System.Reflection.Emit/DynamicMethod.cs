@@ -385,6 +385,36 @@ namespace System.Reflection.Emit {
 			}
 		}
 
+		[MonoTODO]
+		public bool IsSecurityCritical {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsSecuritySafeCritical {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsSecurityTransparent {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 /*
 		public override int MetadataToken {
 			get {
