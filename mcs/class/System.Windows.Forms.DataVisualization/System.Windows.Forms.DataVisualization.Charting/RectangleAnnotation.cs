@@ -28,7 +28,7 @@ namespace System.Windows.Forms.DataVisualization.Charting
 {
 	public class RectangleAnnotation : TextAnnotation
 	{
-		public override string AnnotationType { get { throw new NotImplementedException (); } }
+		public override string AnnotationType { get { throw new NotImplementedException (); } } //FIXME - find out what MS implementation returns here
 
 		[MonoTODO]
 		public int LineWidth {
@@ -38,6 +38,66 @@ namespace System.Windows.Forms.DataVisualization.Charting
 			set {
 				throw new NotImplementedException ();
 			}
-		} //FIXME - find out what MS implementation returns here
+		}
+
+		[MonoTODO]
+		public Color BackColor {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Color BackSecondaryColor {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Color LineColor {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ChartDashStyle LineDashStyle {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ChartHatchStyle BackHatchStyle {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public GradientStyle BackGradientStyle {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
