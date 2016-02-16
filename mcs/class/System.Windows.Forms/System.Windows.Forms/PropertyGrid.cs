@@ -1264,6 +1264,16 @@ namespace System.Windows.Forms
 			}
 		}
 
+		[MonoTODO]
+		public bool CanShowVisualStyleGlyphs {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		[MonoTODO ("Stub, does nothing")]
 		void ComponentModel.Com2Interop.IComPropertyBrowser.DropDownDone ()
 		{

@@ -123,6 +123,16 @@ namespace System.Windows.Forms
 				return Parent.PointToScreen (p);
 			}
 		}
+
+		[MonoTODO]
+		public bool HasDropDown {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		#endregion
 
 		#region Public Methods

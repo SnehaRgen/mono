@@ -1114,5 +1114,15 @@ namespace System.Windows.Forms
 				use_compatible_text_rendering = value;
 			}
 		}
+
+		[MonoTODO]
+		public bool TabStop {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
