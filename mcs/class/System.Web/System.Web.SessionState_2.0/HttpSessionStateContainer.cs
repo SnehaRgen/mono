@@ -150,7 +150,7 @@ namespace System.Web.SessionState
 			}
 		}
 		
-		NameObjectCollectionBase.KeysCollection IHttpSessionState.Keys {
+		public NameObjectCollectionBase.KeysCollection Keys {
 			get {
 				if (sessionItems != null)
 					return sessionItems.Keys;
@@ -185,16 +185,6 @@ namespace System.Web.SessionState
 				if (value < 1)
 					throw new ArgumentException ("The argument to SetTimeout must be greater than 0.");
 				timeout = value;
-			}
-		}
-
-		[MonoTODO]
-		public KeysCollection Keys {
-			get {
-				throw new NotImplementedException ();
-			}
-			set {
-				throw new NotImplementedException ();
 			}
 		}
 

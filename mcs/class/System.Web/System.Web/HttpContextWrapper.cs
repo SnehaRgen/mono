@@ -207,7 +207,7 @@ namespace System.Web
 		}
 
 		[MonoTODO]
-		public AsyncPreloadModeFlags AsyncPreloadMode {
+		public System.Web.Configuration.AsyncPreloadModeFlags AsyncPreloadMode {
 			get {
 				throw new NotImplementedException ();
 			}
