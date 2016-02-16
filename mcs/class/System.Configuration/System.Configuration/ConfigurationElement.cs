@@ -620,6 +620,16 @@ namespace System.Configuration
 			}
 		}
 
+		[MonoTODO]
+		public Configuration CurrentConfiguration {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		void ValidateValue (ConfigurationProperty p, string value)
 		{
 			ConfigurationValidatorBase validator;
