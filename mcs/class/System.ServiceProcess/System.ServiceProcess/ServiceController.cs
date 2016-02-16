@@ -391,6 +391,16 @@ namespace System.ServiceProcess
 			}
 		}
 
+		[MonoTODO]
+		public ServiceStartMode StartType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		private static void ValidateServiceName (string serviceName)
 		{
 			if (serviceName.Length == 0 || serviceName.Length > 80)
