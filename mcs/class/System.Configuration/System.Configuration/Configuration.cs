@@ -270,6 +270,16 @@ namespace System.Configuration {
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public FrameworkName TargetFramework {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		public ConfigurationSection GetSection (string path)
 		{
