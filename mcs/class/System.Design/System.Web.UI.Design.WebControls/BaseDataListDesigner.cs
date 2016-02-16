@@ -78,6 +78,36 @@ namespace System.Web.UI.Design.WebControls {
 			}
 		}
 
+		[MonoTODO]
+		public DesignerActionListCollection ActionLists {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public DesignerDataSourceView DesignerView {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IDataSourceDesigner DataSourceDesigner {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void Dispose (bool disposing)
 		{
 			throw new NotImplementedException ();

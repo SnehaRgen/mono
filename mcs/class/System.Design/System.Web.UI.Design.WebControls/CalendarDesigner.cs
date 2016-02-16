@@ -42,6 +42,16 @@ namespace System.Web.UI.Design.WebControls {
 			get { throw new NotImplementedException (); }
 		}
 
+		[MonoTODO]
+		public DesignerAutoFormatCollection AutoFormats {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override void Initialize (IComponent component)
 		{
 			throw new NotImplementedException ();
