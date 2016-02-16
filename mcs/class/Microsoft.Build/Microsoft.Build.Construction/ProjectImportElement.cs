@@ -54,6 +54,16 @@ namespace Microsoft.Build.Construction
                         get { return "Import"; }
                 }
 
+				[MonoTODO]
+				public ElementLocation ProjectLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
                 internal override void SaveValue (XmlWriter writer)
                 {
                         SaveAttribute (writer, "Project", Project);

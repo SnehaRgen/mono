@@ -128,6 +128,66 @@ namespace Microsoft.Build.Construction
 						throw new NotImplementedException ();
 					}
 				}
+
+				[MonoTODO]
+				public ElementLocation ArchitectureLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation AssemblyFileLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation AssemblyNameLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation RuntimeLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation TaskFactoryLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation TaskNameLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 internal override ProjectElement LoadChildElement (XmlReader reader)
                 {
                         switch (reader.LocalName) {

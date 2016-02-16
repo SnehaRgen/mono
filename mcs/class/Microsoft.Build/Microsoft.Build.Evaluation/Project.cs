@@ -731,6 +731,16 @@ namespace Microsoft.Build.Evaluation
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public ElementLocation ProjectFileLocation {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		// These are required for reserved property, represents dynamically changing property values.
 		// This should resolve to either the project file path or that of the imported file.

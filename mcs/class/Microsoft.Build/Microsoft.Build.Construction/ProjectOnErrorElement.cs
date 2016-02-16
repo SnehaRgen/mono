@@ -64,5 +64,15 @@ namespace Microsoft.Build.Construction
                 
                 public 
                 ElementLocation ExecuteTargetsAttributeLocation { get; set; }
+
+				[MonoTODO]
+				public ElementLocation ExecuteTargetsLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
         }
 }

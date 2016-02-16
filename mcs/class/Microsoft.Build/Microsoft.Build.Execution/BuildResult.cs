@@ -96,6 +96,16 @@ namespace Microsoft.Build.Execution
 		public IDictionary<string, TargetResult> ResultsByTarget { get; private set; }
 
 		public int SubmissionId { get; internal set; }
+
+		[MonoTODO]
+		public ProjectInstance ProjectStateAfterBuild {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

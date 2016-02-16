@@ -83,6 +83,26 @@ namespace Microsoft.Build.Evaluation
 		public ProjectMetadataElement Xml {
 			get { return xml; }
 		}
+
+		[MonoTODO]
+		public ElementLocation ConditionLocation {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ElementLocation Location {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

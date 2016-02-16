@@ -135,5 +135,15 @@ namespace Microsoft.Build.Construction
                  public ElementLocation KeepDuplicatesLocation { get; private set; }
                  public ElementLocation RemoveLocation { get; private set; }
                  public ElementLocation RemoveMetadataLocation { get; private set; }
+
+				[MonoTODO]
+				public ElementLocation KeepMetadataLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
         }
 }

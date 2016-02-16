@@ -55,6 +55,16 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return "Choose"; }
                 }
+
+				[MonoTODO]
+				public ElementLocation ConditionLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 internal override ProjectElement LoadChildElement (XmlReader reader)
                 {
                         var name = reader.LocalName;

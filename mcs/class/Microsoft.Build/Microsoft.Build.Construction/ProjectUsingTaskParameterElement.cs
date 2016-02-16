@@ -58,6 +58,46 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return Name; }
                 }
+
+				[MonoTODO]
+				public ElementLocation ConditionLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation OutputLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation ParameterTypeLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation RequiredLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 internal override void LoadAttribute (string name, string value)
                 {
                         switch (name) {

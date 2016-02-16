@@ -85,6 +85,16 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return "ProjectExtensions"; }
                 }
+
+				[MonoTODO]
+				public ElementLocation ConditionLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 XmlDocument document;
                 XmlElement element;
         }

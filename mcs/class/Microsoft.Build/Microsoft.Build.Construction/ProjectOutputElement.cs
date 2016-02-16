@@ -65,6 +65,26 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return "Output"; }
                 }
+
+				[MonoTODO]
+				public ElementLocation ItemTypeLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ElementLocation PropertyNameLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 internal override void SaveValue (XmlWriter writer)
                 {
                         base.SaveValue (writer);

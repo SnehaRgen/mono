@@ -62,6 +62,16 @@ namespace Microsoft.Build.Construction
                 internal override string XmlName {
                         get { return "ParameterGroup"; }
                 }
+
+				[MonoTODO]
+				public ElementLocation ConditionLocation {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
                 internal override ProjectElement LoadChildElement (XmlReader reader)
                 {
                         return AddParameter (reader.LocalName);

@@ -11,6 +11,16 @@ namespace Microsoft.Build.Evaluation
 		}
 		
 		public ProjectCollectionChangedState State { get; private set; }
+
+		[MonoTODO]
+		public ProjectCollectionChangedState Changed {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
