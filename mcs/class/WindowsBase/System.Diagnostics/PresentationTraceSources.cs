@@ -71,14 +71,8 @@ namespace System.Diagnostics {
 			get { throw new NotImplementedException (); }
 		}
 
-		[MonoTODO]
-		public TraceSource ShellSource {
-			get {
-				throw new NotImplementedException ();
-			}
-			set {
-				throw new NotImplementedException ();
-			}
+		public static TraceSource ShellSource {
+			get { throw new NotImplementedException (); }
 		}
 
 		public static PresentationTraceLevel GetTraceLevel (object element)
