@@ -35,6 +35,16 @@ namespace System.Transactions.Configuration
 			get { return base["distributedTransactionManagerName"] as string; }
 			set { base["distributedTransactionManagerName"] = value; }
 		}
+
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 #endif

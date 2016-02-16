@@ -28,6 +28,16 @@ namespace System.Transactions.Configuration
 				base["maxTimeout"] = value;
 			}
 		}
+
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 #endif
