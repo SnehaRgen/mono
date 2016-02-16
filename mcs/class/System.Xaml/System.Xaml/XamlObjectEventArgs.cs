@@ -38,5 +38,25 @@ namespace System.Xaml
 		}
 
 		public object Instance { get; private set; }
+
+		[MonoTODO]
+		public int ElementLineNumber {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int ElementLinePosition {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
