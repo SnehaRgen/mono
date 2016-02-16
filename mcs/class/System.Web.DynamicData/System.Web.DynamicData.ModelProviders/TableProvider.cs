@@ -84,7 +84,7 @@ namespace System.Web.DynamicData.ModelProviders
 		}
 
 		[MonoTODO]
-		public AttributeCollection Attributes {
+		public System.ComponentModel.AttributeCollection Attributes {
 			get {
 				throw new NotImplementedException ();
 			}
