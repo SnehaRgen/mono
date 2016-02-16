@@ -112,7 +112,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public WebMessageBodyStyle DefaultBodyStyle {
+		public System.ServiceModel.Web.WebMessageBodyStyle DefaultBodyStyle {
 			get {
 				throw new NotImplementedException ();
 			}
@@ -122,7 +122,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public WebMessageFormat DefaultOutgoingResponseFormat {
+		public System.ServiceModel.Web.WebMessageFormat DefaultOutgoingResponseFormat {
 			get {
 				throw new NotImplementedException ();
 			}
