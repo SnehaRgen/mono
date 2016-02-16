@@ -26,5 +26,14 @@ namespace System.Windows.Forms.DataVisualization.Charting
 {
 	public class VerticalLineAnnotation : LineAnnotation
 	{
+		[MonoTODO]
+		public string AnnotationType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

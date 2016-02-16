@@ -26,5 +26,14 @@ namespace System.Windows.Forms.DataVisualization.Charting
 {
 	public class HorizontalLineAnnotation : LineAnnotation
 	{
+		[MonoTODO]
+		public string AnnotationType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
