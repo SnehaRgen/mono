@@ -86,6 +86,16 @@ namespace System
 		}
 
 		[MonoTODO]
+		public Uri OriginalBaseAddress {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		public void MakeReadOnly (bool allowDuplicateEquivalentUriTemplates)
 		{
 			throw new NotImplementedException ();

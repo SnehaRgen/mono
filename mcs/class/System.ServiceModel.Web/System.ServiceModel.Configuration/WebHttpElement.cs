@@ -101,6 +101,36 @@ namespace System.ServiceModel.Configuration
 			}
 		}
 
+		[MonoTODO]
+		public ConfigurationPropertyCollection Properties {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public WebMessageBodyStyle DefaultBodyStyle {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public WebMessageFormat DefaultOutgoingResponseFormat {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override object CreateBehavior ()
 		{
 			return new WebHttpBehavior ();
