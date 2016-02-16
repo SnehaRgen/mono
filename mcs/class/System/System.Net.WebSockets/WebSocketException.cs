@@ -105,6 +105,16 @@ namespace System.Net.WebSockets
 			get;
 			private set;
 		}
+
+		[MonoTODO]
+		public int ErrorCode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

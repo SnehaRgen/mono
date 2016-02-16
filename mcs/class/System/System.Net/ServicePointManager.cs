@@ -290,6 +290,16 @@ namespace System.Net
 			get { return false; }
 		}
 
+		[MonoTODO]
+		public bool ReusePort {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// Methods
 		public static void SetTcpKeepAlive (bool enabled, int keepAliveTime, int keepAliveInterval)
 		{

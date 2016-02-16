@@ -1765,6 +1765,16 @@ namespace System {
 			set { parser = value; }
 		}
 
+		[MonoTODO]
+		public string IdnHost {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public string GetComponents (UriComponents components, UriFormat format)
 		{
 			if ((components & UriComponents.SerializationInfoString) == 0)

@@ -82,6 +82,16 @@ namespace System.Net.Configuration {
 			get { return base.Properties; }
 		}
 
+		[MonoTODO]
+		public string ClientDomain {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void PostDeserialize ()
 		{
 			// what to do here?

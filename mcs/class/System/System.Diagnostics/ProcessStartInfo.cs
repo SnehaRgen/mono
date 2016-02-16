@@ -31,6 +31,7 @@
 
 using Microsoft.Win32;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
@@ -115,14 +116,14 @@ namespace System.Diagnostics
 				if (envVars == null) {
 					// check for non-Unix platforms - see FAQ for more details
 					// http://www.mono-project.com/FAQ:_Technical#How_to_detect_the_execution_platform_.3F
-					int platform = (int) Environment.OSVersion.Platform;
+					int platform = (int) System.Environment.OSVersion.Platform;
 					if ((platform != 4) && (platform != 128)) {
 						envVars = new StringDictionary ();
 					} else {
 						envVars = new CaseSensitiveStringDictionary ();						
 					}
 
-					foreach (DictionaryEntry entry in Environment.GetEnvironmentVariables ())
+					foreach (DictionaryEntry entry in System.Environment.GetEnvironmentVariables ())
 						envVars.Add ((string) entry.Key, (string) entry.Value);
 				}
 
@@ -249,7 +250,7 @@ namespace System.Diagnostics
 #if MOBILE
 				return empty;
 #else
-				switch (Environment.OSVersion.Platform) {
+				switch (System.Environment.OSVersion.Platform) {
 				case (PlatformID)4:
 				case (PlatformID)6:
 				case (PlatformID)128:
@@ -327,6 +328,26 @@ namespace System.Diagnostics
 		public SecureString Password {
 			get { return password; }
 			set { password = value; }
+		}
+
+		[MonoTODO]
+		public IDictionary<string,string> Environment {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string PasswordInClearText {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 	}
 }

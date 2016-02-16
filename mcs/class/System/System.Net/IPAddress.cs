@@ -379,6 +379,16 @@ namespace System.Net {
 			}
 		}
 
+		[MonoTODO]
+		public bool IsIPv4MappedToIPv6 {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 #if NET_4_5
 
 		public IPAddress MapToIPv4 ()

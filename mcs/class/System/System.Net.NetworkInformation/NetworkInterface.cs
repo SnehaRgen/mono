@@ -88,6 +88,16 @@ namespace System.Net.NetworkInformation {
 		public abstract OperationalStatus OperationalStatus { get; }
 		public abstract long Speed { get; }
 		public abstract bool SupportsMulticast { get; }
+
+		[MonoTODO]
+		public int IPv6LoopbackInterfaceIndex {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 
 	abstract class NetworkInterfaceFactory

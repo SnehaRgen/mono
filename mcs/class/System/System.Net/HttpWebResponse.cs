@@ -244,6 +244,16 @@ namespace System.Net
 			}
 		}
 
+		[MonoTODO]
+		public bool SupportsHeaders {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// Methods
 		
 		public string GetResponseHeader (string headerName)

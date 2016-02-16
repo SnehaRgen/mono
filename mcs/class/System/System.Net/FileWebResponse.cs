@@ -111,6 +111,16 @@ namespace System.Net
 			}
 		}
 
+		[MonoTODO]
+		public bool SupportsHeaders {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// Methods
 
 		void ISerializable.GetObjectData (SerializationInfo serializationInfo, StreamingContext streamingContext)

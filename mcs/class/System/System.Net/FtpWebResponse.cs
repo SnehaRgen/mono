@@ -158,6 +158,16 @@ namespace System.Net
 			get { return stream; }
 		}
 
+		[MonoTODO]
+		public bool SupportsHeaders {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal void UpdateStatus (FtpStatus status) {
 			statusCode = status.StatusCode;
 			statusDescription = status.StatusDescription;
