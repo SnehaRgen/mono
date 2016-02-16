@@ -80,6 +80,16 @@ namespace System.Web.UI
 			set { throw new NotSupportedException (); }
 		}
 
+		[MonoTODO]
+		public string ClientID {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override ControlCollection CreateControlCollection ()
 		{
 			return new EmptyControlCollection (this);

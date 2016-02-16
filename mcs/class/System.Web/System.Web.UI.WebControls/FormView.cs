@@ -1161,6 +1161,36 @@ namespace System.Web.UI.WebControls
 		protected override HtmlTextWriterTag TagKey {
 			get { return HtmlTextWriterTag.Table; }
 		}
+
+		[MonoTODO]
+		public string DeleteMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string InsertMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string UpdateMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		public sealed override void DataBind ()
 		{

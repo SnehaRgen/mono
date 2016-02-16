@@ -93,6 +93,16 @@ namespace System.Web.UI.WebControls {
 				}
 			}
 		}
+
+		[MonoTODO]
+		public bool ValidateInput {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

@@ -108,6 +108,26 @@ namespace System.Web.UI.WebControls
 			}
 		}
 
+		[MonoTODO]
+		public bool AllowMultiple {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool HasFiles {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void AddAttributesToRender (HtmlTextWriter writer)
 		{
 			writer.AddAttribute (HtmlTextWriterAttribute.Type, "file", false);

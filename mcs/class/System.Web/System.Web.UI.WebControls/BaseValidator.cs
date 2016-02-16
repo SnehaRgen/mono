@@ -163,6 +163,16 @@ namespace System.Web.UI.WebControls
 			get { return render_uplevel; }
 		}
 
+		[MonoTODO]
+		public bool IsUnobtrusive {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal bool GetRenderUplevel ()
 		{
 			return render_uplevel;

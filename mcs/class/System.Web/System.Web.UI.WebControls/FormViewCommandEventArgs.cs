@@ -42,6 +42,16 @@ namespace System.Web.UI.WebControls
 		public object CommandSource {
 			get { return source; }
 		}
+
+		[MonoTODO]
+		public bool Handled {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

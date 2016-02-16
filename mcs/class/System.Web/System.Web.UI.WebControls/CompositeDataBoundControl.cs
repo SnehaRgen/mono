@@ -46,6 +46,46 @@ namespace System.Web.UI.WebControls
 			}
 		}
 
+		[MonoTODO]
+		public bool IsUsingModelBinders {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string DeleteMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string InsertMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string UpdateMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override void CreateChildControls ()
 		{
 			Controls.Clear ();

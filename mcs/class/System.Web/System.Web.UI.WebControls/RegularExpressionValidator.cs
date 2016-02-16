@@ -86,5 +86,15 @@ namespace System.Web.UI.WebControls {
 				ViewState ["ValidationExpression"] = value;
 			}
 		}
+
+		[MonoTODO]
+		public Nullable<int> MatchTimeout {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

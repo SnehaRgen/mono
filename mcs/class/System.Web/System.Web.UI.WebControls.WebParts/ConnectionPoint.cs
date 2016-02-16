@@ -80,6 +80,16 @@ namespace System.Web.UI.WebControls.WebParts {
 
 		public string Name { 
 			get { return name;}
+		}
+
+		[MonoTODO]
+		public string DisplayName {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}	
         }
 }

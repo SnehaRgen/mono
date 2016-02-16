@@ -2464,6 +2464,16 @@ public partial class Page : TemplateControl, IHttpHandler
 		get { return _styleSheetPageTheme; }
 	}
 
+	[MonoTODO]
+	public bool SkipFormActionValidation {
+		get {
+			throw new NotImplementedException ();
+		}
+		set {
+			throw new NotImplementedException ();
+		}
+	}
+
 	Stack dataItemCtx;
 	
 	internal void PushDataItemContext (object o) {

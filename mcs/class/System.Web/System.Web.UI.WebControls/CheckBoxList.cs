@@ -261,6 +261,16 @@ namespace System.Web.UI.WebControls
 			get { return RepeatedItemCount; }
 		}
 
+		[MonoTODO]
+		public bool RenderWhenDataEmpty {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected virtual Style GetItemStyle (ListItemType itemType, int repeatIndex)
 		{
 			return null;

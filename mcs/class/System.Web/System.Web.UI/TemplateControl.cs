@@ -376,6 +376,16 @@ namespace System.Web.UI
 		internal override TemplateControl TemplateControlInternal {
 			get { return this; }
 		}
+
+		[MonoTODO]
+		public bool EnableTheming {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		[EditorBrowsable (EditorBrowsableState.Never)]
 		public static object ReadStringResource (Type t)

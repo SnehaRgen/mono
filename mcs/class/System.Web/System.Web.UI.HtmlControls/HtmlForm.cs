@@ -183,6 +183,16 @@ namespace System.Web.UI.HtmlControls
 			}
 		}
 
+		[MonoTODO]
+		public string ClientID {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		[MonoTODO ("why override?")]
 		protected override ControlCollection CreateControlCollection ()
 		{

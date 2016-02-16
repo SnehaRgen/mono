@@ -65,6 +65,16 @@ namespace System.Web.UI
 			get { return parser.VirtualPath.Absolute; }
 		}
 
+		[MonoTODO]
+		public bool CalledFromParseControl {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected void AddControl (Type type, IDictionary attributes)
 		{
 			if (parser == null)

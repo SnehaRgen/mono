@@ -71,6 +71,16 @@ namespace System.Web.UI {
 			get { return propertyType; }
 		}
 
+		[MonoTODO]
+		public Object ParsedExpressionData {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override bool Equals (object obj)
 		{
             		if (!(obj is ExpressionBinding))

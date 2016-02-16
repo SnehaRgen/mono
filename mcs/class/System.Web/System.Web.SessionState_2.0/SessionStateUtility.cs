@@ -73,7 +73,7 @@ namespace System.Web.SessionState
 		}
 
 		[MonoTODO]
-		public ISurrogateSelector SerializationSurrogateSelector {
+		public static System.Runtime.Serialization.ISurrogateSelector SerializationSurrogateSelector {
 			get {
 				throw new NotImplementedException ();
 			}

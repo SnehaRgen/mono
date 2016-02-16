@@ -312,6 +312,16 @@ namespace System.Web.UI.WebControls
 			get { return String.Empty; }
 			set { throw new NotSupportedException (); }
 		}
+
+		[MonoTODO]
+		public bool RenderWhenDataEmpty {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		protected virtual void OnClick (BulletedListEventArgs e)
 		{

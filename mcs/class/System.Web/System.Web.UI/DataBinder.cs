@@ -233,6 +233,16 @@ namespace System.Web.UI {
 			bool flag;
 			return GetDataItem (container, out flag); 
 		}
+
+		[MonoTODO]
+		public bool EnableCaching {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

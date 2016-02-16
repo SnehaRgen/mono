@@ -478,6 +478,16 @@ namespace System.Web.UI.WebControls.WebParts
 				return zoneIndex;
 			}
 		}
+
+		[MonoTODO]
+		public Object WebBrowsableObject {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 
 }

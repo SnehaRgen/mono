@@ -52,6 +52,36 @@ namespace System.Web.UI {
 			get { return webResource; }
 		}
 
+		[MonoTODO]
+		public bool CdnSupportsSecureConnection {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string CdnPath {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string LoadSuccessExpression {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 		bool performSubstitution;
 		string webResource, contentType;

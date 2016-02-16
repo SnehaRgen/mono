@@ -44,6 +44,16 @@ namespace System.Web.UI
 			get { return val; }
 			set { val = value; }
 		}
+
+		[MonoTODO]
+		public string PersistedValue {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

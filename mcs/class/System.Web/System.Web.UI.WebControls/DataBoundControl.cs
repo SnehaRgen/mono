@@ -277,6 +277,36 @@ namespace System.Web.UI.WebControls
 			}
 		}
 
+		[MonoTODO]
+		public bool IsUsingModelBinders {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ItemType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SelectMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected void MarkAsDataBound ()
 		{
 			IsDataBound = true;

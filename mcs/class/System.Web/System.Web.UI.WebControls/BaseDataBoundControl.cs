@@ -129,6 +129,26 @@ namespace System.Web.UI.WebControls
 		public override bool SupportsDisabledAttribute {
 			get { return RenderingCompatibilityLessThan40; }
 		}
+
+		[MonoTODO]
+		public bool IsDataBindingAutomatic {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public bool IsUsingModelBinders {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		protected void ConfirmInitState ()
 		{
 			initialized = true;

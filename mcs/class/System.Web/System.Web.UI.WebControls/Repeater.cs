@@ -455,6 +455,36 @@ namespace System.Web.UI.WebControls {
 			}
 		}
 
+		[MonoTODO]
+		public bool IsDataBindingAutomatic {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string ItemType {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string SelectMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected virtual DataSourceSelectArguments CreateDataSourceSelectArguments ()
 		{
 			// MSDN: Returns the Empty value. 

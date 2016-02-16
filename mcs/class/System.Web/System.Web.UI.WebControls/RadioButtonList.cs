@@ -183,6 +183,16 @@ namespace System.Web.UI.WebControls {
 			get { return RepeatedItemCount; }
 		}
 
+		[MonoTODO]
+		public bool RenderWhenDataEmpty {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override Style CreateControlStyle ()
 		{
 			return new TableStyle (ViewState);

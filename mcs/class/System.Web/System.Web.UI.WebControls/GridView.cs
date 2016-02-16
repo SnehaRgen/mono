@@ -1720,6 +1720,46 @@ namespace System.Web.UI.WebControls
 					return HtmlTextWriterTag.Table;
 			}
 		}
+
+		[MonoTODO]
+		public bool AllowCustomPaging {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public int VirtualItemCount {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string DeleteMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string UpdateMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		public sealed override void DataBind ()
 		{

@@ -1031,9 +1031,9 @@ namespace System.Web.UI {
 			get { return unknownMainAttributes; }
 		}
 
-		internal string Text {
+		public string Text {
 			get { return text; }
-			set { text = value; }
+			internal set { text = value; }
 		}
 
 		internal Type BaseType {
