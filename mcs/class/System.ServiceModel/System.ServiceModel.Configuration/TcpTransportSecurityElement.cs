@@ -106,7 +106,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
+		public System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
 			get {
 				throw new NotImplementedException ();
 			}
@@ -116,7 +116,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public SslProtocols SslProtocols {
+		public System.Security.Authentication.SslProtocols SslProtocols {
 			get {
 				throw new NotImplementedException ();
 			}

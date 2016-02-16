@@ -52,16 +52,6 @@ namespace System.ServiceModel.Channels
 		}
 
 		[MonoTODO]
-		public Transaction Transaction {
-			get {
-				throw new NotImplementedException ();
-			}
-			set {
-				throw new NotImplementedException ();
-			}
-		}
-
-		[MonoTODO]
 		public static void Set (Transaction tx, Message msg)
 		{
 			msg.Properties.Add ("Transaction", new TransactionMessageProperty (tx, msg));

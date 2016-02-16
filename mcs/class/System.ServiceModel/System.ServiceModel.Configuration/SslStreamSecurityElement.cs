@@ -81,7 +81,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public SslProtocols SslProtocols {
+		public System.Security.Authentication.SslProtocols SslProtocols {
 			get {
 				throw new NotImplementedException ();
 			}

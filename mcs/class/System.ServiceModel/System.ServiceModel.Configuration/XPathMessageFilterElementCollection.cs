@@ -83,7 +83,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public XPathMessageFilterElement Item[object key] {
+		public XPathMessageFilterElement this[object key] {
 			get {
 				throw new NotImplementedException ();
 			}

@@ -117,7 +117,7 @@ namespace System.ServiceModel.Configuration
 		}
 
 		[MonoTODO]
-		public ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
+		public System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
 			get {
 				throw new NotImplementedException ();
 			}

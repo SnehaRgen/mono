@@ -46,7 +46,7 @@ namespace System.ServiceModel
 		public ProtectionLevel ProtectionLevel { get; set; }
 
 		[MonoTODO]
-		public ExtendedProtectionPolicy ExtendedProtectionPolicy {
+		public System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy {
 			get {
 				throw new NotImplementedException ();
 			}
@@ -56,7 +56,7 @@ namespace System.ServiceModel
 		}
 
 		[MonoTODO]
-		public SslProtocols SslProtocols {
+		public System.Security.Authentication.SslProtocols SslProtocols {
 			get {
 				throw new NotImplementedException ();
 			}

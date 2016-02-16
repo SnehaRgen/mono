@@ -84,7 +84,7 @@ namespace System.ServiceModel.Channels
 		}
 
 		[MonoTODO]
-		public ExtendedProtectionPolicy ExtendedProtectionPolicy {
+		public System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy {
 			get {
 				throw new NotImplementedException ();
 			}
