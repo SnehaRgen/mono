@@ -390,6 +390,16 @@ namespace System.Messaging
 			}
 		}
 
+		[MonoTODO]
+		public QueueAccessMode AccessMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
