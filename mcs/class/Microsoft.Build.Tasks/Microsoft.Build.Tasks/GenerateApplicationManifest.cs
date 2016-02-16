@@ -215,6 +215,16 @@ namespace Microsoft.Build.Tasks {
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public ITaskItem[] FileAssociations {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

@@ -248,5 +248,15 @@ namespace Microsoft.Build.Tasks {
 			}
 		}
 
+		[MonoTODO]
+		public ITaskItem[] ConsoleOutput {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 	}
 }

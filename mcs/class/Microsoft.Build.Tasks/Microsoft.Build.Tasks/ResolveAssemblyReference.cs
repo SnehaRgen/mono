@@ -864,6 +864,36 @@ namespace Microsoft.Build.Tasks {
 						throw new NotImplementedException ();
 					}
 				}
+
+				[MonoTODO]
+				public ITaskItem[] FullFrameworkAssemblyTables {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ITaskItem[] InstalledAssemblySubsetTables {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
+
+				[MonoTODO]
+				public ITaskItem[] ResolvedSDKReferences {
+					get {
+						throw new NotImplementedException ();
+					}
+					set {
+						throw new NotImplementedException ();
+					}
+				}
 	}
 
 	static class ResolveAssemblyReferenceHelper {

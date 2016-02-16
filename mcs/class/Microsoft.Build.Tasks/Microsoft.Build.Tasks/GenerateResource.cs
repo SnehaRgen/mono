@@ -470,6 +470,46 @@ namespace Microsoft.Build.Tasks {
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public ITaskItem[] AdditionalInputs {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ITaskItem[] ExcludedInputPaths {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ITaskItem[] TLogReadFiles {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ITaskItem[] TLogWriteFiles {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 
 	class Resgen : ToolTaskExtension

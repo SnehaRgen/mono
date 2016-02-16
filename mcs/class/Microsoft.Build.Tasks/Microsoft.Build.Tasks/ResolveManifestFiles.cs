@@ -123,6 +123,36 @@ namespace Microsoft.Build.Tasks {
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public ITaskItem DeploymentManifestEntryPoint {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ITaskItem OutputDeploymentManifestEntryPoint {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ITaskItem OutputEntryPoint {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 
