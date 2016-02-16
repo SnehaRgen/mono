@@ -175,6 +175,16 @@ namespace System.Security.Cryptography {
 			}
 		}
 
+		[MonoTODO]
+		public CngAlgorithm Rsa {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static bool operator == (CngAlgorithm left, CngAlgorithm right)
 		{
 			if ((object)left == null)
