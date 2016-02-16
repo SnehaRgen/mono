@@ -158,6 +158,16 @@ namespace System.Data.OracleClient {
 			}
 		}
 
+		[MonoTODO]
+		public CatalogLocation CatalogLocation {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties
 
 		#region Methods

@@ -76,6 +76,16 @@ namespace System.Data.OracleClient {
 			}
 		}
 
+		[MonoTODO]
+		public KeyRestrictionBehavior KeyRestrictionBehavior {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Methods
 	}
 }
