@@ -83,5 +83,15 @@ namespace System.Xaml
 		public bool SkipDuplicatePropertyCheck { get; set; }
 		[MonoTODO ("Ignored")]
 		public bool SkipProvideValueOnRoot { get; set; }
+
+		[MonoTODO]
+		public Uri SourceBamlUri {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

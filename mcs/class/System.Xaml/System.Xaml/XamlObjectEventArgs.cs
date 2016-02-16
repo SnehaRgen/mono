@@ -58,5 +58,15 @@ namespace System.Xaml
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public Uri SourceBamlUri {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
