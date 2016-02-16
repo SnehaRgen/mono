@@ -104,6 +104,16 @@ namespace System.IdentityModel.Selectors
 			}
 		}
 
+		[MonoTODO]
+		public AudienceUriMode AudienceUriMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		class SamlAuthorizationPolicy : SystemIdentityAuthorizationPolicy
 		{
 			SamlSecurityTokenAuthenticator authenticator;
