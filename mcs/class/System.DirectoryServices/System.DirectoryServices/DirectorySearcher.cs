@@ -462,6 +462,46 @@ namespace System.DirectoryServices
 			}
 		}
 
+		[MonoTODO]
+		public DirectorySynchronization DirectorySynchronization {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public DirectoryVirtualListView VirtualListView {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ExtendedDN ExtendedDN {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public SecurityMasks SecurityMasks {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		/// <summary>
 		/// Initializes a new instance of the DirectorySearcher class with 
 		/// SearchRoot, Filter, PropertiesToLoad, and SearchScope set to the 
