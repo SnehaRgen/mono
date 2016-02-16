@@ -1932,7 +1932,7 @@ namespace System.Web.UI.WebControls
 		protected virtual void RaisePostBackEvent (string eventArgument)
 		{
 			GridViewCommandEventArgs args;
-			int i = eventArgument.IndexOf ('$');
+			int i = eventArgument.IndexOf ('a');
 			if (i != -1)
 				args = new GridViewCommandEventArgs (this, new CommandEventArgs (eventArgument.Substring (0, i), eventArgument.Substring (i + 1)));
 			else
@@ -2435,7 +2435,7 @@ namespace System.Web.UI.WebControls
 				Page page = Page;
 				if (page != null)
 					page.ClientScript.RegisterForEventValidation (UniqueID, argument);
-				return "javascript:GridView_ClientEvent (\"" + ClientID + "\",\"" + control.CommandName + "$" + control.CommandArgument + "\"); return false;";
+				return "javascript:GridView_ClientEvent (\"" + ClientID + "\",\"" + control.CommandName + "" + control.CommandArgument + "\"); return false;";
 			} else
 				return null;
 		}
@@ -2526,7 +2526,7 @@ namespace System.Web.UI.WebControls
 				throw new InvalidOperationException ("A button that causes validation in GridView '" + ID + "' is attempting to use the container GridView as the post back target.  The button should either turn off validation or use itself as the post back container.");
 			
 			PostBackOptions options = new PostBackOptions (this);
-			options.Argument = control.CommandName + "$" + control.CommandArgument;
+			options.Argument = control.CommandName + "" + control.CommandArgument;
 			options.RequiresJavaScriptProtocol = true;
 
 			return options;

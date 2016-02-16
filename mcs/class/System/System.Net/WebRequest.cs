@@ -342,7 +342,7 @@ namespace System.Net
 			{
 				result [c] = "^" +
 					Regex.Escape (result [c]).Replace (@"\*", ".*").Replace (@"\?", ".") +
-					"$";
+					"";
 			}
 			return result;
 		}

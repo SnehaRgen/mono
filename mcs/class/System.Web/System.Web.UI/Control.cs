@@ -523,7 +523,7 @@ namespace System.Web.UI
 		}
 
 		protected char IdSeparator {
-			get { return '$'; }
+			get { return 'a'; }
 		}
 
 		[DesignerSerializationVisibility (DesignerSerializationVisibility.Hidden)]

@@ -53,6 +53,16 @@ namespace System
 		string RelativeSearchPath {get; }
 		bool ShadowCopyFiles {get; }
 
+		[MonoTODO]
+		public Evidence Evidence {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		[SecurityPermission (SecurityAction.LinkDemand, ControlAppDomain = true)]
 		void AppendPrivatePath (string path);
 

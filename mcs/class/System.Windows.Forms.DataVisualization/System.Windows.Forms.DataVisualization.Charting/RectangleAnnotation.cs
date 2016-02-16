@@ -28,6 +28,16 @@ namespace System.Windows.Forms.DataVisualization.Charting
 {
 	public class RectangleAnnotation : TextAnnotation
 	{
-		public override string AnnotationType { get { throw new NotImplementedException (); } } //FIXME - find out what MS implementation returns here
+		public override string AnnotationType { get { throw new NotImplementedException (); } }
+
+		[MonoTODO]
+		public int LineWidth {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		} //FIXME - find out what MS implementation returns here
 	}
 }

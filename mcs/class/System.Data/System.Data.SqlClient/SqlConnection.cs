@@ -1137,7 +1137,7 @@ namespace System.Data.SqlClient
 				row [2] = conn.ServerVersion;;
 				row [3] = conn.ServerVersion;;
 				row [4] = GroupByBehavior.Unrelated;
-				row [5] = @"(^\[\p{Lo}\p{Lu}\p{Ll}_@#][\p{Lo}\p{Lu}\p{Ll}\p{Nd}@$#_]*$)|(^\[[^\]\0]|\]\]+\]$)|(^\""[^\""\0]|\""\""+\""$)";
+				row [5] = @"(^\[\p{Lo}\p{Lu}\p{Ll}_@#][\p{Lo}\p{Lu}\p{Ll}\p{Nd}@#_]*$)|(^\[[^\]\0]|\]\]+\]$)|(^\""[^\""\0]|\""\""+\""$)";
 				row [6] = IdentifierCase.Insensitive; // FIXME: obtain this from SQL Server
 				row [7] = false;
 				row [8] = "{0}";

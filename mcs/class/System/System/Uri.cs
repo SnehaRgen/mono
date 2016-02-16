@@ -1099,7 +1099,7 @@ namespace System {
 		}
 
 		private const string EscapeCommon = "<>%\"{}|\\^`";
-		private const string EscapeReserved = ";/?:@&=+$,";
+		private const string EscapeReserved = ";/?:@&=+,";
 		private const string EscapeFragment = "#";
 		private const string EscapeBrackets = "[]";
 

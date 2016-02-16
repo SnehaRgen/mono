@@ -206,8 +206,8 @@ namespace System.Web.Routing
 					len++;
 				}
 
-				if (constraint [len - 1] != '$')
-					constraint += "$";
+				if (constraint [len - 1] != 'a')
+					constraint += "a";
 			}
 
 			return Regex.IsMatch (value, constraint, RegexOptions.CultureInvariant | RegexOptions.IgnoreCase | RegexOptions.Compiled);

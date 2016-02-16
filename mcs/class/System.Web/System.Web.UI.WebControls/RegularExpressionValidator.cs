@@ -67,8 +67,8 @@ namespace System.Web.UI.WebControls {
 			if (expr.Length == 0 || expr [0] != '^')
 				expr.Insert(0, '^');
 								
-			if (expr [expr.Length - 1] != '$')
-				expr.Append('$');
+			if (expr [expr.Length - 1] != 'a')
+				expr.Append('a');
 				
 			return Regex.IsMatch (GetControlValidationValue(ControlToValidate), expr.ToString ());
 		}
