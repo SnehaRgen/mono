@@ -128,6 +128,16 @@ namespace System.Drawing.Design
 
 		public virtual string Version { 
 			get { return string.Empty; }
+		}
+
+		[MonoTODO]
+		public Bitmap OriginalBitmap {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}				
 
 		protected void CheckUnlocked ()
