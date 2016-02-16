@@ -185,6 +185,16 @@ namespace System.Web.UI.WebControls
 		protected virtual bool SupportsHtmlEncode {
 			get { return true; }
 		}
+
+		[MonoTODO]
+		public ValidateRequestMode ValidateRequestMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		protected virtual string FormatDataValue (object value, bool encode)
 		{

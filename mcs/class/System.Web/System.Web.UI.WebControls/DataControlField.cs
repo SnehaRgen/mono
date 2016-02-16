@@ -415,6 +415,16 @@ namespace System.Web.UI.WebControls
 			}
 		}
 
+		[MonoTODO]
+		public ValidateRequestMode ValidateRequestMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override string ToString ()
 		{
 			if (string.IsNullOrEmpty (HeaderText))

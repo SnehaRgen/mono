@@ -289,6 +289,16 @@ namespace System.Web.Configuration
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public ProfileGuidedOptimizationsFlags ProfileGuidedOptimizations {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

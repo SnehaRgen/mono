@@ -141,6 +141,16 @@ namespace System.Web.Hosting {
 			}
 		}
 
+		[MonoTODO]
+		public IApplicationHost ApplicationHost {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static void DecrementBusyCount ()
 		{
 			Interlocked.Decrement (ref busy_count);

@@ -770,6 +770,16 @@ namespace System.Web
 			}
 		}
 
+		[MonoTODO]
+		public AsyncPreloadModeFlags AsyncPreloadMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal void BeginTimeoutPossible ()
 		{
 			timeout_possible = 1;

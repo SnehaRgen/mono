@@ -1841,6 +1841,26 @@ namespace System.Web
 			set { context = value; }
 		}
 
+		[MonoTODO]
+		public ITlsTokenBindingInfo TlsTokenBindingInfo {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ReadEntityBodyMode ReadEntityBodyMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		static void ValidateNameValueCollection (string name, NameValueCollection coll)
 		{
 			if (coll == null)

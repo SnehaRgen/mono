@@ -90,6 +90,26 @@ namespace System.Web.UI
 			}
 		}
 
+		[MonoTODO]
+		public ClientIDMode ClientIDMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ControlCollection Controls {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override ControlCollection CreateControlCollection ()
 		{
 			return new EmptyControlCollection (this);

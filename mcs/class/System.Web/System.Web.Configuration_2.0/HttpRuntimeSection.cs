@@ -368,6 +368,16 @@ namespace System.Web.Configuration
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public AsyncPreloadModeFlags AsyncPreloadMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

@@ -151,6 +151,16 @@ namespace System.Web.UI {
 			set { throw new NotSupportedException (); }
 		}
 
+		[MonoTODO]
+		public ClientIDMode ClientIDMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		static object dataSourceChanged = new object ();
 		event EventHandler System.Web.UI.IDataSource.DataSourceChanged {
 			add { Events.AddHandler (dataSourceChanged, value); }

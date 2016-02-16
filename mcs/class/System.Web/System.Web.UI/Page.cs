@@ -2474,6 +2474,26 @@ public partial class Page : TemplateControl, IHttpHandler
 		}
 	}
 
+	[MonoTODO]
+	public UnobtrusiveValidationMode UnobtrusiveValidationMode {
+		get {
+			throw new NotImplementedException ();
+		}
+		set {
+			throw new NotImplementedException ();
+		}
+	}
+
+	[MonoTODO]
+	public ValidateRequestMode ValidateRequestMode {
+		get {
+			throw new NotImplementedException ();
+		}
+		set {
+			throw new NotImplementedException ();
+		}
+	}
+
 	Stack dataItemCtx;
 	
 	internal void PushDataItemContext (object o) {

@@ -523,6 +523,16 @@ namespace System.Web
 				return root;
 			}
 		}
+
+		[MonoTODO]
+		public SiteMapNode CurrentNode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		protected internal override SiteMapNode GetRootNodeCore ()
 		{

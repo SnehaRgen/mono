@@ -206,6 +206,16 @@ namespace System.Web
 			}
 		}
 
+		[MonoTODO]
+		public AsyncPreloadModeFlags AsyncPreloadMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override void AddError (Exception errorInfo)
 		{
 			w.AddError (errorInfo);

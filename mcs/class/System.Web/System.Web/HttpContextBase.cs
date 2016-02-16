@@ -154,6 +154,16 @@ namespace System.Web
 			}
 		}
 
+		[MonoTODO]
+		public AsyncPreloadModeFlags AsyncPreloadMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public virtual void AddError (Exception errorInfo)
 		{
 			NotImplemented ();

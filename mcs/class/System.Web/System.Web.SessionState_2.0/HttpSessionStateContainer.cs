@@ -188,6 +188,16 @@ namespace System.Web.SessionState
 			}
 		}
 
+		[MonoTODO]
+		public KeysCollection Keys {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal void SetNewSession (bool value)
 		{
 			newSession = value;

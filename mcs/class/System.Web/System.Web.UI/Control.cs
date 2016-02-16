@@ -2063,6 +2063,16 @@ namespace System.Web.UI
 			}
 		}
 
+		[MonoTODO]
+		public ValidateRequestMode ValidateRequestMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public string GetRouteUrl (object routeParameters)
 		{
 			return GetRouteUrl (null, new RouteValueDictionary (routeParameters));

@@ -201,6 +201,16 @@ namespace System.Web.Configuration
 		protected internal override ConfigurationPropertyCollection Properties {
 			get { return properties; }
 		}
+
+		[MonoTODO]
+		public TicketCompatibilityMode TicketCompatibilityMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

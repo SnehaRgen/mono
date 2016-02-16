@@ -48,6 +48,16 @@ namespace System.Web.UI.WebControls
 		public DataControlField ContainingField {
 			get { return containerField; }
 		}
+
+		[MonoTODO]
+		public ValidateRequestMode ValidateRequestMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
 

@@ -114,6 +114,16 @@ namespace System.Web.UI.WebControls
 			get { return itemTemplate; }
 			set { itemTemplate = value; OnFieldChanged (); }
 		}
+
+		[MonoTODO]
+		public ValidateRequestMode ValidateRequestMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		
 		public override void InitializeCell (DataControlFieldCell cell,
 						     DataControlCellType cellType, DataControlRowState rowState, int rowIndex)

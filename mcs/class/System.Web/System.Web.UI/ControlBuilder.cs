@@ -450,6 +450,36 @@ namespace System.Web.UI {
 			}
 		}
 
+		[MonoTODO]
+		public ControlBuilder BindingContainerBuilder {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IFilterResolutionService CurrentFilterResolutionService {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public IThemeResolutionService ThemeResolutionService {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal string GetAttribute (string name)
 		{
 			if (attribs == null)

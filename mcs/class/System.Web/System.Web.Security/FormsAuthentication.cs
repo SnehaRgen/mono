@@ -478,6 +478,16 @@ namespace System.Web.Security
 			get { Initialize (); return login_url; }
 		}
 
+		[MonoTODO]
+		public TicketCompatibilityMode TicketCompatibilityMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static void RedirectToLoginPage ()
 		{
 			Redirect (LoginUrl);
