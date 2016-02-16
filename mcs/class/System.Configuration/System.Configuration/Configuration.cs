@@ -272,7 +272,7 @@ namespace System.Configuration {
 		}
 
 		[MonoTODO]
-		public FrameworkName TargetFramework {
+		public System.Runtime.Versioning.FrameworkName TargetFramework {
 			get {
 				throw new NotImplementedException ();
 			}
