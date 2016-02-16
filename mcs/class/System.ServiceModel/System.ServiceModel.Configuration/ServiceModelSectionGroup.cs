@@ -86,5 +86,15 @@ namespace System.ServiceModel.Configuration
 		public StandardEndpointsSection StandardEndpoints {
 			get { return (StandardEndpointsSection) Sections ["standardEndpoints"]; }
 		}
+
+		[MonoTODO]
+		public ComContractsSection ComContracts {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

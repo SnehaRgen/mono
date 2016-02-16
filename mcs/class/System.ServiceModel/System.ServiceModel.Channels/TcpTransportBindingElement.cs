@@ -83,6 +83,16 @@ namespace System.ServiceModel.Channels
 			set { teredo_enabled = value; }
 		}
 
+		[MonoTODO]
+		public ExtendedProtectionPolicy ExtendedProtectionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override IChannelFactory<TChannel> BuildChannelFactory<TChannel> (
 			BindingContext context)
 		{

@@ -141,6 +141,16 @@ namespace System.ServiceModel.Configuration
 			}
 		}
 
+		[MonoTODO]
+		public BaseAddressPrefixFilterElementCollection BaseAddressPrefixFilters {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

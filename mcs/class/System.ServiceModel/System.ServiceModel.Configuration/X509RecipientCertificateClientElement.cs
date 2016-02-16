@@ -113,6 +113,16 @@ namespace System.ServiceModel.Configuration
 			get { return (X509ScopedServiceCertificateElementCollection) base [scoped_certificates]; }
 		}
 
+		[MonoTODO]
+		public X509ServiceCertificateAuthenticationElement SslCertificateAuthentication {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

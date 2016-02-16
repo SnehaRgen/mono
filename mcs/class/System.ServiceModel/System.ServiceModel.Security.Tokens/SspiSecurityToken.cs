@@ -117,5 +117,15 @@ namespace System.ServiceModel.Security.Tokens
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public NetworkCredential NetworkCredential {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

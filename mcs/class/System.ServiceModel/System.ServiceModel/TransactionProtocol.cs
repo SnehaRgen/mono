@@ -58,6 +58,16 @@ namespace System.ServiceModel
 			get { return wsat; }
 		}
 
+		[MonoTODO]
+		public TransactionProtocol WSAtomicTransaction11 {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// Instance members
 
 		protected TransactionProtocol ()

@@ -82,6 +82,16 @@ namespace System.ServiceModel.Description
 			get { return owner; }
 		}
 
+		[MonoTODO]
+		public ServiceDescription SingleWsdl {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal static ServiceMetadataExtension EnsureServiceMetadataExtension (ServiceHostBase serviceHostBase) {
 			ServiceMetadataExtension sme = serviceHostBase.Extensions.Find<ServiceMetadataExtension> ();
 			if (sme == null) {

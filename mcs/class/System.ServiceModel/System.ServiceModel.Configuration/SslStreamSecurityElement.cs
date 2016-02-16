@@ -80,6 +80,16 @@ namespace System.ServiceModel.Configuration
 			set { base ["requireClientCertificate"] = value; }
 		}
 
+		[MonoTODO]
+		public SslProtocols SslProtocols {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 		[MonoTODO]
 		protected internal override BindingElement CreateBindingElement () {

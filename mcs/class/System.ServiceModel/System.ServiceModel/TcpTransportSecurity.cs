@@ -44,5 +44,25 @@ namespace System.ServiceModel
 		public TcpClientCredentialType ClientCredentialType { get; set; }
 
 		public ProtectionLevel ProtectionLevel { get; set; }
+
+		[MonoTODO]
+		public ExtendedProtectionPolicy ExtendedProtectionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public SslProtocols SslProtocols {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

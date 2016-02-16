@@ -105,6 +105,26 @@ namespace System.ServiceModel.Configuration
 			set { base [protection_level] = value; }
 		}
 
+		[MonoTODO]
+		public ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public SslProtocols SslProtocols {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

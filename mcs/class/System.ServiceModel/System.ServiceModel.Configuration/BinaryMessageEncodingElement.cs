@@ -106,6 +106,16 @@ namespace System.ServiceModel.Configuration
 			get { return (XmlDictionaryReaderQuotasElement) base ["readerQuotas"]; }
 		}
 
+		[MonoTODO]
+		public CompressionFormat CompressionFormat {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected internal override BindingElement CreateBindingElement ()
 		{
 			return new BinaryMessageEncodingBindingElement ();

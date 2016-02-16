@@ -116,6 +116,16 @@ namespace System.ServiceModel.Configuration
 			set { base ["teredoEnabled"] = value; }
 		}
 
+		[MonoTODO]
+		public ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override void ApplyConfiguration (BindingElement bindingElement)
 		{
 			var b = (TcpTransportBindingElement) bindingElement;

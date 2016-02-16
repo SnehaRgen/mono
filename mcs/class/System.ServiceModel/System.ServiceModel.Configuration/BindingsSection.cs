@@ -156,6 +156,26 @@ namespace System.ServiceModel.Configuration
 			get { return (WSHttpBindingCollectionElement) this ["wsHttpBinding"]; }
 		}
 
+		[MonoTODO]
+		public WS2007FederationHttpBindingCollectionElement WS2007FederationHttpBinding {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public WS2007HttpBindingCollectionElement WS2007HttpBinding {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public static BindingsSection GetSection (System.Configuration.Configuration config) {
 			ServiceModelSectionGroup sm = ServiceModelSectionGroup.GetSectionGroup (config);
 			if (sm == null)

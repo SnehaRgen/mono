@@ -153,6 +153,16 @@ namespace System.ServiceModel.Security.Tokens
 			}
 		}
 
+		[MonoTODO]
+		public MessageSecurityVersion DefaultMessageSecurityVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override SecurityTokenParameters CloneCore ()
 		{
 			return new IssuedSecurityTokenParameters (this);

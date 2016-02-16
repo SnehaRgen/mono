@@ -106,5 +106,15 @@ namespace System.ServiceModel.Description
 				throw new NotImplementedException ();
 			}
 		}
+
+		[MonoTODO]
+		public CodeMemberMethod TaskMethod {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }

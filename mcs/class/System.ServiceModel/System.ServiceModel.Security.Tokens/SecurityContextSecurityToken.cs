@@ -196,6 +196,16 @@ namespace System.ServiceModel.Security.Tokens
 			}
 		}
 
+		[MonoTODO]
+		public SecurityMessageProperty BootstrapMessageProperty {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public override bool CanCreateKeyIdentifierClause<T> ()
 		{
 			return typeof (T) == typeof (SecurityContextKeyIdentifierClause);

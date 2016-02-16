@@ -137,6 +137,16 @@ namespace System.ServiceModel.Configuration
 			set { base [realm] = value; }
 		}
 
+		[MonoTODO]
+		public ExtendedProtectionPolicyElement ExtendedProtectionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		internal void ApplyConfiguration (HttpTransportSecurity security)
 		{
 			security.ClientCredentialType = ClientCredentialType;

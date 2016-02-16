@@ -132,6 +132,16 @@ namespace System.ServiceModel.Configuration
 			}
 		}
 
+		[MonoTODO]
+		public MessageSecurityVersion DefaultMessageSecurityVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

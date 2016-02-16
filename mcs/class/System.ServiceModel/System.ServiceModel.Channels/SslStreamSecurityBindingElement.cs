@@ -59,6 +59,16 @@ namespace System.ServiceModel.Channels
 			set { require_client_certificate = value; }
 		}
 
+		[MonoTODO]
+		public SslProtocols SslProtocols {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		private SslStreamSecurityBindingElement (
 			SslStreamSecurityBindingElement other)
 			: base (other)

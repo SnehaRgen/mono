@@ -82,6 +82,16 @@ namespace System.ServiceModel.Configuration
 			get { return properties; }
 		}
 
+		[MonoTODO]
+		public XPathMessageFilterElement Item[object key] {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 
 	}
 

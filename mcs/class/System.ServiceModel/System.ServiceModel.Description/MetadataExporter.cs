@@ -54,6 +54,16 @@ namespace System.ServiceModel.Description
 			get { throw new NotImplementedException (); }
 		}
 
+		[MonoTODO]
+		public PolicyVersion PolicyVersion {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public abstract void ExportContract (ContractDescription contract);
 
 		public abstract void ExportEndpoint (ServiceEndpoint endpoint);
