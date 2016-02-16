@@ -676,6 +676,16 @@ namespace System.Data.SqlClient {
 			set { Transaction = (SqlTransaction) value; }
 		}
 
+		[MonoTODO]
+		public SqlCommandColumnEncryptionSetting ColumnEncryptionSetting {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Methods
 
 		#region Asynchronous Methods

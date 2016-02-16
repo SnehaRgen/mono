@@ -699,6 +699,16 @@ namespace Microsoft.SqlServer.Server {
 			}
 		}
 
+		[MonoTODO]
+		public SortOrder SortOrder {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties
 
 		#region Methods
