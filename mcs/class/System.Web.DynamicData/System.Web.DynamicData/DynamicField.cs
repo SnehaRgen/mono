@@ -166,6 +166,26 @@ namespace System.Web.DynamicData
 		}
 
 		[MonoTODO]
+		public MetaColumn Column {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ValidateRequestMode ValidateRequestMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		protected override void CopyProperties (DataControlField newField)
 		{
 			throw new NotImplementedException ();

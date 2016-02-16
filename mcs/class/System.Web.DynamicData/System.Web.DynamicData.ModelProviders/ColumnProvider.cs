@@ -92,6 +92,16 @@ namespace System.Web.DynamicData.ModelProviders
 		}
 
 		[MonoTODO]
+		public AttributeCollection Attributes {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
 		public override string ToString ()
 		{
 			throw new NotImplementedException ();

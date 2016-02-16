@@ -83,6 +83,16 @@ namespace System.Web.DynamicData.ModelProviders
 			}
 		}
 
+		[MonoTODO]
+		public AttributeCollection Attributes {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public virtual object EvaluateForeignKey (object row, string foreignKeyName)
 		{
 			return DataBinder.GetPropertyValue (row, foreignKeyName);

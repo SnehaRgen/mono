@@ -106,6 +106,16 @@ namespace System.Web.DynamicData
 			}
 		}
 
+		[MonoTODO]
+		public ClientIDMode ClientIDMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		protected override void OnLoad (EventArgs e)
 		{
 			base.OnLoad (e);
