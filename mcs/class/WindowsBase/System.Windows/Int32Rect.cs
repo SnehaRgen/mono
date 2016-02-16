@@ -86,6 +86,16 @@ namespace System.Windows {
 			set { y = value; }
 		}
 
+		[MonoTODO]
+		public bool HasArea {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public bool Equals (Int32Rect value)
 		{
 			return (x == value.x &&

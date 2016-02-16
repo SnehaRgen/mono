@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Security;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace System.Windows.Threading {
 
@@ -123,6 +124,16 @@ namespace System.Windows.Threading {
 		public object Result {
 			get {
 				return result;
+			}
+		}
+
+		[MonoTODO]
+		public Task Task {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
 			}
 		}
 
