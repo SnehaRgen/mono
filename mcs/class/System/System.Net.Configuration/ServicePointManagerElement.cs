@@ -34,6 +34,7 @@
 
 using System;
 using System.Configuration;
+using System.Net.Security;
 
 namespace System.Net.Configuration 
 {
@@ -117,6 +118,16 @@ namespace System.Net.Configuration
 
 		protected override ConfigurationPropertyCollection Properties {
 			get { return properties; }
+		}
+
+		[MonoTODO]
+		public EncryptionPolicy EncryptionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		#endregion // Properties

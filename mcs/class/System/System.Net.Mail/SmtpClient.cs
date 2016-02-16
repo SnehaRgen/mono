@@ -257,6 +257,16 @@ namespace System.Net.Mail {
 			}
 		}
 
+		[MonoTODO]
+		public SmtpDeliveryFormat DeliveryFormat {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties
 
 		#region Events 

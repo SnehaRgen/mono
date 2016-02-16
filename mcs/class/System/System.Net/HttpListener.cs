@@ -187,6 +187,36 @@ namespace System.Net {
 			}
 		}
 
+		[MonoTODO]
+		public HttpListenerTimeoutManager TimeoutManager {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public System.Security.Authentication.ExtendedProtection.ServiceNameCollection DefaultServiceNames {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		public void Abort ()
 		{
 			if (disposed)

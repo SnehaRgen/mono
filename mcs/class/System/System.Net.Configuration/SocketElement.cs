@@ -32,6 +32,7 @@
 #if CONFIGURATION_DEP
 
 using System.Configuration;
+using System.Net.Sockets;
 
 namespace System.Net.Configuration 
 {
@@ -75,6 +76,16 @@ namespace System.Net.Configuration
 
 		protected override ConfigurationPropertyCollection Properties {
 			get { return properties; }
+		}
+
+		[MonoTODO]
+		public IPProtectionLevel IPProtectionLevel {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		#endregion // Properties

@@ -300,6 +300,16 @@ namespace System.Net
 			}
 		}
 
+		[MonoTODO]
+		public EncryptionPolicy EncryptionPolicy {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		// Methods
 		public static void SetTcpKeepAlive (bool enabled, int keepAliveTime, int keepAliveInterval)
 		{

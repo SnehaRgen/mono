@@ -218,6 +218,16 @@ namespace System.Net
 			}
 		}
 
+		[MonoTODO]
+		public IWebRequestCreate CreatorInstance {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		
 		[MonoTODO("Needs to respect Module, Proxy.AutoDetect, and Proxy.ScriptLocation config settings")]
 		static IWebProxy GetDefaultWebProxy ()

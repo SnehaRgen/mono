@@ -301,6 +301,16 @@ namespace System.Net.Mail {
 				return utf8unmarked;
 			}
 		}
+
+		[MonoTODO]
+		public TransferEncoding BodyTransferEncoding {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
 		#endregion // Methods
 	}
 }
