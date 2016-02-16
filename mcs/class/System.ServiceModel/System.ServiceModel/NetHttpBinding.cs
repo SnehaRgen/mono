@@ -58,10 +58,6 @@ namespace System.ServiceModel {
 			get { throw new NotImplementedException (); }
 		}
 		
-		public override string Scheme {
-			get { throw new NotImplementedException (); }
-		}
-		
 		public override BindingElementCollection CreateBindingElements ()
 		{
 			throw new NotImplementedException ();
