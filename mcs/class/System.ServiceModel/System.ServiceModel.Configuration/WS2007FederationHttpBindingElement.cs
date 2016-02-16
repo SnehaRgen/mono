@@ -35,5 +35,11 @@ namespace System.ServiceModel.Configuration
 	[MonoTODO]
 	public class WS2007FederationHttpBindingElement : WSFederationHttpBindingElement
 	{
+		[MonoTODO]
+		protected override Type BindingElementType {
+			get {
+				throw new NotImplementedException ();
+			}
+		}
 	}
 }
