@@ -449,6 +449,16 @@ namespace System.Windows.Forms {
 				}
 			}
 
+			[MonoTODO]
+			public AccessibleStates State {
+				get {
+					throw new NotImplementedException ();
+				}
+				set {
+					throw new NotImplementedException ();
+				}
+			}
+
 			public override void DoDefaultAction ()
 			{
 				// change the state of the check box

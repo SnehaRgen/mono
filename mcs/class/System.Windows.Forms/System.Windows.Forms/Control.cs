@@ -3415,6 +3415,26 @@ namespace System.Windows.Forms
 			}
 		}
 
+		[MonoTODO]
+		public ImeMode ImeModeBase {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public ImeMode PropagatingImeMode {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion	// Protected Instance Properties
 
 		#region Public Static Methods

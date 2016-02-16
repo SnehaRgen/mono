@@ -1736,6 +1736,16 @@ namespace System.Windows.Forms
 			get { return vscroll; }
 		}
 
+		[MonoTODO]
+		public ImeMode ImeModeBase {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion UIA Framework Properties
 
 		internal Graphics CreateGraphicsInternal ()
