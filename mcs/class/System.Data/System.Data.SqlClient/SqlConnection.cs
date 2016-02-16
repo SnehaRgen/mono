@@ -1680,6 +1680,36 @@ namespace System.Data.SqlClient
 			get { return async; }
 		}
 
+		[MonoTODO]
+		public IDictionary<string,IList<string>> ColumnEncryptionTrustedMasterKeyPaths {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public Guid ClientConnectionId {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
+		[MonoTODO]
+		public string AccessToken {
+			get {
+				throw new NotImplementedException ();
+			}
+			set {
+				throw new NotImplementedException ();
+			}
+		}
+
 		#endregion // Properties Net 2
 
 
