@@ -51,7 +51,9 @@ fi
 
 if [[ ${CI_TAGS} == *'monolite'* ]]; then make get-monolite-latest; fi
 
-${TESTCMD} --label=make --timeout=300m --fatal make -j4 -w V=1
+if make --help 2>&1 | grep 'output-sync' ; then EXTRA_MAKE_FLAGS="${EXTRA_MAKE_FLAGS} --output-sync=recurse"; fi
+
+${TESTCMD} --label=make --timeout=300m --fatal make ${EXTRA_MAKE_FLAGS} -j4 -w V=1
 if [[ -n "${ghprbPullId}" ]] && [[ ${label} == w* ]];
     then
     exit 0
