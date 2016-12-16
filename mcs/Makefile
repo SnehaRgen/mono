@@ -15,7 +15,7 @@ monotouch_watch_runtime_SUBDIRS := build class
 monotouch_tv_runtime_SUBDIRS := build class
 xammac_SUBDIRS := build class
 aot_hybrid_SUBDIRS := build class ilasm
-aot_only_SUBDIRS := build class ilasm
+aot_full_SUBDIRS := build class ilasm
 binary_reference_assemblies_SUBDIRS := build class
 net_4_x_SUBDIRS := build class nunit24 ilasm tools tests errors docs mcs class/aot-compiler packages
 xammac_net_4_5_SUBDIRS := build class
@@ -72,7 +72,7 @@ $(_boot_:%=profile-do--monotouch_tv_runtime--%):     profile-do--monotouch_tv_ru
 $(_boot_:%=profile-do--xammac--%):            profile-do--xammac--%:            profile-do--build--%
 $(_boot_:%=profile-do--xammac_net_4_5--%):    profile-do--xammac_net_4_5--%:           profile-do--build--%
 $(_boot_:%=profile-do--aot_hybrid--%):        profile-do--aot_hybrid--%:        profile-do--build--%
-$(_boot_:%=profile-do--aot_only--%):          profile-do--aot_only--%:          profile-do--build--%
+$(_boot_:%=profile-do--aot_full--%):          profile-do--aot_full--%:          profile-do--build--%
 $(_boot_:%=profile-do--build--%):             profile-do--build--%:             profile-do--basic--%
 
 testcorlib:

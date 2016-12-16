@@ -1,1 +1,1 @@
-#include aot_only_Mono.CSharp.dll.sources
+#include aot_full_Mono.CSharp.dll.sources
